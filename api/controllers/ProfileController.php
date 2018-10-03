@@ -3,19 +3,13 @@
 namespace api\controllers;
 
 
-use filsh\yii2\oauth2server\filters\ErrorToExceptionFilter;
 use news\entities\User;
-use yii\filters\auth\CompositeAuth;
-use yii\filters\auth\HttpBearerAuth;
-use yii\filters\auth\QueryParamAuth;
-use yii\helpers\ArrayHelper;
 use yii\rest\Controller;
 
 class ProfileController extends Controller
 {
     public function actionIndex()
     {
-        \Yii::$app->request->enableCsrfCookie;
         return $this->serializeUser($this->findModel());
     }
 
