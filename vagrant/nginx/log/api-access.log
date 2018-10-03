@@ -1,0 +1,5 @@
+192.168.83.1 - - [28/Sep/2018:18:56:39 +0100] "GET / HTTP/1.1" 500 2576 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+192.168.83.1 - - [28/Sep/2018:18:56:39 +0100] "GET /favicon.ico HTTP/1.1" 500 2505 "http://api.news.local/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+192.168.83.1 - - [28/Sep/2018:19:58:03 +0100] "GET / HTTP/1.1" 200 96 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+192.168.83.1 - - [28/Sep/2018:19:58:03 +0100] "GET /favicon.ico HTTP/1.1" 404 175 "http://api.news.local/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+192.168.83.1 - - [28/Sep/2018:19:59:36 +0100] "POST /oauth2/token HTTP/1.1" 500 1481 "-" "Apache-HttpClient/4.5.5 (Java/1.8.0_152-release)"

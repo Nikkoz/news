@@ -1,0 +1,209 @@
+html,
+body {
+    height: 100%;
+}
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+.grid-view td {
+    white-space: nowrap;
+}
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+/* new */
+.nav-tabs.nav-tabs-news > li {
+    float: none;
+}
+.nav-tabs.nav-tabs-news > li > a {
+    margin-right: 0;
+}
+.nav-tabs.nav-tabs-news > li > a:hover,
+.nav-tabs.nav-tabs-news > li > a:focus,
+.nav-tabs.nav-tabs-news > li.active > a {
+    color: #fff;
+    background: #00a65a;
+}
+.slider__block img.img {
+    width: 100%;
+}
+.btns__block-slider {
+    text-align: right;
+    margin-top: 10px;
+}
+.create__post .btns-block > .btn {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+.tab-content #text #text_constructor {
+    min-height: 150px;
+}
+#sliderSelect .content .slider,
+#videoSelect .content .video,
+#tizerSelect .content .news {
+    padding: 5px 0;
+    border-bottom: 1px solid #e6e6e6;
+    cursor: pointer;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+#sliderSelect .content .slider:hover,
+#videoSelect .content .video:hover,
+#tizerSelect .content .news:hover {
+    background: #e6e6e6;
+}
+.text__block.slider,
+.text__block.video {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #a7a6a6;
+    font-style: italic;
+    border: 1px dashed;
+    margin-bottom: 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.text__block {
+    position: relative;
+}
+.text__block .remove-block {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    color: #f00;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 20px;
+}
+.text__block .remove-block:hover {
+    color: #b70303;
+}
+.text__block.tizer {
+    display: flex;
+}
+.text__block.tizer .tizer__select {
+    width: 15%;
+    margin-right: 15px;
+    border: 1px dashed;
+    color: #a7a6a6;
+    text-align: center;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.text__block.tizer .tizer__select > span {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.text__block.tizer .redactor-box {
+    width: 85%;
+}
+
+.show_color {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+/* new */
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.hidden-field {
+    height: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    .nav li > form > button.logout {
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
