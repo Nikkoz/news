@@ -7,9 +7,11 @@ use news\services\manage\posts\RubricsManageService;
 use Yii;
 use news\entities\posts\rubric\Rubrics;
 use backend\forms\posts\RubricsSearch;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * RubricsController implements the CRUD actions for Rubrics model.
@@ -117,18 +119,42 @@ class RubricsController extends Controller
         ]);
     }
 
-    /**
-     * Deletes an existing Rubrics model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    public function actionActivate(int $id): Response
+    {
+        $backUrl = \Yii::$app->request->get('backUrl');
+
+        try {
+            $this->service->activate($id);
+        } catch (\DomainException $e) {
+            \Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+
+        return $this->redirect([$backUrl]);
+    }
+
+    public function actionDeactivate(int $id): Response
+    {
+        $backUrl = \Yii::$app->request->get('backUrl');
+
+        try {
+            $this->service->deactivate($id);
+        } catch (\DomainException $e) {
+            \Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+
+        return $this->redirect([$backUrl]);
+    }
+
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        try {
+            $this->service->remove($id);
 
-        return $this->redirect(['index']);
+            $this->redirect(Url::toRoute('rubrics/index'));
+        } catch (\DomainException $e) {
+            \Yii::$app->errorHandler->logException($e);
+            \Yii::$app->session->setFlash('error', $e->getMessage());
+        }
     }
 
     /**

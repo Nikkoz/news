@@ -67,4 +67,13 @@ class VideosForm extends Model
     {
         return $this->_video;
     }
+
+    public function attributeLabels(): array
+    {
+        return [
+            'link' => \Yii::t('app', 'Link'),
+            'name' => \Yii::t('app', 'Name'),
+            'site' => \Yii::t('app', 'Site'),
+        ];
+    }
 }

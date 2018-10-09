@@ -373,6 +373,20 @@ class NewsManageService
         $this->videoService->remove($id);
     }
 
+    public function activate(int $id): void
+    {
+        $article = $this->repository->get($id);
+        $article->activate();
+        $this->repository->save($article);
+    }
+
+    public function deactivate(int $id): void
+    {
+        $article = $this->repository->get($id);
+        $article->deactivate();
+        $this->repository->save($article);
+    }
+
     public function getAllArticlesWithoutCurrent(int $current = null): array
     {
         return $this->repository->getBy($current ? ['<>', 'id', $current] : []);

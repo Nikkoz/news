@@ -15,6 +15,8 @@ use kartik\color\ColorInput;
     <div class="col-md-6">
         <div class="box box-default">
             <div class="box-body">
+                <?= $form->field($model, 'status')->checkbox(['class' => 'minimal']) ?>
+
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
                 <?= $form->field($model, 'color')->widget(ColorInput::class, [

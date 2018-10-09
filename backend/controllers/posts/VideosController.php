@@ -6,12 +6,12 @@ use news\forms\manage\posts\post\VideosForm;
 use news\services\manage\posts\VideosManageService;
 use yii\helpers\Json;
 use yii\web\Controller;
-use common\models\posts\Videos;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
 use yii\helpers\FileHelper;
-use common\models\Pictures;
+use news\entities\posts\video\Videos;
+use news\entities\Pictures;
 
 
 /**
@@ -70,9 +70,14 @@ class VideosController extends Controller
 
     public function actionDelete($id)
     {
-        $this->service->remove($id);
+        try {
+            $this->service->remove($id);
 
-        return Json::encode(['success' => 'Y', 'id' => $id]);
+            return Json::encode(['success' => 'Y', 'id' => $id]);
+        } catch (\DomainException $e) {
+            \Yii::$app->errorHandler->logException($e);
+            return Json::encode(['success' => 'N', 'error' => $e->getMessage()]);
+        }
     }
 
     /**

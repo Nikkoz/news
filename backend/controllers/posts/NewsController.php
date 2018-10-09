@@ -17,6 +17,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Json;
+use yii\web\Response;
 
 /**
  * Class NewsController
@@ -55,6 +56,11 @@ class NewsController extends Controller
                 'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
+                    'remove-picture' => ['POST'],
+                    'remove-slider-picture' => ['POST'],
+                    'remove-video-picture' => ['POST'],
+                    'remove-slider' => ['POST'],
+                    'remove-video' => ['POST'],
                 ],
             ],
         ];
@@ -153,10 +159,33 @@ class NewsController extends Controller
         ]);
     }
 
-    /**
-     * @return string
-     */
-    public function actionList()
+    public function actionActivate(int $id): Response
+    {
+        $backUrl = \Yii::$app->request->get('backUrl');
+
+        try {
+            $this->service->activate($id);
+        } catch (\DomainException $e) {
+            \Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+
+        return $this->redirect([$backUrl]);
+    }
+
+    public function actionDeactivate(int $id): Response
+    {
+        $backUrl = \Yii::$app->request->get('backUrl');
+
+        try {
+            $this->service->deactivate($id);
+        } catch (\DomainException $e) {
+            \Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+
+        return $this->redirect([$backUrl]);
+    }
+
+    public function actionList(): string
     {
         if(\Yii::$app->request->isAjax) {
             $current = \Yii::$app->request->get('current') ?: null;
@@ -173,12 +202,7 @@ class NewsController extends Controller
         }
     }
 
-    /**
-     * @param string $column
-     * @param int $id
-     * @return bool
-     */
-    public function actionRemovePicture(string $column, int $id)
+    public function actionRemovePicture(string $column, int $id): bool
     {
         if(\Yii::$app->request->isAjax) {
             try {
@@ -191,12 +215,7 @@ class NewsController extends Controller
         }
     }
 
-    /**
-     * @param int $id
-     * @param int $picture
-     * @return bool
-     */
-    public function actionRemoveSliderPicture(int $id, int $picture)
+    public function actionRemoveSliderPicture(int $id, int $picture): bool
     {
         if(\Yii::$app->request->isAjax) {
             try {
@@ -209,7 +228,7 @@ class NewsController extends Controller
         }
     }
 
-    public function actionRemoveVideoPicture(int $id, int $picture)
+    public function actionRemoveVideoPicture(int $id, int $picture): bool
     {
         if(\Yii::$app->request->isAjax) {
             try {
@@ -222,7 +241,7 @@ class NewsController extends Controller
         }
     }
 
-    public function actionRemoveSlider(int $id)
+    public function actionRemoveSlider(int $id): bool
     {
         if(\Yii::$app->request->isAjax) {
             try {
@@ -235,7 +254,7 @@ class NewsController extends Controller
         }
     }
 
-    public function actionRemoveVideo(int $id)
+    public function actionRemoveVideo(int $id): bool
     {
         if(\Yii::$app->request->isAjax) {
             try {

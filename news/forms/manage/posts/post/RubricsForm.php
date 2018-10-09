@@ -36,12 +36,19 @@ class RubricsForm extends Model
 
     public function rubricsList(): array
     {
-        return ArrayHelper::map(Rubrics::find()->asArray()->all(), 'id', 'name');
+        return ArrayHelper::map(Rubrics::find()->active()->asArray()->all(), 'id', 'name');
     }
 
     public function beforeValidate(): bool
     {
         $this->rubrics = array_filter((array)$this->rubrics);
         return parent::beforeValidate();
+    }
+
+    public function attributeLabels(): array
+    {
+        return [
+            'rubrics' => \Yii::t('app', 'Rubrics'),
+        ];
     }
 }

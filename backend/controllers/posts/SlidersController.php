@@ -11,7 +11,10 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * SlidersController implements the CRUD actions for News model.
+ * Class SlidersController
+ * @package backend\controllers\posts
+ *
+ * @property SlidersManageService $service
  */
 class SlidersController extends Controller
 {
@@ -49,9 +52,14 @@ class SlidersController extends Controller
 
     public function actionDelete($id)
     {
-        $this->service->remove($id);
+        try {
+            $this->service->remove($id);
 
-        return Json::encode(['success' => 'Y', 'id' => $id]);
+            return Json::encode(['success' => 'Y', 'id' => $id]);
+        } catch (\DomainException $e) {
+            \Yii::$app->errorHandler->logException($e);
+            return Json::encode(['success' => 'N', 'error' => $e->getMessage()]);
+        }
     }
 
     /**

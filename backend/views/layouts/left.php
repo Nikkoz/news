@@ -1,5 +1,4 @@
 <aside class="main-sidebar">
-    <pre><?= $this->context->id;?></pre>
     <section class="sidebar">
         <?= dmstr\widgets\Menu::widget(
             [
@@ -10,10 +9,10 @@
                     [
                         'label' => \Yii::t('app', 'News'),
                         'url' => '#',
-                        'icon' => 'newspaper-o',
+                        'icon' => 'newspaper',
                         'items' => [
-                            ['label' => \Yii::t('app', 'Articles'), 'icon' => 'newspaper-o', 'url' => \yii\helpers\Url::toRoute(['/news']), 'active' => $this->context->id == 'posts/news'],
-                            ['label' => \Yii::t('app', 'Rubrics'), 'icon' => 'cubes', 'url' => \yii\helpers\Url::toRoute(['/rubrics'])],
+                            ['label' => \Yii::t('app', 'Articles'), 'icon' => 'newspaper', 'url' => \yii\helpers\Url::toRoute(['/news']), 'active' => $this->context->id == 'posts/news'],
+                            ['label' => \Yii::t('app', 'Rubrics'), 'icon' => 'cubes', 'url' => \yii\helpers\Url::toRoute(['/rubrics']), 'active' => $this->context->id == 'posts/rubrics'],
                         ],
                     ],
                     [

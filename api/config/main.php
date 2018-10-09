@@ -85,15 +85,27 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'enableStrictParsing' => true,
+            'enableStrictParsing' => false,
             'showScriptName' => false,
             'rules' => [
                 '' => 'site/index',
                 'profile' => 'profile/index',
                 'POST oauth2/<action:\w+>' => 'oauth2/rest/<action>',
+                /*[
+                    'class' => 'yii\web\CompositeUrlRule',
+                    'prefix' => 'v1',
+                    'rules' => [
+                        '' => 'site/index',
+                        'profile' => 'profile/index',
+                    ]
+                ]*/
             ],
         ],
     ],
+    /**
+     * as authenticator and as access навешивать на behaveors в нужных контроллерах(для аутентификации и доступа)
+     * лучше создать SecurityController и наследоваться от него
+     */
     'as authenticator' => [
         'class' => 'filsh\yii2\oauth2server\filters\auth\CompositeAuth',
         'except' => ['site/index', 'oauth2/rest/token'],

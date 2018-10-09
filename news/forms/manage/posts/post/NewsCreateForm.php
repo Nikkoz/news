@@ -4,6 +4,7 @@ namespace news\forms\manage\posts\post;
 use news\entities\posts\News;
 use news\forms\manage\CompositeForm;
 use news\forms\manage\MetaForm;
+use news\helpers\NewsHelper;
 
 /**
  * Class NewsCreateForm
@@ -92,5 +93,10 @@ class NewsCreateForm extends CompositeForm
     protected function internalForms(): array
     {
         return ['pictures', 'sliders', 'videos', 'meta', 'rubrics'];
+    }
+
+    public function attributeLabels(): array
+    {
+        return NewsHelper::attributeLabels();
     }
 }

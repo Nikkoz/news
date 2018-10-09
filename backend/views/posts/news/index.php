@@ -2,10 +2,13 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\widgets\Pjax;
+use news\entities\posts\News;
+use news\helpers\NewsHelper;
+use news\helpers\RubricsHelper;
+use yii\helpers\ArrayHelper;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\posts\NewsSearch */
+/* @var $searchModel \backend\forms\posts\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = \Yii::t('app', 'News');
@@ -26,12 +29,46 @@ $this->params['breadcrumbs'][] = $this->title;
                     'dataProvider' => $dataProvider,
                     'filterModel' => $searchModel,
                     'columns' => [
+                        //['class' => 'yii\grid\CheckboxColumn'],
                         ['class' => 'yii\grid\SerialColumn'],
-                        'id',
-                        'title',
-                        'preview_text:ntext',
+                        ['attribute' => 'id', 'content' => function (News $model) {
+                            return Html::a($model->id, ['update', 'id' => $model->id]);
+                        }],
+                        ['attribute' => 'title', 'content' => function (News $model) {
+                            return Html::a(Html::encode($model->title), ['update', 'id' => $model->id]);
+                        }],
+                        ['attribute' => 'preview_text', 'content' => function (News $model) {
+                            return \Yii::$app->formatter->asHtml($model->preview_text);
+                        }],
                         [
-                            'class' => 'yii\grid\ActionColumn'
+                            'attribute' => 'rubrics',
+                            'filter' => RubricsHelper::rubricList(),
+                            'content' => function (News $model) {
+                                return RubricsHelper::rubricsLabels(\array_map(function($assignment) {
+                                    return ArrayHelper::getValue($assignment, 'rubric_id');
+                                }, $model->rubricAssignments));
+                            }
+                        ],
+                        [
+                            'attribute' => 'analytic',
+                            'contentOptions' => ['class' => 'td-center td-green'],
+                            'filter' => [1 => \Yii::t('app', 'Yes')],
+                            'content' => function (News $model) {
+                                return $model->analytic ? Html::tag('i', '', ['class' => 'fa fa-fw fa-check']) : '';
+                            }
+                        ],
+                        [
+                            'attribute' => 'status',
+                            'filter' => NewsHelper::statusList(),
+                            'content' => function (News $model) {
+                                return NewsHelper::statusLabel($model->status, $model->id);
+                            },
+                            'format' => 'raw',
+                        ],
+                        'sort',
+                        [
+                            'class' => 'yii\grid\ActionColumn',
+                            'template' => '{update} {delete}'
                         ],
                     ]
                 ]); ?>

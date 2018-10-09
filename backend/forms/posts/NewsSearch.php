@@ -3,29 +3,37 @@
 namespace backend\forms\posts;
 
 use news\entities\posts\News;
+use news\entities\posts\rubric\RubricAssignments;
+use news\entities\posts\rubric\Rubrics;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
  * Class NewsSearch
  * @package common\models\posts
+ *
+ * @property string $title
+ * @property int $status
+ * @property int $created_at
+ * @property int $created_by
+ * @property int $sort
+ * @property int $analytic
+ * @property int $rubrics
  */
 class NewsSearch extends Model
 {
     public $title;
-    public $publish;
+    public $status;
     public $created_at;
     public $created_by;
-    public $updated_at;
-    public $updated_by;
-    public $sort;
-    public $is_analytic;
+    public $analytic;
+    public $rubrics;
 
     public function rules()
     {
         return [
-            [['sort', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-            [['title', 'is_analytic', 'publish'], 'safe'],
+            [['created_at', 'created_by', 'status', 'analytic'], 'integer'],
+            [['title', 'rubrics'], 'safe'],
         ];
     }
 
@@ -38,7 +46,7 @@ class NewsSearch extends Model
      */
     public function search($params)
     {
-        $query = News::find();
+        $query = News::find()->alias('news');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
@@ -54,16 +62,18 @@ class NewsSearch extends Model
         }
 
         $query->andFilterWhere([
-            'sort' => $this->sort,
-            'is_analytic' => $this->is_analytic,
-            'publish' => $this->publish,
+            'analytic' => $this->analytic,
+            'status' => $this->status,
             'created_at' => $this->created_at,
             'created_by' => $this->created_by,
-            'updated_at' => $this->updated_at,
-            'updated_by' => $this->updated_by,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title]);
+
+        if($this->rubrics) {
+            $query->rightJoin(RubricAssignments::tableName() . ' rubric', 'rubric.news_id=news.id');
+            $query->andFilterWhere(['rubric.rubric_id' => $this->rubrics]);
+        }
 
         return $dataProvider;
     }

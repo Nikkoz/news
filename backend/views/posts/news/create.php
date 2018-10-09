@@ -352,7 +352,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <div class="form-group">
-            <?= \yii\helpers\Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            <?= \yii\helpers\Html::submitButton(\Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

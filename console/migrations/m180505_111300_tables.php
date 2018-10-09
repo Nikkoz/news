@@ -131,6 +131,7 @@ class m180505_111300_tables extends Migration
             'slug' => $this->string(255)->notNull(),
             'color' => $this->string(255)->null(),
             'meta_json' => $this->text(),
+            'status' => $this->boolean()->defaultValue(1),
             'sort' => $this->integer()->defaultValue(100),
         ], $tableOptions);
 

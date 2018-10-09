@@ -65,4 +65,14 @@ class PicturesForm extends Model
     {
         return $this->{$attribute} ? $this->{$attribute}->id : '';
     }
+
+    public function attributeLabels(): array
+    {
+        return [
+            'rectanglePictureFile' => \Yii::t('app', 'Rectangle Picture File'),
+            'squarePictureFile' => \Yii::t('app', 'Square Picture File'),
+            'hotPictureFile' => \Yii::t('app', 'Hot Picture File'),
+            'analyticPictureFile' => \Yii::t('app', 'Analytic Picture File'),
+        ];
+    }
 }

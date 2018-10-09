@@ -16,6 +16,7 @@ use news\entities\posts\rubric\Rubrics;
  * @property string $slug
  * @property string $color
  * @property integer $sort
+ * @property boolean $status
  *
  * @property MetaForm $meta
  */
@@ -25,6 +26,7 @@ class RubricForm extends CompositeForm
     public $slug;
     public $color;
     public $sort;
+    public $status;
 
     private $_rubric;
 
@@ -35,6 +37,7 @@ class RubricForm extends CompositeForm
             $this->slug = $rubric->slug;
             $this->color = $rubric->color;
             $this->sort = $rubric->sort;
+            $this->status = $rubric->status;
 
             $this->meta = new MetaForm($rubric->meta);
 
@@ -51,7 +54,7 @@ class RubricForm extends CompositeForm
     {
         return [
             [['name'], 'required'],
-            [['sort'], 'integer'],
+            [['sort', 'status'], 'integer'],
             [['sort'], 'default', 'value' => 100],
             [['name', 'color','slug'], 'string', 'max' => 255],
             ['slug', SlugValidator::class],
@@ -66,6 +69,7 @@ class RubricForm extends CompositeForm
             'name' => Yii::t('app', 'Name'),
             'color' => Yii::t('app', 'Color'),
             'sort' => Yii::t('app', 'Sort'),
+            'status' => Yii::t('app', 'Status'),
         ];
     }
 

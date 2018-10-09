@@ -406,38 +406,56 @@ $hiddens = '';
                                         </div>
                                     <?php elseif(isset($section['slider'])) :
                                         $slider = $model->getSliderById($section['slider']);
-                                        $hiddens .= '<input type="hidden" name="order[]" value="slider_' . $position . '" />';?>
 
-                                        <div class="text__block slider" data-position="<?= $position;?>" data-type="slider">
-                                            Фотогалерея "<?= $slider->name;?>"
-                                            <input type="hidden" name="slider_<?= $position;?>" value="<?= $slider->name;?>" />
+                                        if($slider) :
+                                            $hiddens .= '<input type="hidden" name="order[]" value="slider_' . $position . '" />';?>
+
+                                            <div class="text__block slider" data-position="<?= $position;?>" data-type="slider">
+                                                Фотогалерея "<?= $slider->name;?>"
+                                                <input type="hidden" name="slider_<?= $position;?>" value="<?= $slider->name;?>" />
+                                                <span class="remove-block">×</span>
+                                            </div>
+                                        <?php endif;
+                                    elseif(isset($section['video'])) :
+                                        $video = $model->getVideoById($section['video']);
+
+                                        if($video):
+                                            $hiddens .= '<input type="hidden" name="order[]" value="video_' . $position . '" />';?>
+
+                                            <div class="text__block video" data-position="<?= $position;?>" data-type="video">
+                                                Видеоролик "<?= $video->name;?>"
+                                                <input type="hidden" name="video_<?= $position;?>" value="<?= $video->name;?>" />
+                                                <span class="remove-block">×</span>
+                                            </div>
+                                        <?php endif;
+                                    endif;
+                                else :
+                                    $tizer = $model->getTizerById($section['tizer']);
+
+                                    if($tizer):
+                                        $hiddens .= '<input type="hidden" name="order[]" value="tizer_' . $position . '" />';?>
+
+                                        <div class="text__block tizer" data-position="<?= $position;?>" data-type="tizer">
+                                            <div class="tizer__select"  data-toggle="modal" data-target="#tizerSelect">
+                                                <input type="hidden" name="tizer_<?= $position;?>" value="<?= $tizer->id;?>" />
+                                                <span><?= $tizer->title;?></span>
+                                            </div>
+                                            <textarea name="text_<?= $position;?>" id="text-field-<?= $position;?>">
+                                                <?= $section['text'];?>
+                                            </textarea>
                                             <span class="remove-block">×</span>
                                         </div>
-                                    <?php elseif(isset($section['video'])) :
-                                        $video = $model->getVideoById($section['video']);
-                                        $hiddens .= '<input type="hidden" name="order[]" value="video_' . $position . '" />';?>
+                                    <?php else:
+                                        $hiddens .= '<input type="hidden" name="order[]" value="text_' . $position . '" />';?>
 
-                                        <div class="text__block video" data-position="<?= $position;?>" data-type="video">
-                                            Видеоролик "<?= $video->name;?>"
-                                            <input type="hidden" name="video_<?= $position;?>" value="<?= $video->name;?>" />
+                                        <div class="text__block text" data-position="<?= $position;?>" data-type="text">
+                                                <textarea name="text_<?= $position;?>" id="text-field-<?= $position;?>">
+                                                    <?= $section['text'];?>
+                                                </textarea>
                                             <span class="remove-block">×</span>
                                         </div>
                                     <?php endif;
-                                else :
-                                    $tizer = $model->getTizerById($section['tizer']);
-                                    $hiddens .= '<input type="hidden" name="order[]" value="tizer_' . $position . '" />';?>
-
-                                    <div class="text__block tizer" data-position="<?= $position;?>" data-type="tizer">
-                                        <div class="tizer__select"  data-toggle="modal" data-target="#tizerSelect">
-                                            <input type="hidden" name="tizer_<?= $position;?>" value="<?= $tizer->id;?>" />
-                                            <span><?= $tizer->title;?></span>
-                                        </div>
-                                        <textarea name="text_<?= $position;?>" id="text-field-<?= $position;?>">
-                                            <?= $section['text'];?>
-                                        </textarea>
-                                        <span class="remove-block">×</span>
-                                    </div>
-                                <?php endif;
+                                endif;
                             endforeach;
                         endif;?>
                     </div>
@@ -454,7 +472,7 @@ $hiddens = '';
         </div>
 
         <div class="form-group">
-            <?= \yii\helpers\Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            <?= \yii\helpers\Html::submitButton(\Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

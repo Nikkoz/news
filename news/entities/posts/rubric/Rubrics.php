@@ -2,6 +2,7 @@
 
 namespace news\entities\posts\rubric;
 
+use news\entities\posts\queries\RubricQuery;
 use Yii;
 use news\entities\behaviors\MetaBihavior;
 use news\entities\Meta;
@@ -16,11 +17,15 @@ use yii\db\ActiveRecord;
  * @property string $slug
  * @property string $color
  * @property string $meta_json
+ * @property boolean $status
  * @property int $sort
  * @property Meta $meta
  */
 class Rubrics extends ActiveRecord
 {
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 0;
+
     public $meta;
 
     public static function tableName()
@@ -42,35 +47,69 @@ class Rubrics extends ActiveRecord
         ];
     }
 
-    public static function create(string $name, string $color, int $sort, Meta $meta): self
+    public static function create(string $name, string $color, int $sort, int $status, Meta $meta): self
     {
         $rubric = new static();
 
         $rubric->name = $name;
-        //$rubric->slug = $slug;
         $rubric->color = $color;
         $rubric->sort = $sort;
+        $rubric->status = $status;
         $rubric->meta = $meta;
 
         return $rubric;
     }
 
-    public function edit(string $name, string $color, int $sort, Meta $meta): void
+    public function edit(string $name, string $color, int $sort, int $status, Meta $meta): void
     {
         $this->name = $name;
-        //$this->slug = $slug;
         $this->color = $color;
         $this->sort = $sort;
+        $this->status = $status;
         $this->meta = $meta;
+    }
+
+    public function isActivate(): bool
+    {
+        return $this->status == self::STATUS_ACTIVE;
+    }
+
+    public function isDraft(): bool
+    {
+        return $this->status == self::STATUS_INACTIVE;
+    }
+
+    public function activate(): void
+    {
+        if($this->isActivate()) {
+            throw new \DomainException(\Yii::t('app', 'Rubric is already active.'));
+        }
+
+        $this->status = self::STATUS_ACTIVE;
+    }
+
+    public function deactivate(): void
+    {
+        if($this->isDraft()) {
+            throw new \DomainException(\Yii::t('app', 'Rubric is already inactive.'));
+        }
+
+        $this->status = self::STATUS_INACTIVE;
+    }
+
+    public static function find(): RubricQuery
+    {
+        return new RubricQuery(static::class);
     }
 
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('rubrics', 'ID'),
+            'id' => Yii::t('app', 'ID'),
             'name' => Yii::t('app', 'Name'),
             'color' => Yii::t('app', 'Color'),
             'sort' => Yii::t('app', 'Sort'),
+            'status' => Yii::t('app', 'Status'),
         ];
     }
 }

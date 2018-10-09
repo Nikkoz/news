@@ -26,9 +26,9 @@ class RubricsManageService
     {
         $rubric = Rubrics::create(
             $form->name,
-            //$form->slug,
             $form->color,
             $form->sort,
+            $form->status,
             new Meta(
                 $form->meta->title,
                 $form->meta->description,
@@ -47,9 +47,9 @@ class RubricsManageService
 
         $rubric->edit(
             $form->name,
-            //$form->slug,
             $form->color,
             $form->sort,
+            $form->status,
             new Meta(
                 $form->meta->title,
                 $form->meta->description,
@@ -58,6 +58,20 @@ class RubricsManageService
         );
 
         $this->repository->save($rubric);
+    }
+
+    public function activate(int $id): void
+    {
+        $article = $this->repository->get($id);
+        $article->activate();
+        $this->repository->save($article);
+    }
+
+    public function deactivate(int $id): void
+    {
+        $article = $this->repository->get($id);
+        $article->deactivate();
+        $this->repository->save($article);
     }
 
     public function remove($id): void

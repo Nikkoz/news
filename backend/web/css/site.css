@@ -198,6 +198,12 @@ a.desc:after {
     height: 0;
     overflow: hidden;
 }
+.td-center {
+    text-align: center;
+}
+.td-green {
+    color: #00a65a;
+}
 
 @media (max-width: 767px) {
     .nav li > form > button.logout {

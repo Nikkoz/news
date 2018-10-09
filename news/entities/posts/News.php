@@ -1,4 +1,5 @@
 <?php
+
 namespace news\entities\posts;
 
 use lhs\Yii2SaveRelationsBehavior\SaveRelationsBehavior;
@@ -10,10 +11,11 @@ use news\entities\posts\rubric\RubricAssignments;
 use news\entities\posts\rubric\Rubrics;
 use news\entities\posts\slider\SliderAssignments;
 use news\entities\posts\video\VideoAssignments;
+use news\helpers\NewsHelper;
+use phpDocumentor\Reflection\Types\Self_;
 use yii\behaviors\SluggableBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
-use yii\helpers\Json;
 
 /**
  * Class News
@@ -55,6 +57,7 @@ class News extends ActiveRecord
     const STATUS_DRAFT = 0;
 
     public $meta;
+
     //public $rubrics;
 
     public static function tableName(): string
@@ -82,6 +85,13 @@ class News extends ActiveRecord
                 'class' => JsonBehavior::class,
                 'attribute' => 'detail_text'
             ]
+        ];
+    }
+
+    public function transactions()
+    {
+        return [
+            self::SCENARIO_DEFAULT => self::OP_ALL,
         ];
     }
 
@@ -119,6 +129,34 @@ class News extends ActiveRecord
         $this->meta = $meta;
     }
 
+    public function isActivate(): bool
+    {
+        return $this->status == self::STATUS_ACTIVE;
+    }
+
+    public function isDraft(): bool
+    {
+        return $this->status == self::STATUS_DRAFT;
+    }
+
+    public function activate(): void
+    {
+        if($this->isActivate()) {
+            throw new \DomainException(\Yii::t('app', 'Article is already active.'));
+        }
+
+        $this->status = self::STATUS_ACTIVE;
+    }
+
+    public function deactivate(): void
+    {
+        if($this->isDraft()) {
+            throw new \DomainException(\Yii::t('app', 'Article is already inactive.'));
+        }
+
+        $this->status = self::STATUS_DRAFT;
+    }
+
     // Photo
 
     public function assignPicture(int $id, string $column): void
@@ -138,7 +176,7 @@ class News extends ActiveRecord
         $assignments = $this->sliderAssignments;
 
         foreach ($assignments as $assignment) {
-            if($assignment->isForSlider($id)) {
+            if ($assignment->isForSlider($id)) {
                 return;
             }
         }
@@ -173,7 +211,7 @@ class News extends ActiveRecord
         $assignments = $this->videoAssignments;
 
         foreach ($assignments as $assignment) {
-            if($assignment->isForVideo($id)) {
+            if ($assignment->isForVideo($id)) {
                 return;
             }
         }
@@ -208,7 +246,7 @@ class News extends ActiveRecord
         $assignments = $this->rubricAssignments;
 
         foreach ($assignments as $assignment) {
-            if($assignment->isForRubric($id)) {
+            if ($assignment->isForRubric($id)) {
                 return;
             }
         }
@@ -262,7 +300,7 @@ class News extends ActiveRecord
 
     public function getRectanglePictureFile(): ActiveQuery
     {
-        return $this->hasOne(Pictures::class, ['id'=> 'rectangle_picture']);
+        return $this->hasOne(Pictures::class, ['id' => 'rectangle_picture']);
     }
 
     public function getSquarePictureFile(): ActiveQuery
@@ -282,8 +320,7 @@ class News extends ActiveRecord
 
     public function attributeLabels(): array
     {
-        return [
-
-        ];
+        return NewsHelper::attributeLabels();
     }
+
 }

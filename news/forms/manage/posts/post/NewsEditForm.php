@@ -8,6 +8,7 @@ use news\entities\posts\slider\Sliders;
 use news\entities\posts\video\Videos;
 use news\forms\manage\CompositeForm;
 use news\forms\manage\MetaForm;
+use news\helpers\NewsHelper;
 
 /**
  * Class NewsCreateForm
@@ -150,18 +151,23 @@ class NewsEditForm extends CompositeForm
         return $result;
     }
 
-    public function getSliderById(int $id): Sliders
+    public function getSliderById(int $id): ?Sliders
     {
-        return $this->_sliders[$id];
+        return $this->_sliders[$id] ?? null;
     }
 
-    public function getVideoById(int $id): Videos
+    public function getVideoById(int $id): ?Videos
     {
-        return $this->_videos[$id];
+        return $this->_videos[$id] ?? null;
     }
 
-    public function getTizerById(int $id): News
+    public function getTizerById(int $id): ?News
     {
-        return News::findOne($id);
+        return News::findOne($id) ?? null;
+    }
+
+    public function attributeLabels(): array
+    {
+        return NewsHelper::attributeLabels();
     }
 }

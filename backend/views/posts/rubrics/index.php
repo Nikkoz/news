@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use news\helpers\RubricsHelper;
+use news\entities\posts\rubric\Rubrics;
 
 /* @var $this yii\web\View */
 /* @var $searchModel \backend\forms\posts\RubricsSearch */
@@ -26,18 +28,28 @@ $this->params['breadcrumbs'][] = $this->title;
                     'filterModel' => $searchModel,
                     'columns' => [
                         ['class' => 'yii\grid\SerialColumn'],
-
-                        'id',
-                        'name',
+                        ['attribute' => 'id', 'content' => function (Rubrics $model) {
+                            return Html::a($model->id, ['update', 'id' => $model->id]);
+                        }],
+                        ['attribute' => 'name', 'content' => function (Rubrics $model) {
+                            return Html::a(Html::encode($model->name), ['update', 'id' => $model->id]);
+                        }],
                         [
                             'attribute'=>'color',
                             'format' => 'html',
-                            'value' => function($model) {
+                            'value' => function(Rubrics $model) {
                                 return '<div class="show_color" style="background: '. $model->color .'"></div>';
                             }
                         ],
+                        [
+                            'attribute' => 'status',
+                            'filter' => RubricsHelper::statusList(),
+                            'content' => function (Rubrics $model) {
+                                return RubricsHelper::statusLabel($model->status, $model->id);
+                            },
+                            'format' => 'raw',
+                        ],
                         'sort',
-
                         [
                             'class' => 'yii\grid\ActionColumn',
                             'template' => '{update} {delete}'
