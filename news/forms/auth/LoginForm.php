@@ -22,4 +22,13 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
         ];
     }
+
+    public function attributeLabels(): array
+    {
+        return [
+            'username' => \Yii::t('app', 'Login'),
+            'password' => \Yii::t('app', 'Password'),
+            'rememberMe' => \Yii::t('app', 'Remember me'),
+        ];
+    }
 }

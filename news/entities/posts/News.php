@@ -10,9 +10,9 @@ use news\entities\Pictures;
 use news\entities\posts\rubric\RubricAssignments;
 use news\entities\posts\rubric\Rubrics;
 use news\entities\posts\slider\SliderAssignments;
+use news\entities\posts\tags\TagAssignments;
 use news\entities\posts\video\VideoAssignments;
 use news\helpers\NewsHelper;
-use phpDocumentor\Reflection\Types\Self_;
 use yii\behaviors\SluggableBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
@@ -48,6 +48,7 @@ use yii\db\ActiveRecord;
  * @property Pictures $hotPictureFile
  *
  * @property RubricAssignments $rubricAssignments
+ * @property TagAssignments $tagAssignments
  * @property SliderAssignments $sliderAssignments
  * @property VideoAssignments $videoAssignments
  */
@@ -79,7 +80,7 @@ class News extends ActiveRecord
             ], [
                 'class' => SaveRelationsBehavior::class,
                 'relations' => [
-                    'rubricAssignments', 'sliderAssignments', 'videoAssignments', 'rectanglePictureFile', 'squarePictureFile', 'analyticPictureFile', 'hotPictureFile'
+                    'rubricAssignments', 'tagAssignments', 'sliderAssignments', 'videoAssignments', 'rectanglePictureFile', 'squarePictureFile', 'analyticPictureFile', 'hotPictureFile'
                 ]
             ], [
                 'class' => JsonBehavior::class,
@@ -129,7 +130,7 @@ class News extends ActiveRecord
         $this->meta = $meta;
     }
 
-    public function isActivate(): bool
+    public function isActive(): bool
     {
         return $this->status == self::STATUS_ACTIVE;
     }
@@ -141,7 +142,7 @@ class News extends ActiveRecord
 
     public function activate(): void
     {
-        if($this->isActivate()) {
+        if($this->isActive()) {
             throw new \DomainException(\Yii::t('app', 'Article is already active.'));
         }
 
@@ -274,6 +275,41 @@ class News extends ActiveRecord
         $this->rubricAssignments = [];
     }
 
+    //tags
+
+    public function assignTag(int $id): void
+    {
+        $assignments = $this->tagAssignments;
+
+        foreach ($assignments as $assignment) {
+            if ($assignment->isForTag($id)) {
+                return;
+            }
+        }
+
+        $assignments[] = TagAssignments::create($id);
+        $this->tagAssignments = $assignments;
+    }
+
+    public function revokeTag(int $id): void
+    {
+        $assignments = $this->tagAssignments;
+
+        foreach ($assignments as $i => $assignment) {
+            if ($assignment->isForTag($id)) {
+                unset($assignments[$i]);
+                $this->tagAssignments = $assignments;
+                return;
+            }
+        }
+        throw new \DomainException('Assignment is not found.');
+    }
+
+    public function revokeTags(): void
+    {
+        $this->tagAssignments = [];
+    }
+
     // detail text
 
     public function setDetailText(array $text): void
@@ -286,6 +322,11 @@ class News extends ActiveRecord
     public function getRubricAssignments(): ActiveQuery
     {
         return $this->hasMany(RubricAssignments::class, ['news_id' => 'id']);
+    }
+
+    public function getTagAssignments(): ActiveQuery
+    {
+        return $this->hasMany(TagAssignments::class, ['news_id' => 'id']);
     }
 
     public function getSliderAssignments(): ActiveQuery

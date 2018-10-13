@@ -4,7 +4,6 @@ namespace backend\controllers\posts;
 
 use news\forms\manage\posts\RubricForm;
 use news\services\manage\posts\RubricsManageService;
-use Yii;
 use news\entities\posts\rubric\Rubrics;
 use backend\forms\posts\RubricsSearch;
 use yii\helpers\Url;
@@ -14,13 +13,16 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 
 /**
- * RubricsController implements the CRUD actions for Rubrics model.
+ * Class RubricsController
+ * @package backend\controllers\posts
+ *
+ * @property RubricsManageService $service
  */
 class RubricsController extends Controller
 {
     private $service;
 
-    public function __construct(string $id, $module, array $config = [], RubricsManageService $service)
+    public function __construct(string $id, $module, RubricsManageService $service, array $config = [])
     {
         parent::__construct($id, $module, $config);
 
@@ -46,7 +48,7 @@ class RubricsController extends Controller
     public function actionIndex()
     {
         $searchModel = new RubricsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = $searchModel->search(\Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -63,19 +65,19 @@ class RubricsController extends Controller
     {
         $form = new RubricForm();
 
-        if ($form->load(Yii::$app->request->post())) {
+        if ($form->load(\Yii::$app->request->post())) {
             if($form->validate()) {
                 try {
                     $rubric = $this->service->create($form);
 
-                    Yii::$app->session->setFlash('success', Yii::t('app', 'Rubrics created.'));
+                    \Yii::$app->session->setFlash('success', \Yii::t('app', 'Rubrics created.'));
                     return $this->redirect(['/posts/rubrics/index']);
                 } catch (\DomainException $e) {
-                    Yii::$app->errorHandler->logException($e);
-                    Yii::$app->session->setFlash('error', $e->getMessage());
+                    \Yii::$app->errorHandler->logException($e);
+                    \Yii::$app->session->setFlash('error', $e->getMessage());
                 }
             } else {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Error adding rubric.'));
+                \Yii::$app->session->setFlash('error', \Yii::t('app', 'Error adding rubric.'));
             }
         }
 
@@ -97,19 +99,19 @@ class RubricsController extends Controller
 
         $form = new RubricForm($rubric);
 
-        if ($form->load(Yii::$app->request->post())) {
+        if ($form->load(\Yii::$app->request->post())) {
             if($form->validate()) {
                 try {
                     $this->service->edit($rubric->id, $form);
 
-                    Yii::$app->session->setFlash('success', Yii::t('app', 'Rubrics updated.'));
+                    \Yii::$app->session->setFlash('success', \Yii::t('app', 'Rubrics updated.'));
                     return $this->redirect(['posts/rubrics/index']);
                 } catch (\DomainException $e) {
-                    Yii::$app->errorHandler->logException($e);
-                    Yii::$app->session->setFlash('error', $e->getMessage());
+                    \Yii::$app->errorHandler->logException($e);
+                    \Yii::$app->session->setFlash('error', $e->getMessage());
                 }
             } else {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Error updating rubric.'));
+                \Yii::$app->session->setFlash('error', \Yii::t('app', 'Error updating rubric.'));
             }
         }
 
@@ -170,6 +172,6 @@ class RubricsController extends Controller
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
+        throw new NotFoundHttpException(\Yii::t('app', 'The requested page does not exist.'));
     }
 }

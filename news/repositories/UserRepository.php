@@ -11,6 +11,11 @@ class UserRepository
         return $this->getBy(['email' => $email]);
     }
 
+    public function getById(int $id): User
+    {
+        return $this->getBy(['id' => $id]);
+    }
+
     public function existsByPasswordResetToken(string $token): bool
     {
         return (bool) User::findByPasswordResetToken($token);
@@ -25,6 +30,18 @@ class UserRepository
     {
         if (!$user->save()) {
             throw new \RuntimeException('Saving error.');
+        }
+    }
+
+    /**
+     * @param User $user
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function remove(User $user): void
+    {
+        if (!$user->delete()) {
+            throw new \RuntimeException('Removing error.');
         }
     }
 

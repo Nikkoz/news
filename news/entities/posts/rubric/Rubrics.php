@@ -69,7 +69,7 @@ class Rubrics extends ActiveRecord
         $this->meta = $meta;
     }
 
-    public function isActivate(): bool
+    public function isActive(): bool
     {
         return $this->status == self::STATUS_ACTIVE;
     }
@@ -81,7 +81,7 @@ class Rubrics extends ActiveRecord
 
     public function activate(): void
     {
-        if($this->isActivate()) {
+        if($this->isActive()) {
             throw new \DomainException(\Yii::t('app', 'Rubric is already active.'));
         }
 

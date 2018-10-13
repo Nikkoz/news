@@ -40,6 +40,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'common\auth\Identity',
+            'loginUrl' => '/login',
             'enableAutoLogin' => true,
             'identityCookie' => [
                 'name' => '_identity',
@@ -83,6 +84,19 @@ $config = [
         'urlManager' => function() {
             return \Yii::$app->get('backendUrlManager');
         },
+    ],
+    'as access' => [
+        'class' => 'yii\filters\AccessControl',
+        'except' => ['auth/login', 'site/error'],
+        'rules' => [
+            [
+                'allow' => true,
+                'roles' => ['@'],
+            ],
+        ],
+        'denyCallback' => function ($rule, $action) {
+            return $action->controller->redirect(['/auth/login']);
+        }
     ],
     'params' => $params,
 ];

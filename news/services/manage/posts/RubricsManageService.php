@@ -41,7 +41,7 @@ class RubricsManageService
         return $rubric;
     }
 
-    public function edit($id, RubricForm $form): void
+    public function edit(int $id, RubricForm $form): void
     {
         $rubric = $this->repository->get($id);
 

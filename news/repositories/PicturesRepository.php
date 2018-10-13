@@ -24,18 +24,24 @@ class PicturesRepository
         }
     }
 
-    public function remove(Pictures $picture): void
+    public function remove(Pictures $picture, string $folder = 'posts'): void
     {
         if(!$picture->delete()) {
             throw new \RuntimeException('Removing error.');
         } else {
-            $this->removeFile($picture->name);
+            $this->removeFile($picture->name, $folder);
         }
     }
 
-    public function saveFile(UploadedFile $file): string
+    /**
+     * @param UploadedFile $file
+     * @param string $folder
+     * @return string
+     * @throws \yii\base\Exception
+     */
+    public function saveFile(UploadedFile $file, string $folder = 'posts'): string
     {
-        $dir = \Yii::getAlias('@images') . '/posts/';
+        $dir = \Yii::getAlias('@images') . "/{$folder}/";
         if(!file_exists($dir)) {
             try {
                 FileHelper::createDirectory($dir);
@@ -54,9 +60,9 @@ class PicturesRepository
         return $image;
     }
 
-    public function removeFile(string $fileName): void
+    public function removeFile(string $fileName, string $folder = 'posts'): void
     {
-        $dir = \Yii::getAlias('@images') . '/posts/';
+        $dir = \Yii::getAlias('@images') . "/{$folder}/";
 
         if(file_exists($dir . $fileName)) {
             unlink($dir . $fileName);

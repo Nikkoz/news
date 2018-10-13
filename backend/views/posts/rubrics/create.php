@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model common\models\posts\News */
+/* @var $model \news\entities\posts\rubric\Rubrics */
 
 $this->title = Yii::t('app', 'Create Rubrics');
 $this->params['breadcrumbs'][] = ['label' => \Yii::t('app', 'Rubrics'), 'url' => ['index']];

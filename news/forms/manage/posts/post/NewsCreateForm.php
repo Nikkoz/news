@@ -1,7 +1,6 @@
 <?php
 namespace news\forms\manage\posts\post;
 
-use news\entities\posts\News;
 use news\forms\manage\CompositeForm;
 use news\forms\manage\MetaForm;
 use news\helpers\NewsHelper;
@@ -25,6 +24,7 @@ use news\helpers\NewsHelper;
  *
  * @property MetaForm $meta
  * @property RubricsForm $rubrics
+ * @property TagsForm $tags
  * @property PicturesForm $pictures
  * @property SlidersForm $sliders
  * @property VideosForm $videos
@@ -48,6 +48,7 @@ class NewsCreateForm extends CompositeForm
         $this->meta = new MetaForm();
         $this->pictures = new PicturesForm();
         $this->rubrics = new RubricsForm();
+        $this->tags = new TagsForm();
         $this->sliders = [new SlidersForm()];
         $this->videos = [new VideosForm()];
 
@@ -92,7 +93,7 @@ class NewsCreateForm extends CompositeForm
 
     protected function internalForms(): array
     {
-        return ['pictures', 'sliders', 'videos', 'meta', 'rubrics'];
+        return ['pictures', 'sliders', 'videos', 'meta', 'rubrics', 'tags'];
     }
 
     public function attributeLabels(): array

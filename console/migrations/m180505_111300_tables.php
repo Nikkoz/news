@@ -158,6 +158,8 @@ class m180505_111300_tables extends Migration
             'tag_id' => $this->integer(),
         ], $tableOptions);
 
+        $this->addPrimaryKey('PK-news_tags_assignments', '{{%news_tags_assignments}}', ['news_id', 'tag_id']);
+
         $this->createIndex('IDX_nt_news_id', '{{%news_tags_assignments}}', 'news_id');
         $this->addForeignKey('IDX_nt_news_id', '{{%news_tags_assignments}}', 'news_id', '{{%news}}', 'id', 'CASCADE', 'RESTRICT');
 

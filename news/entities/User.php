@@ -2,8 +2,10 @@
 
 namespace news\entities;
 
+use news\helpers\UsersHelper;
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 
 //use yii\base\StaticInstanceTrait;
@@ -13,6 +15,8 @@ use yii\db\ActiveRecord;
  *
  * @property integer $id
  * @property string $username
+ * @property string $name
+ * @property string $lastname
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
@@ -20,27 +24,24 @@ use yii\db\ActiveRecord;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
- * @property string $password write-only password
+ * @property string $password
+ * @property int $last_auth
+ * @property int $photo
+ * @property Pictures $photoFile
  */
 class User extends ActiveRecord
 {
     //use InstantiateTrait;
 
-    const STATUS_DELETED = 0;
+    const STATUS_INACTIVE = 0;
     //const STATUS_WAIT = 0;
     const STATUS_ACTIVE = 10;
 
-    /**
-     * {@inheritdoc}
-     */
     public static function tableName()
     {
         return '{{%user}}';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function behaviors()
     {
         return [
@@ -48,24 +49,60 @@ class User extends ActiveRecord
         ];
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function rules()
     {
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
-            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE]],
         ];
     }
 
     /**
      * @param string $username
      * @param string $email
+     * @param string $name
+     * @param string $lastname
      * @param string $password
      * @return User
+     * @throws \yii\base\Exception
      */
-    public static function signup(string $username, string $email, string $password): User
+    public static function create(string $username, string $email, string $name, string $lastname, string $password): self
+    {
+        $user = new static();
+        $user->username = $username;
+        $user->email = $email;
+        $user->name = $name;
+        $user->lastname = $lastname;
+        $user->setPassword(!empty($password) ? $password : Yii::$app->security->generateRandomString());
+        $user->created_at = time();
+        $user->status = self::STATUS_ACTIVE;
+        $user->auth_key = Yii::$app->security->generateRandomString();
+
+        return $user;
+    }
+
+    /**
+     * @param string $username
+     * @param string $email
+     * @param string $name
+     * @param string $lastname
+     * @param string $password
+     * @throws \yii\base\Exception
+     */
+    public function edit(string $username, string $email, string $name, string $lastname, string $password = ''): void
+    {
+        $this->username = $username;
+        $this->email = $email;
+        $this->name = $name;
+        $this->lastname = $lastname;
+        $this->updated_at = time();
+
+        if(!empty($password)) {
+            $this->setPassword($password);
+        }
+    }
+
+    /*public static function signup(string $username, string $email, string $password): self
     {
         $user = new static();
         $user->username = $username;
@@ -74,19 +111,36 @@ class User extends ActiveRecord
         $user->generateAuthKey();
 
         return $user;
-    }
+    }*/
 
-    /**
-     * @return bool
-     */
     public function isActive(): bool
     {
-        return $this->status === self::STATUS_ACTIVE;
+        return $this->status == self::STATUS_ACTIVE;
     }
 
-    /**
-     * @return bool
-     */
+    public function isInactive(): bool
+    {
+        return $this->status == self::STATUS_INACTIVE;
+    }
+
+    public function activate(): void
+    {
+        if($this->isActive()) {
+            throw new \DomainException(\Yii::t('app', 'User is already active.'));
+        }
+
+        $this->status = self::STATUS_ACTIVE;
+    }
+
+    public function deactivate(): void
+    {
+        if($this->isInactive()) {
+            throw new \DomainException(\Yii::t('app', 'User is already inactive.'));
+        }
+
+        $this->status = self::STATUS_INACTIVE;
+    }
+
     /*public function isWait()
     {
         return $this->status === self::STATUS_WAIT;
@@ -102,6 +156,23 @@ class User extends ActiveRecord
         $this->email_confirm_token = null;
     }*/
 
+    // Photo
+
+    public function assignPhoto(int $id): void
+    {
+        $this->photo = $id;
+    }
+
+    public function revokePhoto(): void
+    {
+        $this->photo = '';
+    }
+
+    public function getPhotoFile(): ActiveQuery
+    {
+        return $this->hasOne(Pictures::class, ['id' => 'photo']);
+    }
+
     /**
      * @throws \yii\base\Exception
      */
@@ -116,6 +187,7 @@ class User extends ActiveRecord
 
     /**
      * @param $password
+     * @throws \yii\base\Exception
      */
     public function resetPassword($password): void
     {
@@ -127,24 +199,12 @@ class User extends ActiveRecord
         $this->password_reset_token = null;
     }
 
-    /**
-     * Finds user by username
-     *
-     * @param string $username
-     * @return static|null
-     */
-    public static function findByUsername($username)
+    public static function findByUsername(string $username): ?self
     {
         return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
     }
 
-    /**
-     * Finds user by password reset token
-     *
-     * @param string $token password reset token
-     * @return static|null
-     */
-    public static function findByPasswordResetToken($token)
+    public static function findByPasswordResetToken(string $token): ?self
     {
         if (!static::isPasswordResetTokenValid($token)) {
             return null;
@@ -156,13 +216,7 @@ class User extends ActiveRecord
         ]);
     }
 
-    /**
-     * Finds out if password reset token is valid
-     *
-     * @param string $token password reset token
-     * @return bool
-     */
-    public static function isPasswordResetTokenValid($token)
+    public static function isPasswordResetTokenValid(string $token): bool
     {
         if (empty($token)) {
             return false;
@@ -173,32 +227,32 @@ class User extends ActiveRecord
         return $timestamp + $expire >= time();
     }
 
-    /**
-     * Validates password
-     *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
-     */
-    public function validatePassword($password)
+    public function validatePassword(string $password): bool
     {
         return Yii::$app->security->validatePassword($password, $this->password_hash);
     }
 
     /**
-     * Generates password hash from password and sets it to the model
-     *
      * @param string $password
+     * @throws \yii\base\Exception
      */
-    public function setPassword($password)
+    public function setPassword(string $password): void
     {
         $this->password_hash = Yii::$app->security->generatePasswordHash($password);
     }
 
     /**
      * Generates "remember me" authentication key
+     *
+     * @throws \yii\base\Exception
      */
-    public function generateAuthKey()
+    public function generateAuthKey(): void
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+
+    public function attributeLabels(): array
+    {
+        return UsersHelper::attributeLabels();
     }
 }

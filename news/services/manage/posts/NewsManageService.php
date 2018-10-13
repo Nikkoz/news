@@ -13,6 +13,7 @@ use news\repositories\PicturesRepository;
 use news\repositories\posts\NewsRepository;
 use news\repositories\posts\RubricsRepository;
 use news\repositories\posts\SlidersRepository;
+use news\repositories\posts\TagsRepository;
 use news\repositories\posts\VideosRepository;
 use news\services\TransactionManager;
 use yii\helpers\ArrayHelper;
@@ -23,6 +24,7 @@ use yii\helpers\ArrayHelper;
  *
  * @property NewsRepository $repository
  * @property RubricsRepository $rubricRepository
+ * @property TagsRepository $tagRepository
  * @property TransactionManager $transaction
  * @property PicturesRepository $pictureRepository
  * @property SlidersRepository $sliderRepository
@@ -46,6 +48,7 @@ class NewsManageService
     public function __construct(
         NewsRepository $repository,
         RubricsRepository $rubricsRepository,
+        TagsRepository $tagRepository,
         PicturesRepository $pictureRepository,
         SlidersRepository $sliderRepository,
         VideosRepository $videoRepository,
@@ -56,6 +59,7 @@ class NewsManageService
     {
         $this->repository = $repository;
         $this->rubricRepository = $rubricsRepository;
+        $this->tagRepository = $tagRepository;
         $this->pictureRepository = $pictureRepository;
         $this->sliderRepository = $sliderRepository;
         $this->videoRepository = $videoRepository;
@@ -86,6 +90,11 @@ class NewsManageService
         foreach ($form->rubrics->rubrics as $rubric) {
             $rubric = $this->rubricRepository->get($rubric);
             $news->assignRubric($rubric->id);
+        }
+
+        foreach ($form->tags->tags as $tag) {
+            $tag = $this->tagRepository->get($tag);
+            $news->assignTag($tag->id);
         }
 
         $this->transaction->wrap(function () use ($news, $form) {
@@ -196,12 +205,18 @@ class NewsManageService
             //$news->revokeSliders();
             //$news->revokeVideos();
             $news->revokeRubrics();
+            $news->revokeTags();
 
             $this->repository->save($news);
 
             foreach ($form->rubrics->rubrics as $rubric) {
                 $rubric = $this->rubricRepository->get($rubric);
                 $news->assignRubric($rubric->id);
+            }
+
+            foreach ($form->tags->tags as $tag) {
+                $tag = $this->tagRepository->get($tag);
+                $news->assignTag($tag->id);
             }
 
             if($form->pictures->rectanglePictureFile) {
@@ -248,7 +263,7 @@ class NewsManageService
                 $news->assignPicture($picture->id, 'analytic_picture');
             }
 
-            $assign = ArrayHelper::getColumn($news->sliderAssignments, 'slider_id');
+            $assign = ArrayHelper::getColumn((array)$news->sliderAssignments, 'slider_id');
             $sliders = [];
 
             foreach ($form->sliders as $slide) {
@@ -269,7 +284,7 @@ class NewsManageService
                 }
             }
 
-            $assign = ArrayHelper::getColumn($news->videoAssignments, 'video_id');
+            $assign = ArrayHelper::getColumn((array)$news->videoAssignments, 'video_id');
             $videos = [];
 
             foreach ($form->videos as $v) {

@@ -34,6 +34,7 @@ use news\helpers\NewsHelper;
  *
  * @property MetaForm $meta
  * @property RubricsForm $rubrics
+ * @property TagsForm $tags
  * @property PicturesForm $pictures
  * @property SlidersForm $sliders
  * @property VideosForm $videos
@@ -75,6 +76,7 @@ class NewsEditForm extends CompositeForm
 
         $this->meta = new MetaForm($news->meta);
         $this->rubrics = new RubricsForm($news);
+        $this->tags = new TagsForm($news);
         $this->pictures = new PicturesForm($news);
 
         $sliders = [];
@@ -118,7 +120,7 @@ class NewsEditForm extends CompositeForm
 
     protected function internalForms(): array
     {
-        return ['pictures', 'sliders', 'videos', 'meta', 'rubrics'];
+        return ['pictures', 'sliders', 'videos', 'meta', 'rubrics', 'tags'];
     }
 
     public function setSliders(array $sliders): array

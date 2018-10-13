@@ -77,6 +77,10 @@ $hiddens = '';
                         <?= $form->field($model,'choice', ['options' => ['class' => 'col-md-2']])->checkbox(['class' => 'minimal']) ?>
                     </div>
 
+                    <?= $form->field($model->tags, 'tags')->widget(Select2::class, [
+                        'items' => $model->tags->tagsList(),
+                        'multiple' => true
+                    ]) ?>
                 </div>
                 <div class="tab-pane" id="pictures">
                     <div class="row">

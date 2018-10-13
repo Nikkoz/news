@@ -3,12 +3,21 @@
 namespace common\auth;
 
 use filsh\yii2\oauth2server\Module;
+use news\repositories\PicturesRepository;
 use OAuth2\Storage\UserCredentialsInterface;
 use news\entities\User;
 use news\readModels\UserReadRepository;
 use Yii;
 use yii\web\IdentityInterface;
 
+/**
+ * Class Identity
+ * @package common\auth
+ *
+ * @property User $user
+ *
+ * @property string $fullName
+ */
 class Identity implements IdentityInterface, UserCredentialsInterface
 {
     private $user;
@@ -44,6 +53,25 @@ class Identity implements IdentityInterface, UserCredentialsInterface
     public function getUsername(): string
     {
         return $this->user->username;
+    }
+
+    public function getFullName(): string
+    {
+        return $this->user->lastname . ' '. $this->user->name;
+    }
+
+    public function getPhoto(): string
+    {
+        $repository = new PicturesRepository();
+        $photo = $repository->get($this->user->photo);
+
+        return $photo->getPicture('users');
+    }
+
+    public function getRole(): ?string
+    {
+        $roles = \Yii::$app->authManager->getRolesByUser($this->user->id);
+        return $roles ? reset($roles)->description : null;
     }
 
     public function getAuthKey(): string
