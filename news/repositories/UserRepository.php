@@ -2,10 +2,18 @@
 
 namespace news\repositories;
 
-use news\entities\User;
+use news\dispatchers\EventDispatcher;
+use news\entities\user\User;
 
 class UserRepository
 {
+    private $dispatcher;
+
+    public function __construct(EventDispatcher $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+    }
+
     public function getByEmail(string $email): User
     {
         return $this->getBy(['email' => $email]);
@@ -18,7 +26,7 @@ class UserRepository
 
     public function existsByPasswordResetToken(string $token): bool
     {
-        return (bool) User::findByPasswordResetToken($token);
+        return (bool)User::findByPasswordResetToken($token);
     }
 
     public function getByPasswordResetToken(string $token): User
@@ -31,10 +39,12 @@ class UserRepository
         if (!$user->save()) {
             throw new \RuntimeException('Saving error.');
         }
+
+        $this->dispatcher->dispatchAll($user->releaseEvents());
     }
 
     /**
-     * @param User $user
+     * @param \news\entities\user\User $user
      * @throws \Throwable
      * @throws \yii\db\StaleObjectException
      */
@@ -43,16 +53,19 @@ class UserRepository
         if (!$user->delete()) {
             throw new \RuntimeException('Removing error.');
         }
+
+        $this->dispatcher->dispatchAll($user->releaseEvents());
     }
 
     private function getBy(array $conditions): User
     {
-        if(!$user = User::find()->andWhere($conditions)->limit(1)->one()) {
+        if (!$user = User::find()->andWhere($conditions)->limit(1)->one()) {
             throw new \DomainException('User is not found');
         }
 
         return $user;
     }
+
     public function findByUserNameOrEmail(string $value): User
     {
         return $this->getBy(['or', ['email' => $value], ['username' => $value]]);

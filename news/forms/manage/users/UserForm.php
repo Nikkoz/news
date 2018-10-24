@@ -3,10 +3,9 @@
 namespace news\forms\manage\users;
 
 
-use news\entities\User;
+use news\entities\user\User;
 use news\forms\manage\CompositeForm;
 use news\helpers\UsersHelper;
-use yii\base\Model;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -47,7 +46,7 @@ class UserForm extends CompositeForm
 
     public function __construct(User $user = null, array $config = [])
     {
-        if($user) {
+        if ($user) {
             $roles = \Yii::$app->authManager->getRolesByUser($user->id);
 
             $this->id = $user->id;

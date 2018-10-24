@@ -1,17 +1,17 @@
 <?php
 
-namespace news\services\auth\events;
+namespace news\entities\user\events;
 
 
-use news\entities\User;
+use news\entities\user\User;
 
 /**
  * Class UserSignUpRequested
  * @package news\services\auth\events
  *
- * @property User $user
+ * @property \news\entities\user\User $user
  */
-class UserSignUpRequested
+class UserCreateRequested
 {
     public $user;
 

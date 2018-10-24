@@ -3,7 +3,7 @@
 namespace news\helpers;
 
 
-use news\entities\User;
+use news\entities\user\User;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -49,12 +49,10 @@ class UsersHelper
         switch ($status) {
             case User::STATUS_ACTIVE:
                 $class = 'label label-success';
-                $action = 'deactivate';
                 break;
             case User::STATUS_INACTIVE:
             default:
                 $class = 'label label-default';
-                $action = 'activate';
                 break;
         }
 

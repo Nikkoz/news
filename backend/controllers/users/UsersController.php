@@ -6,7 +6,7 @@ namespace backend\controllers\users;
 use backend\forms\UserSearch;
 use news\forms\manage\users\UserForm;
 use news\services\manage\UserManageService;
-use news\entities\User;
+use news\entities\user\User;
 use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -53,8 +53,10 @@ class UsersController extends Controller
     }
 
     /**
-     * @return string|\yii\web\Response
+     * @return string|Response
+     * @throws \Throwable
      * @throws \yii\base\Exception
+     * @throws \yii\db\Exception
      */
     public function actionCreate()
     {
@@ -147,11 +149,13 @@ class UsersController extends Controller
                 \Yii::$app->errorHandler->logException($e);
             }
         }
+
+        return false;
     }
 
     /**
      * @param int $id
-     * @return null|User
+     * @return null|\news\entities\user\User
      * @throws NotFoundHttpException
      */
     protected function findModel(int $id): ?User

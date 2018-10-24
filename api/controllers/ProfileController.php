@@ -3,7 +3,7 @@
 namespace api\controllers;
 
 
-use news\entities\User;
+use news\entities\user\User;
 use yii\rest\Controller;
 
 class ProfileController extends Controller

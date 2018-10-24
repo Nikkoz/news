@@ -2,7 +2,7 @@
 
 namespace news\readModels;
 
-use news\entities\User;
+use news\entities\user\User;
 
 class UserReadRepository
 {

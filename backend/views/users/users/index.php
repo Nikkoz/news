@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use news\helpers\UsersHelper;
-use news\entities\User;
+use news\entities\user\User;
 
 /* @var $this yii\web\View */
 /* @var $searchModel \backend\forms\UserSearch */

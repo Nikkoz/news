@@ -5,7 +5,7 @@ namespace common\auth;
 use filsh\yii2\oauth2server\Module;
 use news\repositories\PicturesRepository;
 use OAuth2\Storage\UserCredentialsInterface;
-use news\entities\User;
+use news\entities\user\User;
 use news\readModels\UserReadRepository;
 use Yii;
 use yii\web\IdentityInterface;
@@ -14,7 +14,7 @@ use yii\web\IdentityInterface;
  * Class Identity
  * @package common\auth
  *
- * @property User $user
+ * @property \news\entities\user\User $user
  *
  * @property string $fullName
  */

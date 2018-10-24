@@ -3,7 +3,7 @@
 namespace news\forms\manage\users;
 
 
-use news\entities\User;
+use news\entities\user\User;
 use yii\base\Model;
 use yii\web\UploadedFile;
 

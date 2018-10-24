@@ -5,5 +5,5 @@ use yii\test\ActiveFixture;
 
 class UserFixture extends ActiveFixture
 {
-    public $modelClass = 'news\entities\User';
+    public $modelClass = 'news\entities\user\User';
 }

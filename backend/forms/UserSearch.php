@@ -4,7 +4,7 @@ namespace backend\forms;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use news\entities\User;
+use news\entities\user\User;
 
 /**
  * Class UserSearch

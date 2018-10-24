@@ -4,7 +4,7 @@ namespace news\services\manage;
 
 
 use news\entities\Pictures;
-use news\entities\User;
+use news\entities\user\User;
 use news\forms\manage\users\UserForm;
 use news\repositories\PicturesRepository;
 use news\repositories\UserRepository;
@@ -45,7 +45,9 @@ class UserManageService
     /**
      * @param UserForm $form
      * @return User
+     * @throws \Throwable
      * @throws \yii\base\Exception
+     * @throws \yii\db\Exception
      */
     public function create(UserForm $form): User
     {
@@ -58,7 +60,7 @@ class UserManageService
         );
 
         $this->transaction->wrap(function () use ($user, $form) {
-            if($form->photo->photo) {
+            if ($form->photo->photo) {
                 $file = $this->pictureRepository->saveFile($form->photo->photo);
 
                 $picture = Pictures::create($file);
@@ -77,7 +79,9 @@ class UserManageService
     /**
      * @param int $id
      * @param UserForm $form
+     * @throws \Throwable
      * @throws \yii\base\Exception
+     * @throws \yii\db\Exception
      */
     public function edit(int $id, UserForm $form): void
     {
@@ -91,7 +95,7 @@ class UserManageService
         );
 
         $this->transaction->wrap(function () use ($user, $form) {
-            if($form->photo->photo) {
+            if ($form->photo->photo) {
                 $file = $this->pictureRepository->saveFile($form->photo->photo, 'users');
 
                 $picture = Pictures::create($file);
@@ -134,7 +138,7 @@ class UserManageService
 
     private function checkPicture(int $newId, int $id = null): void
     {
-        if($id && $id != $newId) {
+        if ($id && $id != $newId) {
             $picture = $this->pictureRepository->get($id);
             $this->pictureRepository->remove($picture, $this->folder);
         }

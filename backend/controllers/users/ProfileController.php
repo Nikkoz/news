@@ -3,7 +3,7 @@
 namespace backend\controllers\users;
 
 
-use news\entities\User;
+use news\entities\user\User;
 use news\forms\manage\users\UserForm;
 use news\services\manage\UserManageService;
 use yii\helpers\Url;
@@ -55,7 +55,7 @@ class ProfileController extends Controller
 
     /**
      * @param int $id
-     * @return null|User
+     * @return null|\news\entities\user\User
      * @throws NotFoundHttpException
      */
     protected function findModel(int $id): ?User

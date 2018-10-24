@@ -2,7 +2,7 @@
 
 namespace news\services\auth;
 
-use news\entities\User;
+use news\entities\user\User;
 use news\forms\auth\LoginForm;
 use news\repositories\UserRepository;
 

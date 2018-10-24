@@ -3,7 +3,6 @@
 namespace console\controllers;
 
 
-use news\entities\User;
 use news\repositories\UserRepository;
 use yii\console\Controller;
 use yii\helpers\Console;

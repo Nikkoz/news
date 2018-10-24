@@ -1,7 +1,11 @@
 <?php
 
-namespace news\entities;
+namespace news\entities\user;
 
+use news\entities\AggregateRoot;
+use news\entities\EventTrait;
+use news\entities\Pictures;
+use news\entities\user\events\UserCreateRequested;
 use news\helpers\UsersHelper;
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -29,9 +33,9 @@ use yii\db\ActiveRecord;
  * @property int $photo
  * @property Pictures $photoFile
  */
-class User extends ActiveRecord
+class User extends ActiveRecord implements AggregateRoot
 {
-    //use InstantiateTrait;
+    use EventTrait;
 
     const STATUS_INACTIVE = 0;
     //const STATUS_WAIT = 0;
@@ -77,6 +81,8 @@ class User extends ActiveRecord
         $user->created_at = time();
         $user->status = self::STATUS_ACTIVE;
         $user->auth_key = Yii::$app->security->generateRandomString();
+
+        $user->recordEvent(new UserCreateRequested($user));
 
         return $user;
     }
