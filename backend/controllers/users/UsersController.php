@@ -77,8 +77,11 @@ class UsersController extends Controller
 
     /**
      * @param int $id
-     * @return string|\yii\web\Response
+     * @return string|Response
+     * @throws NotFoundHttpException
+     * @throws \Throwable
      * @throws \yii\base\Exception
+     * @throws \yii\db\Exception
      */
     public function actionUpdate(int $id)
     {

@@ -9,6 +9,9 @@ return [
         '@npm'   => '@vendor/npm-asset',
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'bootstrap' => [
+        'queue',
+    ],
     'components' => [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
@@ -23,6 +26,10 @@ return [
                     'port' => 11211,
                 ],
             ],*/
+        ],
+        'queue' => [
+            'class' => 'yii\queue\redis\Queue',
+            'as log' => 'yii\queue\LogBehavior',
         ],
         'i18n' => require __DIR__ . '/langs.php',
     ],
