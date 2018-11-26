@@ -1,12 +1,12 @@
 <?php
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $user \news\entities\user\User */
 
-$confirmLink = \Yii::$app->urlManager->createAbsoluteUrl(['auth/signup/confirm', 'token' => $user->password_reset_token]);
+$resetLink = \Yii::$app->get('frontendUrlManager')->createAbsoluteUrl(['auth/reset/confirm', 'token' => $user->password_reset_token]);
 ?>
-Hello <?= $user->username ?>,
+Hello <?= Html::encode($user->username) ?>,
+Follow the link below to reset your password:
 
-Follow the link below to confirm your email:
-
-<?= $confirmLink ?>
+<?= $resetLink;?>

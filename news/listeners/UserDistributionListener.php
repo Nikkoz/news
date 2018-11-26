@@ -4,7 +4,7 @@ namespace news\listeners;
 
 
 use news\entities\user\events\UserDistribution;
-use news\job\DistributionNews;
+use news\jobs\DistributionNews;
 use news\repositories\UserRepository;
 use yii\queue\redis\Queue;
 

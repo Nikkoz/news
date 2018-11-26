@@ -1,9 +1,10 @@
 <?php
 return [
     'id' => 'app-common',
-    'name' => 'Ki-News',
+    'name' => 'Известия',
     'language' => 'ru-RU',
     'sourceLanguage' => 'en-US',
+    'timeZone' => 'Europe/Moscow',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -29,6 +30,7 @@ return [
         ],
         'queue' => [
             'class' => 'yii\queue\redis\Queue',
+            'redis' => 'redis',
             'as log' => 'yii\queue\LogBehavior',
         ],
         'i18n' => require __DIR__ . '/langs.php',

@@ -116,7 +116,7 @@ class TagsController extends Controller
         try {
             $this->service->remove($id);
 
-            $this->redirect(Url::toRoute('tags/index'));
+            $this->redirect(Url::toRoute('/tags'));
         } catch (\DomainException $e) {
             \Yii::$app->errorHandler->logException($e);
             \Yii::$app->session->setFlash('error', $e->getMessage());

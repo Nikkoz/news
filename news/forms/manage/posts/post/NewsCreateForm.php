@@ -3,6 +3,7 @@ namespace news\forms\manage\posts\post;
 
 use news\forms\manage\CompositeForm;
 use news\forms\manage\MetaForm;
+use news\forms\manage\posts\post\RubricsForm;
 use news\helpers\NewsHelper;
 
 /**
@@ -15,6 +16,8 @@ use news\helpers\NewsHelper;
  * @property integer $sort
  * @property boolean $analytics
  * @property boolean $hot
+ * @property boolean $news
+ * @property string $color
  * @property boolean $discussing
  * @property boolean $reading
  * @property boolean $choice
@@ -36,6 +39,8 @@ class NewsCreateForm extends CompositeForm
     public $sort;
     public $analytics;
     public $hot;
+    public $news;
+    public $color;
     public $discussing;
     public $reading;
     public $choice;
@@ -82,12 +87,12 @@ class NewsCreateForm extends CompositeForm
         return [
             [['title', 'detail_text'],'required'],
             [['title', 'alias'], 'string', 'max' => 255],
-            [['preview_text'], 'string'],
+            [['preview_text', 'color'], 'string'],
             //[['alias'], 'unique', 'targetClass' => News::class],
             ['sort', 'integer'],
             ['detail_text', 'safe'],
             [['sort'], 'default', 'value' => 100],
-            [['analytics', 'hot', 'discussing', 'reading', 'choice', 'status'], 'integer', 'max' => 1],
+            [['analytics', 'hot', 'news', 'discussing', 'reading', 'choice', 'status'], 'integer', 'max' => 1],
         ];
     }
 

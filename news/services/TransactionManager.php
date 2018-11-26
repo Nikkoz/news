@@ -32,8 +32,5 @@ class TransactionManager
 
             throw $e;
         }
-
-
-        \Yii::$app->db->transaction($function);
     }
 }

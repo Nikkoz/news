@@ -37,10 +37,9 @@ class SlidersManageService
 
         $this->transaction->wrap(function () use ($slider, $form) {
             foreach ($form->pictures as $picture) {
+                $file = $this->pictureRepository->saveFile($picture, 'sliders');
 
-                $file = $this->pictureRepository->saveFile($picture);
-
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'sliders');
                 $this->pictureRepository->save($picture);
 
                 $slider->assignPicture($picture->id);
@@ -61,9 +60,9 @@ class SlidersManageService
         $this->transaction->wrap(function () use ($slider, $form) {
             foreach ($form->pictures as $picture) {
 
-                $file = $this->pictureRepository->saveFile($picture);
+                $file = $this->pictureRepository->saveFile($picture, 'sliders');
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'sliders');
                 $this->pictureRepository->save($picture);
 
                 $slider->assignPicture($picture->id);
@@ -76,7 +75,19 @@ class SlidersManageService
     public function remove($id): void
     {
         $slider = $this->repository->get($id);
+
+        $this->removeAllPictures($slider);
         $this->repository->remove($slider);
+    }
+
+    private function removeAllPictures(Sliders $slider): void
+    {
+        if($slider->picturesAssignments) {
+            foreach ($slider->picturesAssignments as $picturesAssignment) {
+                $picture = $this->pictureRepository->get($picturesAssignment->picture_id);
+                $this->pictureRepository->remove($picture);
+            }
+        }
     }
 
     public function removePicture(int $sliderId, int $pictureId): void

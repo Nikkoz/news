@@ -347,6 +347,15 @@ $(document).ready(function() {
             }
         });
     });
+
+    $("#rubricsform-rubrics").select2().on('select2:select', function(e){
+        let element = e.params.data.element;
+        let $element = $(element);
+
+        $element.detach();
+        $(this).append($element);
+        $(this).trigger("change");
+    })
 });
 
 $(window).on('load',function () {

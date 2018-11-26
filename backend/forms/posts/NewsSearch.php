@@ -18,6 +18,8 @@ use yii\data\ActiveDataProvider;
  * @property int $created_by
  * @property int $sort
  * @property int $analytic
+ * @property int $hot
+ * @property int $news
  * @property int $rubrics
  */
 class NewsSearch extends Model
@@ -27,12 +29,14 @@ class NewsSearch extends Model
     public $created_at;
     public $created_by;
     public $analytic;
+    public $hot;
+    public $news;
     public $rubrics;
 
     public function rules()
     {
         return [
-            [['created_at', 'created_by', 'status', 'analytic'], 'integer'],
+            [['created_at', 'created_by', 'status', 'analytic', 'hot', 'news'], 'integer'],
             [['title', 'rubrics'], 'safe'],
         ];
     }
@@ -46,12 +50,12 @@ class NewsSearch extends Model
      */
     public function search($params)
     {
-        $query = News::find()->alias('news');
+        $query = News::find()->alias('news')->with('rubricAssignments');
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'sort' => [
-                'defaultOrder' => ['updated_at' => SORT_DESC]
+                'defaultOrder' => ['created_at' => SORT_DESC]
             ]
         ]);
 
@@ -63,6 +67,8 @@ class NewsSearch extends Model
 
         $query->andFilterWhere([
             'analytic' => $this->analytic,
+            'hot' => $this->hot,
+            'news' => $this->news,
             'status' => $this->status,
             'created_at' => $this->created_at,
             'created_by' => $this->created_by,

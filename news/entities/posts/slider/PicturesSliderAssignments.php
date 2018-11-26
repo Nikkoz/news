@@ -27,7 +27,7 @@ class PicturesSliderAssignments extends ActiveRecord
         ];
     }*/
 
-    public static function create($pictureId): self
+    public static function create(int $pictureId): self
     {
         $assignment = new static();
         $assignment->picture_id = $pictureId;

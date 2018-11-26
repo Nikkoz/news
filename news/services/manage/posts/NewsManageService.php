@@ -11,7 +11,7 @@ use news\forms\manage\posts\post\SlidersForm;
 use news\forms\manage\posts\post\VideosForm;
 use news\repositories\PicturesRepository;
 use news\repositories\posts\NewsRepository;
-use news\repositories\posts\RubricsRepository;
+use news\repositories\posts\rubrics\RubricsRepository;
 use news\repositories\posts\SlidersRepository;
 use news\repositories\posts\TagsRepository;
 use news\repositories\posts\VideosRepository;
@@ -76,6 +76,7 @@ class NewsManageService
             $form->sort,
             $form->analytics,
             $form->hot,
+            $form->news,
             $form->discussing,
             $form->reading,
             $form->choice,
@@ -86,6 +87,10 @@ class NewsManageService
                 $form->meta->keywords
             )
         );
+
+        if ($form->color) {
+            $news->setColor($form->color);
+        }
 
         foreach ($form->rubrics->rubrics as $rubric) {
             $rubric = $this->rubricRepository->get($rubric);
@@ -98,19 +103,10 @@ class NewsManageService
         }
 
         $this->transaction->wrap(function () use ($news, $form) {
-            if($form->pictures->rectanglePictureFile) {
-                $file = $this->pictureRepository->saveFile($form->pictures->rectanglePictureFile);
-
-                $picture = Pictures::create($file);
-                $this->pictureRepository->save($picture);
-
-                $news->assignPicture($picture->id, 'rectangle_picture');
-            }
-
             if($form->pictures->squarePictureFile) {
-                $file = $this->pictureRepository->saveFile($form->pictures->squarePictureFile);
+                $file = $this->pictureRepository->saveFile($form->pictures->squarePictureFile, 'posts', ['64x64', '120x120']);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'posts');
                 $this->pictureRepository->save($picture);
 
                 $news->assignPicture($picture->id, 'square_picture');
@@ -119,16 +115,25 @@ class NewsManageService
             if($form->pictures->hotPictureFile) {
                 $file = $this->pictureRepository->saveFile($form->pictures->hotPictureFile);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'posts');
                 $this->pictureRepository->save($picture);
 
                 $news->assignPicture($picture->id, 'hot_picture');
             }
 
+            if($form->pictures->rectanglePictureFile) {
+                $file = $this->pictureRepository->saveFile($form->pictures->rectanglePictureFile);
+
+                $picture = Pictures::create($file, 'posts');
+                $this->pictureRepository->save($picture);
+
+                $news->assignPicture($picture->id, 'rectangle_picture');
+            }
+
             if($form->pictures->analyticPictureFile) {
                 $file = $this->pictureRepository->saveFile($form->pictures->analyticPictureFile);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'posts');
                 $this->pictureRepository->save($picture);
 
                 $news->assignPicture($picture->id, 'analytic_picture');
@@ -190,6 +195,7 @@ class NewsManageService
             $form->sort,
             $form->analytics,
             $form->hot,
+            $form->news,
             $form->discussing,
             $form->reading,
             $form->choice,
@@ -200,6 +206,10 @@ class NewsManageService
                 $form->meta->keywords
             )
         );
+
+        if ($form->color) {
+            $news->setColor($form->color);
+        }
 
         $this->transaction->wrap(function() use ($form, $news) {
             //$news->revokeSliders();
@@ -222,7 +232,7 @@ class NewsManageService
             if($form->pictures->rectanglePictureFile) {
                 $file = $this->pictureRepository->saveFile($form->pictures->rectanglePictureFile);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'posts');
                 $this->pictureRepository->save($picture);
 
                 $this->checkPicture($picture->id, $news->rectangle_picture);
@@ -231,9 +241,9 @@ class NewsManageService
             }
 
             if($form->pictures->squarePictureFile) {
-                $file = $this->pictureRepository->saveFile($form->pictures->squarePictureFile);
+                $file = $this->pictureRepository->saveFile($form->pictures->squarePictureFile, 'posts', ['64x64', '120x120']);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'posts');
                 $this->pictureRepository->save($picture);
 
                 $this->checkPicture($picture->id, $news->square_picture);
@@ -244,7 +254,7 @@ class NewsManageService
             if($form->pictures->hotPictureFile) {
                 $file = $this->pictureRepository->saveFile($form->pictures->hotPictureFile);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'posts');
                 $this->pictureRepository->save($picture);
 
                 $this->checkPicture($picture->id, $news->hot_picture);
@@ -255,7 +265,7 @@ class NewsManageService
             if($form->pictures->analyticPictureFile) {
                 $file = $this->pictureRepository->saveFile($form->pictures->analyticPictureFile);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'posts');
                 $this->pictureRepository->save($picture);
 
                 $this->checkPicture($picture->id, $news->analytic_picture);
@@ -329,8 +339,13 @@ class NewsManageService
 
     public function remove($id): void
     {
-        $rubric = $this->repository->get($id);
-        $this->repository->remove($rubric);
+        $news = $this->repository->get($id);
+
+        $this->removePicturesNews($news);
+        $this->removeSlidersNews($news);
+        $this->removeVideosNews($news);
+
+        $this->repository->remove($news);
     }
 
     public function removePicture(int $id, string $column): void
@@ -358,6 +373,36 @@ class NewsManageService
 
         $video->revokePicture();
         $this->pictureRepository->remove($picture);
+    }
+
+    private function removePicturesNews(News $news): void
+    {
+        $fields = ['hot_picture', 'rectangle_picture', 'square_picture', 'analytic_picture'];
+
+        foreach ($fields as $column) {
+            if($news->$column) {
+                $picture = $this->pictureRepository->get($news->$column);
+                $this->pictureRepository->remove($picture);
+            }
+        }
+    }
+
+    private function removeSlidersNews(News $news): void
+    {
+        if($news->sliderAssignments) {
+            foreach ($news->sliderAssignments as $sliderAssignment) {
+                $this->removeSlider($sliderAssignment->slider_id);
+            }
+        }
+    }
+
+    private function removeVideosNews(News $news): void
+    {
+        if($news->videoAssignments) {
+            foreach ($news->videoAssignments as $videoAssignment) {
+                $this->removeVideo($videoAssignment->video_id);
+            }
+        }
     }
 
     private function checkPicture(int $newId, int $id = null): void

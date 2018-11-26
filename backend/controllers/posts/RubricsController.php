@@ -3,7 +3,7 @@
 namespace backend\controllers\posts;
 
 use news\forms\manage\posts\RubricForm;
-use news\services\manage\posts\RubricsManageService;
+use news\services\manage\posts\rubrics\RubricsManageService;
 use news\entities\posts\rubric\Rubrics;
 use backend\forms\posts\RubricsSearch;
 use yii\helpers\Url;

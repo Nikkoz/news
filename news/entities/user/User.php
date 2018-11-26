@@ -179,6 +179,19 @@ class User extends ActiveRecord implements AggregateRoot
         return $this->hasOne(Pictures::class, ['id' => 'photo']);
     }
 
+    public function getFullName(): string
+    {
+        return $this->name . ' ' . $this->lastname;
+    }
+
+    public function getPhotoMin(string $size): string
+    {
+        $picture = Pictures::findOne($this->photo);
+        $file = \Yii::getAlias('@imagesStatic/users') . "/thumbnail_{$size}/{$picture->name}";
+
+        return $file;
+    }
+
     /**
      * @throws \yii\base\Exception
      */

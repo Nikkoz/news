@@ -1,16 +1,36 @@
 <?php
 namespace frontend\controllers;
 
+use news\readModels\posts\NewsReadRepository;
+use news\readModels\posts\RubricsReadRepository;
 use yii\web\Controller;
 
 /**
- * Site controller
+ * Class SiteController
+ * @package frontend\controllers
+ *
+ * @property RubricsReadRepository $rubricsRepository
+ * @property NewsReadRepository $newsRepository
  */
 class SiteController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
+    private $rubricsRepository;
+    private $newsRepository;
+
+    public function __construct(
+        string $id,
+        $module,
+        RubricsReadRepository $rubricsRepository,
+        NewsReadRepository $newsRepository,
+        array $config = []
+    )
+    {
+        parent::__construct($id, $module, $config);
+
+        $this->rubricsRepository = $rubricsRepository;
+        $this->newsRepository = $newsRepository;
+    }
+
     public function actions()
     {
         return [
@@ -24,21 +44,11 @@ class SiteController extends Controller
         ];
     }
 
-    /**
-     * Displays homepage.
-     *
-     * @return mixed
-     */
     public function actionIndex()
     {
         return $this->render('index');
     }
 
-    /**
-     * Displays about page.
-     *
-     * @return mixed
-     */
     public function actionAbout()
     {
         return $this->render('about');

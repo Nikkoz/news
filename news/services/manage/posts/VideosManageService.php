@@ -36,9 +36,9 @@ class VideosManageService
 
         $this->transaction->wrap(function() use ($video, $form) {
             if($form->picture) {
-                $file = $this->pictureRepository->saveFile($form->picture);
+                $file = $this->pictureRepository->saveFile($form->picture, 'videos');
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'videos');
                 $this->pictureRepository->save($picture);
 
                 $video->setPicture($picture->id);
@@ -58,9 +58,9 @@ class VideosManageService
 
         $this->transaction->wrap(function() use ($video, $form) {
             if($form->picture) {
-                $file = $this->pictureRepository->saveFile($form->picture);
+                $file = $this->pictureRepository->saveFile($form->picture, 'videos');
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'videos');
                 $this->pictureRepository->save($picture);
 
                 $video->setPicture($picture->id);
@@ -73,6 +73,18 @@ class VideosManageService
     public function remove($id): void
     {
         $video = $this->repository->get($id);
+        $picture_id = $video->picture_id;
+
         $this->repository->remove($video);
+
+        if($picture_id) {
+            $this->removePicture($picture_id);
+        }
+    }
+
+    private function removePicture(int $pictureId): void
+    {
+        $picture = $this->pictureRepository->get($pictureId);
+        $this->pictureRepository->remove($picture);
     }
 }

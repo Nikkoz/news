@@ -4,6 +4,7 @@ use yii\widgets\ActiveForm;
 use vova07\imperavi\Widget;
 use backend\widgets\Select2;
 use yii\helpers\Html;
+use kartik\color\ColorInput;
 
 /* @var $this yii\web\View */
 /* @var $model \news\forms\manage\posts\post\NewsCreateForm */
@@ -23,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#article" data-toggle="tab"><?= \Yii::t('app', 'Article');?></a></li>
+                <li><a href="#analytic" data-toggle="tab"><?= \Yii::t('app', 'Analytic');?></a></li>
                 <li><a href="#rubric" data-toggle="tab"><?= \Yii::t('app', 'Rubric');?></a></li>
                 <li><a href="#pictures" data-toggle="tab"><?= \Yii::t('app', 'Pictures');?></a></li>
                 <li><a href="#sliders" data-toggle="tab"><?= \Yii::t('app', 'Sliders');?></a></li>
@@ -44,9 +46,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
 
                     <div class="row">
-                        <?= $form->field($model, 'analytics', ['options' => ['class' => 'col-md-2']])->checkbox(['class' => 'minimal']) ?>
-
                         <?= $form->field($model, 'hot', ['options' => ['class' => 'col-md-2']])->checkbox(['class' => 'minimal']) ?>
+
+                        <?= $form->field($model, 'news', ['options' => ['class' => 'col-md-2']])->checkbox(['class' => 'minimal']) ?>
                     </div>
 
                     <?= $form->field($model, 'preview_text')->widget(Widget::class,[
@@ -59,6 +61,13 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'fullscreen',
                             ],
                         ],
+                    ]) ?>
+                </div>
+                <div class="tab-pane" id="analytic">
+                    <?= $form->field($model, 'analytics')->checkbox(['class' => 'minimal']) ?>
+
+                    <?= $form->field($model, 'color')->widget(ColorInput::class, [
+                        'options' => ['placeholder' => \Yii::t('app', 'Select color ...')],
                     ]) ?>
                 </div>
                 <div class="tab-pane" id="rubric">

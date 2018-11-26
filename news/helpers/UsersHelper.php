@@ -7,7 +7,7 @@ use news\entities\user\User;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
-class UsersHelper
+final class UsersHelper
 {
     public static function getRole(int $userId): string
     {

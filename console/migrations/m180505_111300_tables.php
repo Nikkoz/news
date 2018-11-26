@@ -7,9 +7,6 @@ use yii\db\Migration;
  */
 class m180505_111300_tables extends Migration
 {
-    /**
-     * {@inheritdoc}
-     */
     public function up()
     {
         $tableOptions = null;
@@ -31,6 +28,8 @@ class m180505_111300_tables extends Migration
             'analytic_picture' => $this->integer()->null(),
             'analytic' => $this->boolean()->defaultValue(0),
             'hot' => $this->boolean()->defaultValue(0),
+            'news' => $this->boolean()->defaultValue(0),
+            'color' => $this->string(50)->null(),
             'discussing' => $this->boolean()->defaultValue(0),
             'reading' => $this->boolean()->defaultValue(0),
             'choice' => $this->boolean()->defaultValue(0),
@@ -46,6 +45,7 @@ class m180505_111300_tables extends Migration
         $this->createTable('{{%pictures}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string(255)->notNull(),
+            'folder' => $this->string(255)->defaultValue('common')->notNull(),
             'description' => $this->string(255)->null(),
             'author' => $this->string(255)->null(),
             'sort' => $this->integer()->defaultValue(100),
@@ -167,9 +167,6 @@ class m180505_111300_tables extends Migration
         $this->addForeignKey('IDX_nt_tag_id', '{{%news_tags_assignments}}', 'tag_id', '{{%tags}}', 'id', 'CASCADE', 'RESTRICT');
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function down()
     {
         $this->dropForeignKey('IDX_news_user_created_by', '{{%news}}');

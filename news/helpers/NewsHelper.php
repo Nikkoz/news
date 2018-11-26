@@ -7,7 +7,7 @@ use news\entities\posts\News;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
-class NewsHelper
+final class NewsHelper
 {
     public static function statusList(): array
     {
@@ -49,11 +49,14 @@ class NewsHelper
             'sort' => \Yii::t('app', 'Sort'),
             'analytics' => \Yii::t('app', 'Analytics'),
             'hot' => \Yii::t('app', 'Hot'),
+            'news' => \Yii::t('app', 'To news'),
             'discussing' => \Yii::t('app', 'Discussing'),
             'reading' => \Yii::t('app', 'Reading'),
             'choice' => \Yii::t('app', 'Choice'),
             'analytic' => \Yii::t('app', 'Analytic'),
             'rubrics' => \Yii::t('app', 'Rubrics'),
+            'created_at' => \Yii::t('app', 'Created at'),
+            'color' => \Yii::t('app', 'Background color'),
         ];
     }
 }

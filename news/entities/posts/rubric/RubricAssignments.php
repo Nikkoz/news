@@ -13,6 +13,8 @@ use yii\db\ActiveRecord;
  *
  * @property int $news_id
  * @property int $rubric_id
+ *
+ * @property Rubrics $rubric
  */
 class RubricAssignments extends ActiveRecord
 {
@@ -41,5 +43,10 @@ class RubricAssignments extends ActiveRecord
     public function isForRubric($id): bool
     {
         return $this->rubric_id == $id;
+    }
+
+    public function getRubric(): Rubrics
+    {
+        return Rubrics::findOne($this->rubric_id);
     }
 }

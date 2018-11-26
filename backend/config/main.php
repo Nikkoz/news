@@ -68,17 +68,6 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'i18n' => [
-            'translations' => [
-                'app*' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@backend/messages',
-                    'fileMap' => [
-                        'app' => 'app.php',
-                    ],
-                ],
-            ],
-        ],
         'backendUrlManager' => require  __DIR__ . '/urlManager.php',
         'frontendUrlManager' => require __DIR__ . '/../../frontend/config/urlManager.php',
         'urlManager' => function() {

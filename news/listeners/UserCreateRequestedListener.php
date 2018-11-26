@@ -39,8 +39,8 @@ class UserCreateRequestedListener
             ['html' => 'user/create/confirm-html', 'text' => 'user/create/confirm-text'],
             ['user' => $user]
         )->setTo($user->email)
-            ->setSubject('Create user confirm')
-            ->send();
+        ->setSubject('Create user confirm')
+        ->send();
 
         if(!$sent) {
             throw new \RuntimeException('Email sending error.');

@@ -26,6 +26,7 @@ class SimpleEventDispatcher implements EventDispatcher
     public function dispatch($event): void
     {
         $eventName = get_class($event);
+
         if (array_key_exists($eventName, $this->listeners)) {
             foreach ($this->listeners[$eventName] as $listenerClass) {
                 $listener = $this->resolveListener($listenerClass);

@@ -6,15 +6,7 @@
                 'items' => [
                     ['label' => 'Menu', 'options' => ['class' => 'header']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => \Yii::$app->user->isGuest],
-                    [
-                        'label' => \Yii::t('app', 'Users'),
-                        'url' => '#',
-                        'icon' => 'users',
-                        'items' => [
-                            ['label' => \Yii::t('app', 'Users'), 'icon' => 'user', 'url' => \yii\helpers\Url::toRoute(['users/users']), 'active' => $this->context->id == 'users/users'],
-                            ['label' => \Yii::t('app', 'Roles'), 'icon' => 'users', 'url' => \yii\helpers\Url::toRoute(['users/roles']), 'active' => $this->context->id == '/roles'],
-                        ],
-                    ],
+                    ['label' => \Yii::t('app', 'Users'), 'icon' => 'user', 'url' => \yii\helpers\Url::toRoute(['users/users']), 'active' => $this->context->id == 'users/users'],
                     [
                         'label' => \Yii::t('app', 'News'),
                         'url' => '#',
@@ -23,6 +15,15 @@
                             ['label' => \Yii::t('app', 'Articles'), 'icon' => 'newspaper', 'url' => \yii\helpers\Url::toRoute(['/news']), 'active' => $this->context->id == 'posts/news'],
                             ['label' => \Yii::t('app', 'Rubrics'), 'icon' => 'cubes', 'url' => \yii\helpers\Url::toRoute(['/rubrics']), 'active' => $this->context->id == 'posts/rubrics'],
                             ['label' => \Yii::t('app', 'Tags'), 'icon' => 'tags', 'url' => \yii\helpers\Url::toRoute(['/tags']), 'active' => $this->context->id == 'posts/tags'],
+                            [
+                                'label' => \Yii::t('app', 'Settings'),
+                                'icon' => '',
+                                'url' => '#',
+                                'items' => [
+                                    ['label' => \Yii::t('app', 'Templates'), 'icon' => '', 'url' => \yii\helpers\Url::toRoute(['/templates']), 'active' => $this->context->id == 'posts/rubric-template'],
+                                    ['label' => \Yii::t('app', 'Positions'), 'icon' => '', 'url' => \yii\helpers\Url::toRoute(['/positions']), 'active' => $this->context->id == 'posts/rubric-position'],
+                                ]
+                            ],
                         ],
                     ],
                     [

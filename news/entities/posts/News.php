@@ -7,15 +7,20 @@ use news\entities\behaviors\JsonBehavior;
 use news\entities\behaviors\MetaBihavior;
 use news\entities\Meta;
 use news\entities\Pictures;
+use news\entities\posts\queries\NewsQuery;
 use news\entities\posts\rubric\RubricAssignments;
 use news\entities\posts\rubric\Rubrics;
 use news\entities\posts\slider\SliderAssignments;
 use news\entities\posts\tags\TagAssignments;
 use news\entities\posts\video\VideoAssignments;
+use news\entities\user\User;
 use news\helpers\NewsHelper;
+use yii\behaviors\BlameableBehavior;
 use yii\behaviors\SluggableBehavior;
+use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\web\UploadedFile;
 
 /**
  * Class News
@@ -26,6 +31,8 @@ use yii\db\ActiveRecord;
  * @property string $alias
  * @property integer $sort
  * @property integer $analytic
+ * @property integer $news
+ * @property string $color
  * @property integer $hot
  * @property integer $discussing
  * @property integer $reading
@@ -33,6 +40,10 @@ use yii\db\ActiveRecord;
  * @property integer $status
  * @property string $preview_text
  * @property array $detail_text
+ * @property int $created_at
+ * @property int $updated_at
+ * @property int $created_by
+ * @property int $updated_by
  *
  * @property integer $rectangle_picture
  * @property integer $square_picture
@@ -41,6 +52,7 @@ use yii\db\ActiveRecord;
  *
  * @property Meta $meta
  * @property Rubrics $rubrics
+ * @property User $author
  *
  * @property Pictures $rectanglePictureFile
  * @property Pictures $squarePictureFile
@@ -85,7 +97,9 @@ class News extends ActiveRecord
             ], [
                 'class' => JsonBehavior::class,
                 'attribute' => 'detail_text'
-            ]
+            ],
+            TimestampBehavior::class,
+            BlameableBehavior::class,
         ];
     }
 
@@ -96,38 +110,45 @@ class News extends ActiveRecord
         ];
     }
 
-    public static function create(string $title, int $status, int $sort, int $analytics, int $hot, int $discussing, int $reading, int $choice, string $preview_text, Meta $meta): self
+    public static function create(string $title, int $status, int $sort, int $analytics, int $hot, int $news, int $discussing, int $reading, int $choice, string $preview_text, Meta $meta): self
     {
-        $news = new static();
+        $post = new static();
 
-        $news->status = $status;
-        $news->title = $title;
-        $news->sort = $sort;
-        $news->analytic = $analytics;
-        $news->hot = $hot;
-        $news->discussing = $discussing;
-        $news->reading = $reading;
-        $news->choice = $choice;
-        $news->preview_text = $preview_text;
+        $post->status = $status;
+        $post->title = $title;
+        $post->sort = $sort;
+        $post->analytic = $analytics;
+        $post->hot = $hot;
+        $post->news = $news;
+        $post->discussing = $discussing;
+        $post->reading = $reading;
+        $post->choice = $choice;
+        $post->preview_text = $preview_text;
 
-        $news->meta = $meta;
+        $post->meta = $meta;
 
-        return $news;
+        return $post;
     }
 
-    public function edit(string $title, int $status, int $sort, int $analytics, int $hot, int $discussing, int $reading, int $choice, string $preview_text, Meta $meta): void
+    public function edit(string $title, int $status, int $sort, int $analytics, int $hot, int $news, int $discussing, int $reading, int $choice, string $preview_text, Meta $meta): void
     {
         $this->status = $status;
         $this->title = $title;
         $this->sort = $sort;
         $this->analytic = $analytics;
         $this->hot = $hot;
+        $this->news = $news;
         $this->discussing = $discussing;
         $this->reading = $reading;
         $this->choice = $choice;
         $this->preview_text = $preview_text;
 
         $this->meta = $meta;
+    }
+
+    public function setColor(string $color): void
+    {
+        $this->color = $color;
     }
 
     public function isActive(): bool
@@ -359,9 +380,32 @@ class News extends ActiveRecord
         return $this->hasOne(Pictures::class, ['id' => 'hot_picture']);
     }
 
+    public function getAuthor(): User
+    {
+        return User::findOne($this->created_by);
+    }
+
+    public function getRectanglePicture(): string
+    {
+        return $this->rectanglePictureFile ? $this->rectanglePictureFile->getPicture() : '';
+    }
+
+    public function getSquarePicture(string $size = null)
+    {
+        if (!$this->square_picture) {
+            return '';
+        }
+
+        return $size ? $this->squarePictureFile->getPictureSize($size) : $this->squarePictureFile->getPicture();
+    }
+
     public function attributeLabels(): array
     {
         return NewsHelper::attributeLabels();
     }
 
+    public static function find(): NewsQuery
+    {
+        return new NewsQuery(static::class);
+    }
 }

@@ -59,11 +59,15 @@ class UserManageService
             $form->password
         );
 
+        if($form->role = 'author') {
+            $user->requestPasswordReset();
+        }
+
         $this->transaction->wrap(function () use ($user, $form) {
             if ($form->photo->photo) {
-                $file = $this->pictureRepository->saveFile($form->photo->photo);
+                $file = $this->pictureRepository->saveFile($form->photo->photo, 'users', ['64x64', '40x40']);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'users');
                 $this->pictureRepository->save($picture);
 
                 $user->assignPhoto($picture->id);
@@ -96,9 +100,9 @@ class UserManageService
 
         $this->transaction->wrap(function () use ($user, $form) {
             if ($form->photo->photo) {
-                $file = $this->pictureRepository->saveFile($form->photo->photo, 'users');
+                $file = $this->pictureRepository->saveFile($form->photo->photo, 'users', ['64x64', '40x40']);
 
-                $picture = Pictures::create($file);
+                $picture = Pictures::create($file, 'users');
                 $this->pictureRepository->save($picture);
 
                 $this->checkPicture($picture->id, $user->photo);

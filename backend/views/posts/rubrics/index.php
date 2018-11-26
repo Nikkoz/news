@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use news\helpers\RubricsHelper;
+use news\helpers\rubrics\RubricsHelper;
 use news\entities\posts\rubric\Rubrics;
 
 /* @var $this yii\web\View */

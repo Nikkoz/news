@@ -13,9 +13,6 @@ class RubricsSearch extends Model
 {
     public $name;
 
-    /**
-     * @inheritdoc
-     */
     public function rules(): array
     {
         return [

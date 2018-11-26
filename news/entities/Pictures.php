@@ -1,10 +1,9 @@
 <?php
+
 namespace news\entities;
 
 use yii\db\ActiveRecord;
-use yii\helpers\FileHelper;
 use yii\helpers\Url;
-use yii\web\UploadedFile;
 use yiidreamteam\upload\ImageUploadBehavior;
 
 /**
@@ -13,16 +12,20 @@ use yiidreamteam\upload\ImageUploadBehavior;
  *
  * @property int $id
  * @property string $name
+ * @property string $folder
  * @property string $description
  * @property string $author
  * @property int $sort
+ *
+ * @mixin ImageUploadBehavior
  */
 class Pictures extends ActiveRecord
 {
-    public static function create(string $file): self
+    public static function create(string $file, string $folder = 'common'): self //UploadedFile $file
     {
         $photo = new static();
         $photo->name = $file;
+        $photo->folder = $folder;
 
         return $photo;
     }
@@ -49,10 +52,10 @@ class Pictures extends ActiveRecord
                 'class' => ImageUploadBehavior::class,
                 'attribute' => 'name',
                 'createThumbsOnRequest' => true,
-                'filePath' => '@staticRoot/origin/products/[[attribute_product_id]]/[[id]].[[extension]]',
-                'fileUrl' => '@static/origin/products/[[attribute_product_id]]/[[id]].[[extension]]',
-                'thumbPath' => '@staticRoot/cache/products/[[attribute_product_id]]/[[profile]]_[[id]].[[extension]]',
-                'thumbUrl' => '@static/cache/products/[[attribute_product_id]]/[[profile]]_[[id]].[[extension]]',
+                'filePath' => '@images/origin/[[attribute_folder]]/[[filename]]_[[pk]].[[extension]]',
+                'fileUrl' => '/uploads/images/origin/[[attribute_folder]]/[[filename]]_[[pk]].[[extension]]',
+                'thumbPath' => '@images/cache/[[attribute_folder]]/[[profile]]_[[filename]]_[[pk]].[[extension]]',
+                'thumbUrl' => '/uploads/images/cache/[[attribute_folder]]/[[profile]]_[[filename]]_[[pk]].[[extension]]',
                 'thumbs' => [
                     'admin' => ['width' => 100, 'height' => 70],
                     'thumb' => ['width' => 640, 'height' => 480],
@@ -67,16 +70,24 @@ class Pictures extends ActiveRecord
         ];
     }*/
 
-    public function getPicture($folder)
+    public function getPicture(): ?string
     {
-        if($this->name) {
-            $path = "uploads/images/{$folder}/" . $this->name;
+        if ($this->name) {
+            $path = "uploads/images/{$this->folder}/" . $this->name;
 
             $url = str_replace('admin.', '', Url::home(true));
 
             return $url . $path;
         }
 
-        return false;
+        return null;
+    }
+
+    public function getPictureSize(string $size): ?string
+    {
+        $path = \Yii::getAlias("@imagesStatic/{$this->folder}") . "/thumbnail_{$size}/{$this->name}";
+        $file = \Yii::getAlias("@images/{$this->folder}") . "/thumbnail_{$size}/{$this->name}";
+
+        return \file_exists($file) ? $path : '';
     }
 }

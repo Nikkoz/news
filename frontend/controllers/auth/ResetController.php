@@ -54,6 +54,7 @@ class ResetController extends Controller
      */
     public function actionConfirm($token)
     {
+
         try {
             $this->service->validateToken($token);
         } catch (\DomainException $e) {

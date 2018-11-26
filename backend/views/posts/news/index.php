@@ -4,8 +4,9 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use news\entities\posts\News;
 use news\helpers\NewsHelper;
-use news\helpers\RubricsHelper;
+use news\helpers\rubrics\RubricsHelper;
 use yii\helpers\ArrayHelper;
+use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel \backend\forms\posts\NewsSearch */
@@ -35,11 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
                             return Html::a($model->id, ['update', 'id' => $model->id]);
                         }],
                         ['attribute' => 'title', 'content' => function (News $model) {
-                            return Html::a(Html::encode($model->title), ['update', 'id' => $model->id]);
+                            return Html::a(Html::encode(StringHelper::truncateWords($model->title, 7)), ['update', 'id' => $model->id]);
                         }],
-                        ['attribute' => 'preview_text', 'content' => function (News $model) {
+                        /*['attribute' => 'preview_text', 'content' => function (News $model) {
                             return \Yii::$app->formatter->asHtml($model->preview_text);
-                        }],
+                        }],*/
                         [
                             'attribute' => 'rubrics',
                             'filter' => RubricsHelper::rubricList(),
@@ -58,6 +59,22 @@ $this->params['breadcrumbs'][] = $this->title;
                             }
                         ],
                         [
+                            'attribute' => 'hot',
+                            'contentOptions' => ['class' => 'td-center td-green'],
+                            'filter' => [1 => \Yii::t('app', 'Yes')],
+                            'content' => function (News $model) {
+                                return $model->hot ? Html::tag('i', '', ['class' => 'fa fa-fw fa-check']) : '';
+                            }
+                        ],
+                        [
+                            'attribute' => 'news',
+                            'contentOptions' => ['class' => 'td-center td-green'],
+                            'filter' => [1 => \Yii::t('app', 'Yes')],
+                            'content' => function (News $model) {
+                                return $model->news ? Html::tag('i', '', ['class' => 'fa fa-fw fa-check']) : '';
+                            }
+                        ],
+                        [
                             'attribute' => 'status',
                             'filter' => NewsHelper::statusList(),
                             'content' => function (News $model) {
@@ -65,6 +82,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             },
                             'format' => 'raw',
                         ],
+                        'created_at:datetime',
                         'sort',
                         [
                             'class' => 'yii\grid\ActionColumn',

@@ -1,6 +1,7 @@
 <?php
 return [
     'class' => 'yii\web\UrlManager',
+    'baseUrl' => '',
     'hostInfo' => $params['backendHostInfo'],
     'enablePrettyUrl' => true,
     'showScriptName' => false,
@@ -27,6 +28,14 @@ return [
         'rubrics' => 'posts/rubrics/index',
         'rubrics/create' => 'posts/rubrics/create',
         'rubrics/<_a:(update|delete|view|activate|deactivate)>/<id:\d+>' => 'posts/rubrics/<_a>',
+
+        'templates' => 'posts/rubric-template/index',
+        'templates/create' => 'posts/rubric-template/create',
+        'templates/<_a:(update|delete)>/<id:\d+>' => 'posts/rubric-template/<_a>',
+
+        'positions' => 'posts/rubric-position/index',
+        'positions/create' => 'posts/rubric-position/create',
+        'positions/<_a:(update|delete)>/<id:\d+>' => 'posts/rubric-position/<_a>',
 
         'tags' => 'posts/tags/index',
         'tags/create' => 'posts/tags/create',

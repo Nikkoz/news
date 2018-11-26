@@ -8,6 +8,7 @@ use news\entities\posts\slider\Sliders;
 use news\entities\posts\video\Videos;
 use news\forms\manage\CompositeForm;
 use news\forms\manage\MetaForm;
+use news\forms\manage\posts\post\RubricsForm;
 use news\helpers\NewsHelper;
 
 /**
@@ -20,6 +21,8 @@ use news\helpers\NewsHelper;
  * @property integer $sort
  * @property boolean $analytics
  * @property boolean $hot
+ * @property boolean $news
+ * @property string $color
  * @property boolean $discussing
  * @property boolean $reading
  * @property boolean $choice
@@ -47,6 +50,8 @@ class NewsEditForm extends CompositeForm
     public $sort;
     public $analytics;
     public $hot;
+    public $news;
+    public $color;
     public $discussing;
     public $reading;
     public $choice;
@@ -67,6 +72,8 @@ class NewsEditForm extends CompositeForm
         $this->sort = $news->sort;
         $this->analytics = $news->analytic;
         $this->hot = $news->hot;
+        $this->news = $news->news;
+        $this->color = $news->color;
         $this->discussing = $news->discussing;
         $this->reading = $news->reading;
         $this->choice = $news->choice;
@@ -109,12 +116,12 @@ class NewsEditForm extends CompositeForm
         return [
             [['title', 'detail_text'], 'required'],
             [['title', 'alias'], 'string', 'max' => 255],
-            [['preview_text'], 'string'],
+            [['preview_text', 'color'], 'string'],
             //[['alias'], 'unique', 'targetClass' => News::class, 'filter' => $this->_post ? ['<>', 'id', $this->_post->id] : null],
             ['sort', 'integer'],
             ['detail_text', 'safe'],
             [['sort'], 'default', 'value' => 100],
-            [['analytics', 'hot', 'discussing', 'reading', 'choice', 'status'], 'integer', 'max' => 1],
+            [['analytics', 'hot', 'news', 'discussing', 'reading', 'choice', 'status'], 'integer', 'max' => 1],
         ];
     }
 

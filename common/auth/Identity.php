@@ -60,8 +60,12 @@ class Identity implements IdentityInterface, UserCredentialsInterface
         return $this->user->lastname . ' '. $this->user->name;
     }
 
-    public function getPhoto(): string
+    public function getPhoto(): ?string
     {
+        if(!$this->user->photo) {
+            return null;
+        }
+
         $repository = new PicturesRepository();
         $photo = $repository->get($this->user->photo);
 
