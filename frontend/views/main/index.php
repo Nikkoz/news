@@ -31,7 +31,7 @@ if ($hot): ?>
                     <div class="first__shocktable first__shocktable-js">
                         <div class="first__shockmiddle">
                             <div class="announcement">
-                                <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $hot->rubricAssignments[0]->rubric->slug, 'post' => $hot->alias]))?>" class="announcement__title opacity">
+                                <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $hot->rubricAssignments[0]->rubric->slug, 'post' => $hot->alias]))?>" class="announcement__title opacity">
                                     <?= Html::encode($hot->title); ?>
                                 </a>
                                 <div class="announcement__date">
@@ -41,7 +41,7 @@ if ($hot): ?>
                                     <?= Html::encode(\strip_tags($hot->preview_text)); ?>
                                 </div>
                                 <div class="announcement__tags">
-                                    <a href="<?= Html::encode(Url::toRoute(['rubrics/index', 'rubric' => $hot->rubricAssignments[0]->rubric->slug]))?>" class="tag tag_transparent"><?= Html::encode($hot->rubricAssignments[0]->rubric->name);?></a>
+                                    <a href="<?= Html::encode(Url::toRoute(['posts/rubrics/index', 'rubric' => $hot->rubricAssignments[0]->rubric->slug]))?>" class="tag tag_transparent"><?= Html::encode($hot->rubricAssignments[0]->rubric->name);?></a>
                                 </div>
                                 <div class="announcement__autor">
                                     <img class="announcement__autorface" src="<?= $hot->author->getPhotoMin('40x40'); ?>" alt="<?= Html::encode($hot->author->getFullName()); ?>">
@@ -61,7 +61,7 @@ if ($hot): ?>
                                     <img src="<?= $first->squarePictureFile->getPicture(); ?>" alt="<?= Html::encode($first->title); ?>">
                                 <?php endif; ?>
                                 <div class="clipping__tags">
-                                    <a href="<?= Html::encode(Url::toRoute(['rubrics/index', 'rubric' => $first->rubricAssignments[0]->rubric->slug]))?>" class="tag tag_white">
+                                    <a href="<?= Html::encode(Url::toRoute(['posts/rubrics/index', 'rubric' => $first->rubricAssignments[0]->rubric->slug]))?>" class="tag tag_white">
                                         <?= Html::encode($first->rubricAssignments[0]->rubric->name); ?>
                                     </a>
                                 </div>
@@ -73,7 +73,7 @@ if ($hot): ?>
                                     </span>
                                 </div>
                             </div>
-                            <a class="clipping__title title" href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>">
+                            <a class="clipping__title title" href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>">
                                 <?= Html::encode(StringHelper::truncateWords($first->title, 5)); ?>
                             </a>
                         </div>
@@ -97,11 +97,11 @@ if ($hot): ?>
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias]))?>" class="band__name title">
+                                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias]))?>" class="band__name title">
                                                         <?= Html::encode($post->title); ?>
                                                     </a>
                                                     <div class="band__tags">
-                                                        <a href="<?= Html::encode(Url::toRoute(['rubrics/index', 'rubric' => $post->rubricAssignments[0]->rubric->slug]))?>" class="tag tag_white">
+                                                        <a href="<?= Html::encode(Url::toRoute(['posts/rubrics/index', 'rubric' => $post->rubricAssignments[0]->rubric->slug]))?>" class="tag tag_white">
                                                             <?= Html::encode($post->rubricAssignments[0]->rubric->name); ?>
                                                         </a>
                                                     </div>
@@ -109,7 +109,7 @@ if ($hot): ?>
                                             </li>
                                             <?php $newsMobile .= '<li class="band__item">
                                                         <div class="band__content">
-                                                            <a href="'. Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias])) .'" class="band__name title">
+                                                            <a href="'. Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias])) .'" class="band__name title">
                                                                 '. Html::encode($post->title) .'
                                                             </a>
                                                             <div class="band__time">
@@ -123,7 +123,7 @@ if ($hot): ?>
                                     </ul>
                                 </div>
                                 <div class="first__all">
-                                    <a href="<?= Url::toRoute(['rubrics/index', 'rubric' => 'news'])?>" class="btn btn_inline btn_big btn_transparent">Вся лента</a>
+                                    <a href="<?= Url::toRoute(['posts/rubrics/index', 'rubric' => 'news'])?>" class="btn btn_inline btn_big btn_transparent">Вся лента</a>
                                 </div>
                             </div>
                         <?php endif; ?>
@@ -159,11 +159,11 @@ if ($hot): ?>
                                             <div class="analysis__announcement">
                                                 <div class="announcement">
 
-                                                    <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>" class="announcement__title opacity">
+                                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>" class="announcement__title opacity">
                                                         <?= Html::encode($first->title); ?>
                                                     </a>
                                                     <div class="analysis__data">
-                                                        <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>" class="tag tag_policy">
+                                                        <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>" class="tag tag_policy">
                                                             <?= Html::encode($first->rubricAssignments[0]->rubric->name); ?>
                                                         </a>
                                                         <span class="announcement__time">
@@ -201,7 +201,7 @@ if ($hot): ?>
                                         <div class="analysis__tr">
                                             <div class="analysis__announcement">
                                                 <div class="announcement">
-                                                    <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $second->rubricAssignments[0]->rubric->slug, 'post' => $second->alias]))?>" class="announcement__title opacity">
+                                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $second->rubricAssignments[0]->rubric->slug, 'post' => $second->alias]))?>" class="announcement__title opacity">
                                                         <?= Html::encode($second->title); ?>
                                                     </a>
                                                     <div class="analysis__data">
@@ -241,7 +241,7 @@ if ($hot): ?>
                                 foreach ($news as $post): ?>
                                     <li class="band__item">
                                         <div class="band__content">
-                                            <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias])); ?>" class="band__name title">
+                                            <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias])); ?>" class="band__name title">
                                                 <?= Html::encode($post->title); ?>
                                             </a>
                                             <div class="band__time">

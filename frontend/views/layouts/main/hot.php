@@ -5,7 +5,9 @@
 
 $this->beginContent('@frontend/views/layouts/main.php');?>
 
-<?= $this->render('header_hot.php'); ?>
+<?= $this->render('header.php', [
+    'class' => 'header_need_trasparent-js header_transparent',
+]); ?>
 
 <?= $content;?>
 

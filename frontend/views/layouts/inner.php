@@ -9,8 +9,8 @@ use yii\helpers\Html;
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= \Yii::$app->language ?>">
+    <!DOCTYPE html>
+    <html lang="<?= \Yii::$app->language ?>">
     <head>
         <meta charset="<?= \Yii::$app->charset ?>">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,17 +23,17 @@ AppAsset::register($this);
         <?php $this->head() ?>
     </head>
     <body>
-        <?php $this->beginBody() ?>
+    <?php $this->beginBody() ?>
 
-        <div class="wrapper page_home">
-            <?= $content;?>
+    <div class="wrapper <?= $this->params['page_class']['wrapper'];?>">
+        <?= $content;?>
 
-            <?= $this->render('main/footer.php'); ?>
-        </div>
+        <?= $this->render('inner/footer.php'); ?>
+    </div>
 
-        <?= $this->render('popups.php'); ?>
+    <?= $this->render('popups.php'); ?>
 
-        <?php $this->endBody() ?>
+    <?php $this->endBody() ?>
     </body>
-</html>
+    </html>
 <?php $this->endPage() ?>

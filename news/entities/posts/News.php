@@ -399,6 +399,17 @@ class News extends ActiveRecord
         return $size ? $this->squarePictureFile->getPictureSize($size) : $this->squarePictureFile->getPicture();
     }
 
+    public function checkRubric(string $rubric): bool
+    {
+        foreach ($this->rubricAssignments as $rubricAssignment) {
+            if ($rubric === $rubricAssignment->rubric->slug) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function attributeLabels(): array
     {
         return NewsHelper::attributeLabels();

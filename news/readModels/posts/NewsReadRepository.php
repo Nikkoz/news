@@ -6,6 +6,7 @@ namespace news\readModels\posts;
 use news\entities\posts\News;
 use news\entities\posts\rubric\RubricAssignments;
 use yii\db\ActiveRecord;
+use yii\web\NotFoundHttpException;
 
 class NewsReadRepository
 {
@@ -27,6 +28,22 @@ class NewsReadRepository
     public function getNewsByRubric(int $rubricId, int $limit): array
     {
         return News::find()->active()->with('rectanglePictureFile')->rubric($rubricId)->andWhere(['analytic' => 0])->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
+    }
+
+    public function lastNews(int $limit): array
+    {
+        return News::find()->active()->with('rubricAssignments', 'squarePictureFile')->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
+    }
+
+    public function getByAlias(string $alias): ?News
+    {
+        $news = News::find()->active()->andWhere(['=', 'alias', $alias])->limit(1)->one();
+
+        if(!$news) {
+            throw new NotFoundHttpException('Article is not found.');
+        }
+
+        return $news;
     }
 
     public function getNewsBy(int $limit, array $conditions): array

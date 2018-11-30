@@ -9,11 +9,11 @@ use yii\widgets\Menu;
             <div class="footer__subscription">
                 <a href="#" class="subscription clearfix" data-popup="subscribe">
                     <span href="#" class="subscription__icon">
-                        <img src="images/subscription.jpg" alt="subscription">
+                        <img src="/images/subscription.jpg" alt="subscription">
                     </span>
                     <span class="subscription__description">
                         <span class="subscription__action">Подписаться</span>
-                        <span class="subscription__number">20 416 читателей</span>
+                        <span class="subscription__number"><?= $this->params['subscribers'];?> читателей</span>
                     </span>
                 </a>
             </div>
@@ -37,7 +37,7 @@ use yii\widgets\Menu;
             foreach ($this->params['rubrics'] as $rubric) {
                 $items[] = [
                     'label' => $rubric->name,
-                    'url' => Url::toRoute(['rubrics/index', 'rubric' => $rubric->slug]),
+                    'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => $rubric->slug]),
                 ];
             }
 

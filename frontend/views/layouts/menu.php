@@ -4,13 +4,13 @@ use yii\widgets\Menu;
 
 $items[] = [
     'label' => \Yii::t('app', 'News'),
-    'url' => Url::toRoute(['rubrics/index', 'rubric' => 'news'])
+    'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => 'news'])
 ];
 
 foreach ($this->params['rubrics'] as $rubric) {
     $items[] = [
         'label' => $rubric->name,
-        'url' => Url::toRoute(['rubrics/index', 'rubric' => $rubric->slug]),
+        'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => $rubric->slug]),
     ];
 }
 

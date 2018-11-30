@@ -1,7 +1,8 @@
 <?php
-/* @var $this \yii\web\View */
+/** @var $this \yii\web\View */
+/** @var $class string */
 ?>
-<header class="header">
+<header class="header <?= $class; ?>">
     <div class="header__pantry">
         <div class="center clearfix">
             <!--header burger start -->
@@ -22,7 +23,7 @@
             <!--header logo end -->
 
             <!--header navigatoin start -->
-            <?= $this->render('menu.php');?>
+            <?= $this->render('/layouts/menu.php');?>
             <!--header navigatoin end -->
 
             <!--header tools start -->
@@ -30,11 +31,11 @@
                 <div class="header__subscription opacity">
                     <a href="#" class="subscription clearfix" data-popup="subscribe">
                         <span class="subscription__icon">
-                            <img src="images/subscription.jpg" alt="subscription">
+                            <img src="/images/subscription.jpg" alt="subscription">
                         </span>
                         <span class="subscription__description">
                             <span class="subscription__action">Подписаться</span>
-                            <span class="subscription__number">20 416 читателей</span>
+                            <span class="subscription__number"><?= $this->params['subscribers'];?> читателей</span>
                         </span>
                     </a>
                 </div>

@@ -31,7 +31,7 @@ use news\helpers\ColorHelper;
                                 ?>
                                 <li class="band__item">
                                     <div class="band__content">
-                                        <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="band__name title">
+                                        <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="band__name title">
                                             <?= Html::encode($post->title);?>
                                         </a>
                                         <div class="band__time">
@@ -62,7 +62,7 @@ use news\helpers\ColorHelper;
 
                                 $rgb = ColorHelper::hexToRgb($color);
                                 ?>
-                                <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_standart card_border">
+                                <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_standart card_border">
                                     <div class="card__photo">
                                         <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                     </div>
@@ -99,7 +99,7 @@ use news\helpers\ColorHelper;
                             $post = $news[$i];?>
                             <div class="col-xs-12 col-xxsm-12 col-xsm-6 col-sm-6 col-md-8 col-lg-8">
                                 <div class="grid__item">
-                                    <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_full" style="background-image: url(<?= $post->getRectanglePicture();?>)">
+                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_full" style="background-image: url(<?= $post->getRectanglePicture();?>)">
                                         <div class="card__photo">
                                             <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                             <div class="card__content">
@@ -137,7 +137,7 @@ use news\helpers\ColorHelper;
                                 $rgb = ColorHelper::hexToRgb($color); ?>
                                 <div class="col-xs-12 col-xxsm-12 col-xsm-6 col-sm-6 col-md-4 col-lg-4">
                                     <div class="grid__item">
-                                        <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_standart card_border">
+                                        <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_standart card_border">
                                             <div class="card__photo">
                                                 <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                             </div>

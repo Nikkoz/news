@@ -4,15 +4,14 @@ namespace frontend\controllers;
 
 
 use news\entities\posts\News;
-use news\entities\posts\rubric\Rubrics;
 use news\entities\posts\rubric\templates\RubricPositions;
 use news\forms\SubscribeForm;
 use news\readModels\posts\NewsReadRepository;
 use news\readModels\posts\RubricsReadRepository;
+use news\readModels\posts\SubscribeReadRepository;
 use news\services\manage\SubscribeManageService;
 use yii\caching\Cache;
 use yii\caching\TagDependency;
-use yii\web\Controller;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
 
@@ -25,60 +24,42 @@ use yii\widgets\ActiveForm;
  * @property Cache $cache
  * @property SubscribeManageService $subscribeService
  */
-class MainController extends Controller
+class MainController extends AppController
 {
-    private $rubricsRepository;
     private $newsRepository;
-    private $cache;
     private $subscribeService;
 
     public function __construct(
-        string $id,
-        $module,
+        string $id, $module,
+        Cache $cache,
         RubricsReadRepository $rubricsRepository,
         NewsReadRepository $newsRepository,
         SubscribeManageService $subscribeService,
-        Cache $cache,
+        SubscribeReadRepository $subscribeRepository,
         array $config = []
     )
     {
-        parent::__construct($id, $module, $config);
+        parent::__construct($id, $module, $cache, $rubricsRepository, $subscribeRepository, $config);
 
-        $this->rubricsRepository = $rubricsRepository;
         $this->newsRepository = $newsRepository;
-        $this->cache = $cache;
         $this->subscribeService = $subscribeService;
-    }
-
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
     }
 
     public function actionIndex()
     {
-        $this->view->params['subscribeForm'] = new SubscribeForm();
-        $this->view->params['rubrics'] = $this->cache->getOrSet(['rubrics'], function () {
-            return $this->rubricsRepository->getAll()->getModels();
-        }, null, new TagDependency(['tags' => ['rubrics']]));
-
         /** @var News $hot */
         $hot = $this->newsRepository->getHotPost();
         $mainNews = $this->newsRepository->getPostsInNews(['<>', 'id', $hot ? $hot->id : ''], $hot ? 4 : 6);
 
 
-        $positions = $this->cache->getOrSet(['positions'], function() {
+        $positions = $this->cache->getOrSet(['positions'], function () {
             return $this->rubricsRepository->getPositions();
         }, null, new TagDependency(['tags' => ['positions', 'rubrics']]));
 
-        if($hot) {
-            $this->layout = 'hot';
+        if ($hot) {
+            $this->layout = 'main/hot';
         } else {
-            $this->layout = 'home';
+            $this->layout = 'main/home';
         }
 
         $rubrics = [];
@@ -102,7 +83,7 @@ class MainController extends Controller
         $discussing = $this->newsRepository->getNewsBy(5, ['discussing' => 1]);
         $choice = $this->newsRepository->getNewsBy(5, ['choice' => 1]);
 
-        return $this->render('index',\array_merge([
+        return $this->render('index', \array_merge([
             'hot' => $hot,
             'news' => $mainNews,
             'positions' => $positions,

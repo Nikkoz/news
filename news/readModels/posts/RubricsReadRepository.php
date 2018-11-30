@@ -9,12 +9,24 @@ use yii\data\ActiveDataProvider;
 use yii\data\DataProviderInterface;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
+use yii\web\NotFoundHttpException;
 
 class RubricsReadRepository
 {
     public function count(): int
     {
         return Rubrics::find()->active()->count();
+    }
+
+    public function getByAlias(string $alias): ?Rubrics
+    {
+        $rubric = Rubrics::find()->andWhere(['=', 'slug', $alias])->limit(1)->one();
+
+        if (!$rubric) {
+            throw new NotFoundHttpException('Rubrics is not found.');
+        }
+
+        return $rubric;
     }
 
     public function getAll(): DataProviderInterface

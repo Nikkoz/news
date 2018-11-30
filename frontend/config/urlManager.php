@@ -16,10 +16,11 @@ return [
         'signup/<_a:[/w-]+>' => 'auth/signup/<_a>',
         '<_a:login|logout>' => 'auth/auth/<_a>',
 
-        ['class' => 'frontend\urls\PostUrlRule'],
+        'rubrics/<rubric:\w+>' => 'posts/rubrics/index',
         ['class' => 'frontend\urls\AnalyticUrlRule'],
+        ['class' => 'frontend\urls\PostUrlRule'],
 
-        'rubrics/<rubric:\w+>' => 'rubrics/index',
+        '/authors' => 'posts/authors/index',
 
         '<_c:[\w\-]+>' => '<_c>/index',
         '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',

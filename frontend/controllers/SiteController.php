@@ -3,6 +3,8 @@ namespace frontend\controllers;
 
 use news\readModels\posts\NewsReadRepository;
 use news\readModels\posts\RubricsReadRepository;
+use news\readModels\posts\SubscribeReadRepository;
+use yii\caching\Cache;
 use yii\web\Controller;
 
 /**
@@ -12,36 +14,32 @@ use yii\web\Controller;
  * @property RubricsReadRepository $rubricsRepository
  * @property NewsReadRepository $newsRepository
  */
-class SiteController extends Controller
+class SiteController extends AppController
 {
-    private $rubricsRepository;
     private $newsRepository;
 
     public function __construct(
-        string $id,
-        $module,
+        string $id, $module,
+        Cache $cache,
         RubricsReadRepository $rubricsRepository,
         NewsReadRepository $newsRepository,
+        SubscribeReadRepository $subscribeRepository,
         array $config = []
     )
     {
-        parent::__construct($id, $module, $config);
+        parent::__construct($id, $module, $cache, $rubricsRepository, $subscribeRepository, $config);
 
-        $this->rubricsRepository = $rubricsRepository;
         $this->newsRepository = $newsRepository;
     }
 
-    public function actions()
+    public function actions(): array
     {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
+        return \array_merge(parent::actions(), [
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
+            ]
+        ]);
     }
 
     public function actionIndex()
@@ -52,5 +50,10 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionError()
+    {
+        echo 'error';
     }
 }

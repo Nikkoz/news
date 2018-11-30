@@ -23,7 +23,7 @@ $post = $news[0];
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hide-xsm hide-xxsm hide-xs">
                         <div class="grid__item">
-                            <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="analysis analysis_flat" data-id="<?= $post->id;?>">
+                            <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="analysis analysis_flat" data-id="<?= $post->id;?>">
                                 <div class="analysis__content">
                                     <div class="analysis__table">
                                         <div class="analysis__tr">
@@ -70,7 +70,7 @@ $post = $news[0];
 
                             <div class="col-xs-12 col-xxsm-12 col-xsm-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="grid__item">
-                                    <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_standart card_background_gray">
+                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_standart card_background_gray">
                                         <div class="card__photo">
                                             <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                         </div>
@@ -116,7 +116,7 @@ $post = $news[0];
 
                                     <li class="band__item">
                                         <div class="band__content">
-                                            <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="band__name title">
+                                            <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="band__name title">
                                                 <?= Html::encode($post->title);?>
                                             </a>
                                             <div class="band__time">

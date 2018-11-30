@@ -5,7 +5,9 @@
 
 $this->beginContent('@frontend/views/layouts/main.php');?>
 
-<?= $this->render('header.php'); ?>
+<?= $this->render('header.php', [
+    'class' => ''
+]); ?>
 
 <?= $content;?>
 

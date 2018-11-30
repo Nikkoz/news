@@ -33,7 +33,7 @@ unset($news[0]);
                     </span>
                 </div>
             </div>
-            <a class="clipping__title title" href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>">
+            <a class="clipping__title title" href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>">
                 <?= Html::encode($post->title); ?>
             </a>
         </div>
@@ -49,7 +49,7 @@ unset($news[0]);
                                 <img src="<?= $post->getSquarePicture('64x64'); ?>" alt="<?= Html::encode($post->title); ?>">
                             </div>
                             <div class="band__content">
-                                <a href="<?= Html::encode(Url::toRoute(['rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>" class="band__name title">
+                                <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>" class="band__name title">
                                     <?= Html::encode($post->title); ?>
                                 </a>
                                 <div class="band__time">
