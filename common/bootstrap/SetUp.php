@@ -2,16 +2,20 @@
 
 namespace common\bootstrap;
 
+
 use news\dispatchers\DeferredEventDispatcher;
 use news\dispatchers\EventDispatcher;
 use news\dispatchers\SimpleEventDispatcher;
+use news\entities\events\SubscribeRequested;
 use news\jobs\AsyncEventJobHandler;
+use news\listeners\SubscribeRequestedListener;
 use news\listeners\UserCreateRequestedListener;
 use news\entities\user\events\UserCreateRequested;
 use news\services\auth\PasswordResetService;
 use news\services\contact\ContactService;
 use news\dispatchers\AsyncEventDispatcher;
 use yii\base\BootstrapInterface;
+use yii\caching\Cache;
 use yii\di\Container;
 use yii\di\Instance;
 use yii\mail\MailerInterface;
@@ -27,6 +31,10 @@ class SetUp implements BootstrapInterface
         $container->setSingleton(PasswordResetService::class, [], [
             [\Yii::$app->params['supportEmail'] => \Yii::$app->name . ' robot']
         ]);
+
+        $container->setSingleton(Cache::class, function () use ($app) {
+            return $app->cache;
+        });
 
         $container->setSingleton(Queue::class, function () use ($app) {
             return $app->get('queue');
@@ -54,7 +62,8 @@ class SetUp implements BootstrapInterface
 
         $container->setSingleton(SimpleEventDispatcher::class, function (Container $container) {
             return new SimpleEventDispatcher($container, [
-                UserCreateRequested::class => [UserCreateRequestedListener::class]
+                UserCreateRequested::class => [UserCreateRequestedListener::class],
+                SubscribeRequested::class => [SubscribeRequestedListener::class]
             ]);
         });
 

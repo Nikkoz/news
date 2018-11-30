@@ -26,6 +26,7 @@
                             ],
                         ],
                     ],
+                    ['label' => \Yii::t('app', 'Subscribe'), 'icon' => 'subscribe', 'url' => \yii\helpers\Url::toRoute(['/subscribe']), 'active' => $this->context->id == 'subscribe'],
                     [
                         'label' => 'Development',
                         'icon' => 'share',

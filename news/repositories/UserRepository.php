@@ -2,9 +2,16 @@
 
 namespace news\repositories;
 
+
 use news\dispatchers\EventDispatcher;
 use news\entities\user\User;
 
+/**
+ * Class UserRepository
+ * @package news\repositories
+ *
+ * @property EventDispatcher $dispatcher
+ */
 class UserRepository
 {
     private $dispatcher;

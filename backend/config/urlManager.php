@@ -23,6 +23,11 @@ return [
         'news/create' => 'posts/news/create',
         'news/<_a:(update|delete|view|activate|deactivate)>/<id:\d+>' => 'posts/news/<_a>',
 
+        'subscribe' => 'subscribe/index',
+        'subscribe/index' => 'subscribe/index',
+        'subscribe/create' => 'subscribe/create',
+        'subscribe/<_a:(update|delete)>/<id:\d+>' => 'subscribe/<_a>',
+
         'videos/<_a:(update|delete|view)>/<id:\d+>' => 'videos/<_a>',
 
         'rubrics' => 'posts/rubrics/index',

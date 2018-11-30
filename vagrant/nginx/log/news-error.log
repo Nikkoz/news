@@ -1377,3 +1377,642 @@ PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/front
 PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
 PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
 PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:17:22 [error] 1852#1852: *70 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:17:24 [error] 1852#1852: *71 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:38:19 [error] 1852#1852: *78 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:38:20 [error] 1852#1852: *79 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:38:21 [error] 1852#1852: *78 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:38:22 [error] 1852#1852: *79 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:39:38 [error] 1852#1852: *92 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:39:39 [error] 1852#1852: *93 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:39:40 [error] 1852#1852: *92 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:40:12 [error] 1852#1852: *93 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:40:13 [error] 1852#1852: *92 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 15:40:14 [error] 1852#1852: *93 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:29:45 [error] 1852#1852: *223 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 113" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:29:45 [error] 1852#1852: *223 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:29:45 [error] 1852#1852: *223 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(113): yii\widgets\ActiveField->textInput()
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderF" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:42:12 [error] 1852#1852: *228 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 117" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:42:12 [error] 1852#1852: *228 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:42:12 [error] 1852#1852: *228 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(120): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:42:47 [error] 1852#1852: *228 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 117" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:42:47 [error] 1852#1852: *228 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:42:47 [error] 1852#1852: *228 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(120): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:45:20 [error] 1852#1852: *245 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:45:20 [error] 1852#1852: *245 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:45:20 [error] 1852#1852: *245 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:46:28 [error] 1852#1852: *251 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:46:28 [error] 1852#1852: *251 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:46:28 [error] 1852#1852: *251 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:46:52 [error] 1852#1852: *260 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:46:52 [error] 1852#1852: *260 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:46:52 [error] 1852#1852: *260 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:47:42 [error] 1852#1852: *257 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:47:42 [error] 1852#1852: *257 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:47:42 [error] 1852#1852: *257 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:48:14 [error] 1852#1852: *258 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:48:14 [error] 1852#1852: *258 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:48:14 [error] 1852#1852: *258 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:48:39 [error] 1852#1852: *251 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:48:39 [error] 1852#1852: *251 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:48:39 [error] 1852#1852: *251 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:49:55 [error] 1852#1852: *275 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:49:55 [error] 1852#1852: *275 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:49:55 [error] 1852#1852: *275 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:52:46 [error] 1852#1852: *281 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:52:46 [error] 1852#1852: *281 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:52:46 [error] 1852#1852: *281 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:54:04 [error] 1852#1852: *282 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:54:04 [error] 1852#1852: *282 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:54:04 [error] 1852#1852: *282 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:55:52 [error] 1852#1852: *301 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:55:52 [error] 1852#1852: *301 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:55:52 [error] 1852#1852: *301 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:56:09 [error] 1852#1852: *299 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:56:09 [error] 1852#1852: *299 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:56:09 [error] 1852#1852: *299 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:58:35 [error] 1852#1852: *316 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:58:35 [error] 1852#1852: *316 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:58:35 [error] 1852#1852: *316 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:59:30 [error] 1852#1852: *315 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:59:30 [error] 1852#1852: *315 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:59:30 [error] 1852#1852: *315 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:59:49 [error] 1852#1852: *315 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 119" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:59:49 [error] 1852#1852: *315 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 16:59:49 [error] 1852#1852: *315 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(122): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 17:06:34 [error] 1852#1852: *327 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 121" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 17:06:34 [error] 1852#1852: *327 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 17:06:34 [error] 1852#1852: *327 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(124): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/?"
+2018/11/26 17:06:38 [error] 1852#1852: *328 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 121" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:06:38 [error] 1852#1852: *328 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:06:38 [error] 1852#1852: *328 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(124): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:08:02 [error] 1852#1852: *327 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 121" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:08:02 [error] 1852#1852: *327 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:08:02 [error] 1852#1852: *327 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(124): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:11:50 [error] 1852#1852: *350 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 121" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:11:50 [error] 1852#1852: *350 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:11:50 [error] 1852#1852: *350 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(124): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:20:27 [error] 1852#1852: *375 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:20:27 [error] 1852#1852: *375 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:20:27 [error] 1852#1852: *375 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:20:50 [error] 1852#1852: *375 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:20:50 [error] 1852#1852: *375 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:20:50 [error] 1852#1852: *375 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:22:29 [error] 1852#1852: *394 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:22:29 [error] 1852#1852: *394 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:22:29 [error] 1852#1852: *394 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:23:26 [error] 1852#1852: *391 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:23:26 [error] 1852#1852: *391 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:23:26 [error] 1852#1852: *391 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:24:40 [error] 1852#1852: *415 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:24:40 [error] 1852#1852: *415 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:24:40 [error] 1852#1852: *415 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:28:22 [error] 1852#1852: *433 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:28:22 [error] 1852#1852: *433 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/26 17:28:22 [error] 1852#1852: *433 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:08:50 [error] 1842#1842: *1 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:08:50 [error] 1842#1842: *1 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:08:50 [error] 1842#1842: *1 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:41:09 [error] 1842#1842: *17 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:41:09 [error] 1842#1842: *17 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:41:09 [error] 1842#1842: *17 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:41:41 [error] 1842#1842: *18 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:41:41 [error] 1842#1842: *18 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/wid" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:41:41 [error] 1842#1842: *18 FastCGI sent in stderr: "gets/ActiveField.php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 16:48:43 [error] 1842#1842: *25 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/config/main.php on line 58. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /app/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/config/main.php on line 58. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/ba" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local"
+2018/11/28 16:48:43 [error] 1842#1842: *25 FastCGI sent in stderr: "se/Application.php(392): yii\web\Response->send()
+#2 /app/frontend/web/index" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local"
+2018/11/28 17:07:52 [error] 1842#1842: *28 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 17:07:52 [error] 1842#1842: *28 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/28 17:07:52 [error] 1842#1842: *28 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/30 14:55:52 [error] 1836#1836: *14 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/footer.php on line 37
+PHP message: PHP Notice:  Undefined index: rubrics in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Warning:  Invalid argument supplied for foreach() in /app/frontend/views/layouts/menu_popup.php on line 10
+PHP message: PHP Notice:  Undefined index: subscribeForm in /app/frontend/views/layouts/popups.php on line 122" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/30 14:55:52 [error] 1836#1836: *14 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+Error: Call to a member function isAttributeRequired() on null in /app/vendor/yiisoft/yii2/widgets/ActiveField.php:916
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/widgets/ActiveField" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/11/30 14:55:52 [error] 1836#1836: *14 FastCGI sent in stderr: ".php(402): yii\widgets\ActiveField->addAriaAttributes(Array)
+#1 /app/frontend/views/layouts/popups.php(125): yii\widgets\ActiveField->textInput(Array)
+#2 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#3 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#4 /app/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/app/frontend/v...', Array, NULL)
+#5 /app/frontend/views/layouts/main.php(34): yii\base\View->render('popups.php')
+#6 /app/vendor/yiisoft/yii2/base/View.php(348): require('/app/frontend/v...')
+#7 /app/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/app/frontend/v...', Array)
+#8 /app/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->re" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"

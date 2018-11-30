@@ -3,3 +3,9 @@ backend-access.log
 backend-error.log
 frontend-access.log
 frontend-error.log
+news-error.log
+news-access.log
+administrator-access.log
+administrator-error.log
+api-error.log
+api-access.loggit
