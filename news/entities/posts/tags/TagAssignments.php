@@ -31,4 +31,9 @@ class TagAssignments extends ActiveRecord
     {
         return $this->tag_id == $id;
     }
+
+    public function getTag(): Tags
+    {
+        return Tags::findOne($this->tag_id);
+    }
 }

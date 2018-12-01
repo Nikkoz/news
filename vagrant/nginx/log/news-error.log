@@ -2408,3 +2408,51 @@ Stack trace:
 #1 [internal function]: frontend\controllers\SiteController->__construct('site', Object(yii\web\Application), Object(yii\caching\MemCache), Object(news\readModels\posts\RubricsReadRepository), Object(news\readModels\posts\NewsReadRepository), Array)
 #2 /app/vendor/yiisoft/yii2/di/Container.php(376): ReflectionClass->newInstanceArgs(Array)
 #3 /app/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('frontend\\contro" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /assets/media/band.jpg HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/12/01 10:22:46 [error] 1830#1830: *111 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 51. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /app/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 51. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(392): yii" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/sobytia HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/nauka/gubernatory-otcitautsa-putinu-o-vypolnenii-ego-ukazov-6"
+2018/12/01 11:09:40 [error] 1830#1830: *261 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 51. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /app/vendor/yiisoft/yii2/base/ErrorHandl" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/sobytia HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/12/01 11:09:40 [error] 1830#1830: *261 FastCGI sent in stderr: "er.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 51. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(392): yii" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/sobytia HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/12/01 11:19:38 [error] 1830#1830: *264 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 51. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /app/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 51. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(392): yii" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/sobytia HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/"
+2018/12/01 11:26:34 [error] 1830#1830: *301 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 55" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/01 11:26:58 [error] 1830#1830: *301 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 57" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/01 11:26:59 [error] 1830#1830: *301 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 57" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/01 11:29:05 [error] 1830#1830: *301 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 55" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/01 11:29:42 [error] 1830#1830: *301 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 60" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/01 11:31:27 [error] 1830#1830: *319 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 55" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/01 11:31:38 [error] 1830#1830: *319 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 55" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/01 11:31:58 [error] 1830#1830: *319 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 52" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"

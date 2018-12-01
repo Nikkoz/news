@@ -59,10 +59,10 @@ use yii\web\UploadedFile;
  * @property Pictures $analyticPictureFile
  * @property Pictures $hotPictureFile
  *
- * @property RubricAssignments $rubricAssignments
- * @property TagAssignments $tagAssignments
- * @property SliderAssignments $sliderAssignments
- * @property VideoAssignments $videoAssignments
+ * @property RubricAssignments[] $rubricAssignments
+ * @property TagAssignments[] $tagAssignments
+ * @property SliderAssignments[] $sliderAssignments
+ * @property VideoAssignments]\ $videoAssignments
  */
 class News extends ActiveRecord
 {
@@ -397,6 +397,16 @@ class News extends ActiveRecord
         }
 
         return $size ? $this->squarePictureFile->getPictureSize($size) : $this->squarePictureFile->getPicture();
+    }
+
+    public function getTags(): array
+    {
+        $tags = [];
+        foreach ($this->tagAssignments as $assignment) {
+            $tags[] = $assignment->getTag()->name;
+        }
+
+        return $tags;
     }
 
     public function checkRubric(string $rubric): bool

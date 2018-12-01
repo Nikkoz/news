@@ -3,14 +3,15 @@
 namespace news\entities\posts\queries;
 
 
+use news\entities\posts\News;
 use news\entities\posts\rubric\RubricAssignments;
 use yii\db\ActiveQuery;
 
 class NewsQuery extends ActiveQuery
 {
-    public function active(): self
+    public function active($alias = null): self
     {
-        return $this->andWhere(['status' => 1]);
+        return $this->andWhere([($alias ? $alias . '.' : '') . 'status' => News::STATUS_ACTIVE]);
     }
 
     public function news(): self

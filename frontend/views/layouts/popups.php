@@ -34,7 +34,7 @@ use yii\widgets\ActiveForm;
                     <div class="found__overflow">
                         <div class="found">
                             <div class="found__img">
-                                <img src="assets/media/band.jpg" alt="#">
+                                <img src="/media/band.jpg" alt="#">
                             </div>
                             <div class="found__content">
                                 <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>

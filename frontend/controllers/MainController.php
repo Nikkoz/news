@@ -75,7 +75,7 @@ class MainController extends AppController
                 'color' => $rubric->color,
                 'analytic' => $this->newsRepository->getAnalyticByRubric($rubric->id),
                 'template' => $template->file,
-                'news' => $this->newsRepository->getNewsByRubric($rubric->id, $template->count_news),
+                'news' => $this->newsRepository->getByRubric($rubric->id, $template->count_news),
             ];
         }
 

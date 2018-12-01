@@ -29,15 +29,25 @@ class RubricsReadRepository
         return $rubric;
     }
 
+    public function getAliasById(int $id): string
+    {
+        return Rubrics::find()->select('slug')->andWhere(['=', 'id', $id])->limit(1)->column()[0];
+    }
+
     public function getAll(): DataProviderInterface
     {
         $query = Rubrics::find()->active();
         return $this->getProvider($query);
     }
 
-    public function getPositions()
+    public function getPositions(): array
     {
         return RubricPositions::find()->with('rubricAssignment', 'templateAssignment')->all();
+    }
+
+    public function getPosition(int $rubricId): ?RubricPositions
+    {
+        return RubricPositions::find()->select(['id', 'template_id'])->with('templateAssignment')->andWhere(['=', 'rubric_id', $rubricId])->limit(1)->one();
     }
 
     private function getProvider(ActiveQuery $query): ActiveDataProvider
