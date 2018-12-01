@@ -25,7 +25,7 @@ AppAsset::register($this);
     <body>
     <?php $this->beginBody() ?>
 
-    <div class="wrapper <?= $this->params['page_class']['wrapper'];?>">
+    <div class="wrapper <?= $this->params['pageParams']['wrapper'];?>">
         <?= $content;?>
 
         <?= $this->render('inner/footer.php'); ?>

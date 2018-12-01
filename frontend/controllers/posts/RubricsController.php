@@ -17,6 +17,9 @@ use yii\caching\Cache;
  */
 class RubricsController extends AppController
 {
+
+    public $layout = 'inner/rubric';
+
     public function __construct(
         string $id,
         $module,
@@ -31,10 +34,10 @@ class RubricsController extends AppController
 
     public function actionIndex(string $rubric)
     {
-        $this->layout = 'inner/rubric';
-        $this->view->params['page_class'] = [
+        $this->view->params['pageParams'] = [
             'wrapper' => 'page_roubrick',
-            'header' => 'header_roubrick header_show_burger'
+            'header' => 'header_roubrick header_show_burger',
+            'type' => 'rubric',
         ];
 
         $rubric = $this->rubricsRepository->getByAlias($rubric);
@@ -47,11 +50,16 @@ class RubricsController extends AppController
 
     public function actionPost(string $rubric, string $post)
     {
-        $this->layout = 'inner/rubric';
-
-        $this->view->params['page_class'] = [
+        $this->view->params['pageParams'] = [
             'wrapper' => '',
-            'header' => 'header_need_burger-js  header_need_scroll-js'
+            'header' => 'header_need_burger-js  header_need_scroll-js',
+            'type' => 'post',
         ];
+
+        $rubric = $this->rubricsRepository->getByAlias($rubric);
+
+        return $this->render('index', [
+            'rubric' => $rubric,
+        ]);
     }
 }

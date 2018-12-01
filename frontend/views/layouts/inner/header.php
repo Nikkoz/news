@@ -5,7 +5,7 @@ use yii\helpers\Url;
 use frontend\widgets\posts\ArticleCarouselWidget;
 use yii\widgets\Menu;
 ?>
-<header class="header <?= $this->params['page_class']['header']; ?>">
+<header class="header <?= $this->params['pageParams']['header']; ?>">
     <div class="header__pantry">
         <div class="center clearfix">
             <!--header burger start -->
@@ -60,41 +60,28 @@ use yii\widgets\Menu;
                 <a href="#" class="header__search opacity" data-popup="search"></a>
             </div>
             <!--header tools end -->
-            <!--header category start -->
-            <div class="header__category clearfix">
-                <div class="header__title">
-                    <?= $this->title; ?>
+            <?php if ($this->params['pageParams']['type'] == 'rubric'): ?>
+                <!--header category start -->
+                <div class="header__category clearfix">
+                    <div class="header__title">
+                        <?= $this->title; ?>
+                    </div>
+                    <div class="header__choice">
+                        <a class="marked"><?= \Yii::$app->formatter->asDate(time(), 'php:M Y')?></a>
+                        <a href="<?= Url::toRoute(['posts/authors']);?>" class="">Авторы</a>
+                    </div>
                 </div>
-                <div class="header__choice">
-                    <a href="#" class="marked" id="datepicker"><?= \Yii::$app->formatter->asDate(time(), 'php:M Y')?></a>
-                    <a href="<?= Url::toRoute(['posts/authors']);?>" class="">Авторы</a>
+                <!--header category end -->
+            <?php elseif ($this->params['pageParams']['type'] == 'post'): ?>
+                <!--header intertal   start -->
+                <div class="header__intertal">
+                    <div class="header__title">
+                        <span><?= $this->title; ?></span>
+                    </div>
                 </div>
-            </div>
-            <!--header category end -->
+                <!--header intertal   end -->
+            <?php endif; ?>
         </div>
-    </div>
-
-    <div class="dataselect">
-        <div class="dataselect__header">
-            <div class="dataselect__day">
-                Понедельник
-            </div>
-            <div class="dataselect__month">
-                Июн
-            </div>
-            <div class="dataselect__number">
-                26
-            </div>
-            <div class="dataselect__year">
-                2017
-            </div>
-        </div>
-        <div class="dataselect__datapicker">
-
-        </div>
-    </div>
-    <div class="dataselect__back">
-
     </div>
 </header>
 
