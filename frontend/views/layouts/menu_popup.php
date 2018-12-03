@@ -1,11 +1,12 @@
 <?php
+
 use yii\helpers\Url;
 use yii\widgets\Menu;
 
-$items[] = [
+/*$items[] = [
     'label' => \Yii::t('app', 'News'),
     'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => 'news'])
-];
+];*/
 
 foreach ($this->params['rubrics'] as $rubric) {
     $items[] = [

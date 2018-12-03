@@ -13,6 +13,11 @@ use yii\web\NotFoundHttpException;
 
 class NewsReadRepository
 {
+    public function count(): int
+    {
+        return News::find()->active()->count();
+    }
+
     public function getHotPost(): ?ActiveRecord
     {
         return News::find()->active()->with('rubricAssignments', 'hotPictureFile')->where(['=', 'hot', 1])->limit(1)->orderBy(['updated_at' => SORT_DESC])->one();
@@ -49,6 +54,18 @@ class NewsReadRepository
         $query = News::find()->alias('n')->active('n')
                              ->with('rectanglePictureFile', 'squarePictureFile', 'tagAssignments')
                              ->rubric($rubricId);
+
+        if ($offset) {
+            return $query->offset($offset)->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
+        }
+
+        return $this->getProvider($query, $limit, $offset ? true : false);
+    }
+
+    public function getAll(int $limit, int $offset = null)
+    {
+        $query = News::find()->alias('n')->active('n')
+                             ->with('rectanglePictureFile', 'squarePictureFile', 'tagAssignments');
 
         if ($offset) {
             return $query->offset($offset)->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();

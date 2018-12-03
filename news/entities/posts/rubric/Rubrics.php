@@ -81,7 +81,7 @@ class Rubrics extends ActiveRecord
 
     public function activate(): void
     {
-        if($this->isActive()) {
+        if ($this->isActive()) {
             throw new \DomainException(\Yii::t('app', 'Rubric is already active.'));
         }
 
@@ -90,11 +90,16 @@ class Rubrics extends ActiveRecord
 
     public function deactivate(): void
     {
-        if($this->isDraft()) {
+        if ($this->isDraft()) {
             throw new \DomainException(\Yii::t('app', 'Rubric is already inactive.'));
         }
 
         $this->status = self::STATUS_INACTIVE;
+    }
+
+    public function getSeoTitle(): string
+    {
+        return $this->meta->title ?: $this->name;
     }
 
     public static function find(): RubricQuery

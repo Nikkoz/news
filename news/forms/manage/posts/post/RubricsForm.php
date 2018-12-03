@@ -1,4 +1,5 @@
 <?php
+
 namespace news\forms\manage\posts\post;
 
 
@@ -19,7 +20,7 @@ class RubricsForm extends Model
 
     public function __construct(News $news = null, array $config = [])
     {
-        if($news) {
+        if ($news) {
             $this->rubrics = ArrayHelper::getColumn($news->rubricAssignments, 'rubric_id');
         }
 
@@ -34,9 +35,15 @@ class RubricsForm extends Model
         ];
     }
 
-    public function rubricsList(): array
+    public function rubricsList(bool $news = false): array
     {
-        return ArrayHelper::map(Rubrics::find()->active()->asArray()->all(), 'id', 'name');
+        $query = Rubrics::find()->active()->orderBy(['sort' => SORT_ASC]);
+
+        if (!$news) {
+            $query->andWhere(['<>', 'slug', 'novosti']);
+        }
+
+        return ArrayHelper::map($query->asArray()->all(), 'id', 'name');
     }
 
     public function beforeValidate(): bool

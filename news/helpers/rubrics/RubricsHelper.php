@@ -70,4 +70,11 @@ final class RubricsHelper
     {
         return Rubrics::find()->active();
     }
+
+    public static function isNews(int $id): bool
+    {
+        $rubric = Rubrics::find()->select('slug')->andWhere(['=', 'id', $id])->limit(1)->column();
+
+        return $rubric[0] === 'novosti';
+    }
 }

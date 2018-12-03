@@ -4,6 +4,7 @@ namespace frontend\controllers\posts;
 
 
 use frontend\controllers\AppController;
+use news\helpers\rubrics\RubricsHelper;
 use news\readModels\posts\NewsReadRepository;
 use news\readModels\posts\RubricsReadRepository;
 use news\readModels\posts\SubscribeReadRepository;
@@ -47,36 +48,52 @@ class RubricsController extends AppController
             'type' => 'rubric',
         ];
 
+        $template = 'template_news';
         $rubric = $this->rubricsRepository->getByAlias($rubric);
-        $dataProvider = $this->newsRepository->getAllByRubric($rubric->id, 17);
-        $template = $this->rubricsRepository->getPosition($rubric->id);
+
+        if ($rubric->slug === 'novosti') {
+            $dataProvider = $this->newsRepository->getAll(17);
+        } else {
+            $dataProvider = $this->newsRepository->getAllByRubric($rubric->id, 17);
+            $template = $this->rubricsRepository->getPosition($rubric->id)->templateAssignment->file;
+        }
 
         return $this->render('index', [
             'rubric' => $rubric,
             'dataProvider' => $dataProvider,
-            'template' => $template ? $template->templateAssignment : (object)['file' => 'template1'],
+            'template' => $template,
         ]);
     }
 
     public function actionLoad(int $id, int $offset)
     {
         $limit = 6;
+        $isNews = RubricsHelper::isNews($id);
 
-        $news = $this->newsRepository->getAllByRubric($id, 6, $offset);
-        $count = $this->cache->getOrSet(['news_count', 'rubric' => $id], function () use ($id) {
-            return $this->newsRepository->countInRubric($id);
-        }, null, new TagDependency(['tags' => ['posts']]));
+        if (!$isNews) {
+            $news = $this->newsRepository->getAllByRubric($id, $limit, $offset);
+            $count = $this->cache->getOrSet(['news_count_rubric', 'rubric' => $id], function () use ($id) {
+                return $this->newsRepository->countInRubric($id);
+            }, null, new TagDependency(['tags' => ['posts']]));
+        } else {
+            $news = $this->newsRepository->getAll($limit, $offset);
+            $count = $this->cache->getOrSet(['news_count'], function () use ($id) {
+                return $this->newsRepository->count();
+            }, null, new TagDependency(['tags' => ['posts']]));
+        }
 
         \Yii::$app->response->format = Response::FORMAT_JSON;
 
         return [
             'html' => $this->renderPartial('_load', [
                 'news' => $news,
-                'rubric' => $this->rubricsRepository->getAliasById($id)
+                'rubric' => !$isNews ? $this->rubricsRepository->getAliasById($id) : '',
+                'isNews' => $isNews,
             ]),
             'pagination' => [
                 'offset' => $offset + $limit,
-                'show' => $count > $offset + $limit
+                'show' => $count > $offset + $limit,
+                'count' => $count
             ]
         ];
     }
