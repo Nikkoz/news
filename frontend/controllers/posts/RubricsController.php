@@ -107,8 +107,9 @@ class RubricsController extends AppController
         ];
 
         $rubric = $this->rubricsRepository->getByAlias($rubric);
+        $post = $this->newsRepository->getByAlias($post);
 
-        return $this->render('index', [
+        return $this->render('post', [
             'rubric' => $rubric,
         ]);
     }
