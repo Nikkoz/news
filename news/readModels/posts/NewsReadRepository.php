@@ -5,6 +5,7 @@ namespace news\readModels\posts;
 
 use news\entities\posts\News;
 use news\entities\posts\rubric\RubricAssignments;
+use news\entities\posts\tags\TagAssignments;
 use yii\data\ActiveDataProvider;
 use yii\data\DataProviderInterface;
 use yii\db\ActiveQuery;
@@ -62,6 +63,14 @@ class NewsReadRepository
         return $this->getProvider($query, $limit, $offset ? true : false);
     }
 
+    public function getByTags(int $limit, array $tags): array
+    {
+        return News::find()->alias('n')->active('n')->with('rectanglePictureFile', 'squarePictureFile')
+                           ->innerJoin(TagAssignments::tableName(), '`id`=`news_id`')
+                           ->andWhere(['IN', 'tag_id', $tags])
+                           ->limit($limit)->all();
+    }
+
     public function getAll(int $limit, int $offset = null)
     {
         $query = News::find()->alias('n')->active('n')
@@ -79,9 +88,19 @@ class NewsReadRepository
         return News::find()->active()->with('rubricAssignments', 'squarePictureFile')->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
     }
 
+    public function getChoiceNews(int $limit): array
+    {
+        return News::find()->active()->choice()->with('rectanglePictureFile', 'rubricAssignments')->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
+    }
+
+    /**
+     * @param string $alias
+     * @return News|null
+     * @throws NotFoundHttpException
+     */
     public function getByAlias(string $alias): ?News
     {
-        $news = News::find()->active()->andWhere(['=', 'alias', $alias])->limit(1)->one();
+        $news = News::find()->active()->with('author')->andWhere(['=', 'alias', $alias])->limit(1)->one();
 
         if(!$news) {
             throw new NotFoundHttpException('Article is not found.');

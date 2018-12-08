@@ -4,6 +4,8 @@ namespace news\helpers;
 
 
 use news\entities\posts\News;
+use news\entities\posts\slider\Sliders;
+use news\entities\posts\video\Videos;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
@@ -37,6 +39,32 @@ final class NewsHelper
         }
 
         return Html::a(ArrayHelper::getValue(self::statusList(), $status), ["posts/news/{$action}", 'id' => $id, 'backUrl' => \Yii::$app->request->url], ['class' => $class, 'data-publish' => '']);
+    }
+
+    public static function getSlider(int $id): ?Sliders
+    {
+        return Sliders::find()->andWhere(['=', 'id', $id])->limit(1)->one();
+    }
+
+    public static function getTizer(int $id): string
+    {
+        return News::find()->select('title')->andWhere(['=', 'id', $id])->limit(1)->column()[0];
+    }
+
+    public static function getVideo(int $id): ?Videos
+    {
+        return Videos::find()->andWhere(['=', 'id', $id])->limit(1)->one();
+    }
+
+    public static function getTags(News $post): array
+    {
+        $tags = [];
+
+        foreach ($post->tagAssignments as $tagAssignment) {
+            $tags[] = $tagAssignment->tag_id;
+        }
+
+        return $tags;
     }
 
     public static function attributeLabels(): array

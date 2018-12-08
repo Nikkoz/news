@@ -28,4 +28,9 @@ class NewsQuery extends ActiveQuery
     {
         return $this->innerJoin(RubricAssignments::tableName(), '`id` = `news_id`')->andWhere(['rubric_id' => $rubricId]);
     }
+
+    public function choice(): self
+    {
+        return $this->andWhere(['=', 'choice', 1]);
+    }
 }

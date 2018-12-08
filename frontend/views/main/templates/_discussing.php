@@ -21,7 +21,7 @@ unset($news[0]);
                 <div class="clipping__background" style="background-color: #101620;"></div>
                 <img src="<?= $post->getSquarePicture(); ?>" alt="<?= Html::encode($post->title); ?>">
                 <div class="clipping__tags">
-                    <a href="<?= Html::encode(Url::toRoute(['rubrics/index', 'rubric' => $rubric->slug]))?>" class="tag tag_white">
+                    <a href="<?= Html::encode(Url::toRoute(['posts/rubrics/index', 'rubric' => $rubric->slug]))?>" class="tag tag_white">
                         <?= $rubric->name;?>
                     </a>
                 </div>

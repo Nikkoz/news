@@ -4,6 +4,7 @@ namespace frontend\controllers\posts;
 
 
 use frontend\controllers\AppController;
+use news\helpers\NewsHelper;
 use news\helpers\rubrics\RubricsHelper;
 use news\readModels\posts\NewsReadRepository;
 use news\readModels\posts\RubricsReadRepository;
@@ -40,6 +41,11 @@ class RubricsController extends AppController
         $this->newsRepository = $newsRepository;
     }
 
+    /**
+     * @param string $rubric
+     * @return string
+     * @throws \yii\web\NotFoundHttpException
+     */
     public function actionIndex(string $rubric)
     {
         $this->view->params['pageParams'] = [
@@ -98,6 +104,12 @@ class RubricsController extends AppController
         ];
     }
 
+    /**
+     * @param string $rubric
+     * @param string $post
+     * @return string
+     * @throws \yii\web\NotFoundHttpException
+     */
     public function actionPost(string $rubric, string $post)
     {
         $this->view->params['pageParams'] = [
@@ -109,8 +121,14 @@ class RubricsController extends AppController
         $rubric = $this->rubricsRepository->getByAlias($rubric);
         $post = $this->newsRepository->getByAlias($post);
 
+        $tagIDs = NewsHelper::getTags($post);
+
+        $posts = $this->newsRepository->getByTags(6, $tagIDs);
+
         return $this->render('post', [
             'rubric' => $rubric,
+            'post' => $post,
+            'posts' => $posts
         ]);
     }
 }

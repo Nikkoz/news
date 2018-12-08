@@ -77,7 +77,7 @@ $post = $news[0];
                                         <div class="card__content">
                                             <div class="card__tags">
                                                 <span
-                                                    data-href="<?= Html::encode(Url::toRoute(['rubrics/index', 'rubric' => $alias]))?>"
+                                                    data-href="<?= Html::encode(Url::toRoute(['posts/rubrics/index', 'rubric' => $alias]))?>"
                                                     class="tag tag_border_hover"
                                                     style="background-color: rgba(<?= $rgb['r'];?>, <?= $rgb['g'];?>, <?= $rgb['b'];?>, 0.3);border-color: rgba(<?= $rgb['r'];?>, <?= $rgb['g'];?>, <?= $rgb['b'];?>, 0.5);border:0;padding: 4px 9px;color: rgb(<?= $rgb['r'];?>, <?= $rgb['g'];?>, <?= $rgb['b'];?>);">
                                                     <?= Html::encode($name); ?>

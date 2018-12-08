@@ -24,11 +24,6 @@ use yii\widgets\Menu;
             <!--header logo end -->
             <!--header navigatoin start -->
             <?php
-            $items[] = [
-                'label' => \Yii::t('app', 'News'),
-                'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => 'news'])
-            ];
-
             foreach ($this->params['rubrics'] as $rubric) {
                 /** @var $rubric \news\entities\posts\rubric\Rubrics */
 

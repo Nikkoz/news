@@ -165,7 +165,7 @@ use news\helpers\ColorHelper;
                                     <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                     <div class="card__content">
                                         <div class="card__tags">
-                                            <span data-href="<?= Html::encode(Url::toRoute(['rubrics/index', 'rubric' => $alias]))?>" class="tag tag_white">
+                                            <span data-href="<?= Html::encode(Url::toRoute(['posts/rubrics/index', 'rubric' => $alias]))?>" class="tag tag_white">
                                                 <?= Html::encode($name); ?>
                                             </span>
                                         </div>

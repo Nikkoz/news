@@ -85,7 +85,7 @@ use yii\helpers\Url;
                 <div class="clipping__background" style="background-color: #F2F2F2;"></div>
                 <img src="<?= $post->getSquarePicture();?>" alt="<?= Html::encode($post->title); ?>">
                 <div class="clipping__tags">
-                    <a href="<?= Html::encode(Url::toRoute(['rubrics/index', 'rubric' => $rubric->slug])); ?>" class="tag tag_white">
+                    <a href="<?= Html::encode(Url::toRoute(['posts/rubrics/index', 'rubric' => $rubric->slug])); ?>" class="tag tag_white">
                         <?= Html::encode($rubric->name); ?>
                     </a>
                 </div>

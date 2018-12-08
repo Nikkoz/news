@@ -380,9 +380,9 @@ class News extends ActiveRecord
         return $this->hasOne(Pictures::class, ['id' => 'hot_picture']);
     }
 
-    public function getAuthor(): User
+    public function getAuthor(): ActiveQuery
     {
-        return User::findOne($this->created_by);
+        return $this->hasOne(User::class, ['id' => 'created_by']);
     }
 
     public function getRectanglePicture(): string
@@ -418,6 +418,11 @@ class News extends ActiveRecord
         }
 
         return false;
+    }
+
+    public function getSeoTitle(): string
+    {
+        return $this->meta->title ?: $this->title;
     }
 
     public function attributeLabels(): array

@@ -31,7 +31,7 @@ use yii\widgets\Menu;
             <?php
             $items[] = [
                 'label' => \Yii::t('app', 'News'),
-                'url' => Url::toRoute(['rubrics/index', 'rubric' => 'news'])
+                'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => 'news'])
             ];
 
             foreach ($this->params['rubrics'] as $rubric) {
