@@ -3,6 +3,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use news\helpers\NewsHelper;
 ?>
 <h3>Читают</h3>
 <div class="row">
@@ -19,7 +20,7 @@ use yii\helpers\Url;
 
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="grid__item">
-                <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>" class="card card_small">
+                <a href="<?= Html::encode(NewsHelper::url($post, $rubric->slug)); ?>" class="card card_small">
                     <div class="card__photo">
                         <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title); ?>">
                     </div>
@@ -58,7 +59,7 @@ use yii\helpers\Url;
                 $rubric = $post->rubricAssignments[0]->rubric; ?>
                 <li class="band__item">
                     <div class="band__content">
-                        <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>" class="band__name title">
+                        <a href="<?= Html::encode(NewsHelper::url($post, $rubric->slug)); ?>" class="band__name title">
                             <?= Html::encode($post->title); ?>
                         </a>
                         <div class="band__time">
@@ -97,7 +98,7 @@ use yii\helpers\Url;
                     </span>
                 </div>
             </div>
-            <a class="clipping__title title" href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>">
+            <a class="clipping__title title" href="<?= Html::encode(NewsHelper::url($post, $rubric->slug)); ?>">
                 <?= Html::encode($post->title); ?>
             </a>
         </div>

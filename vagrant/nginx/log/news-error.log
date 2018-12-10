@@ -2456,3 +2456,16 @@ Stack trace:
 2018/12/01 11:31:27 [error] 1830#1830: *319 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 55" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
 2018/12/01 11:31:38 [error] 1830#1830: *319 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 55" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
 2018/12/01 11:31:58 [error] 1830#1830: *319 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot use temporary expression in write context in /app/frontend/controllers/posts/RubricsController.php on line 52" while reading response header from upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/ludi HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/sobytia"
+2018/12/08 12:00:22 [error] 1849#1849: *603 FastCGI sent in stderr: "PHP message: An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 128. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /app/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /app/frontend/controllers/posts/RubricsController.php on line 128. in /app/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /app/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /app/vendor/yiisoft/yii2/base/Application.php(392): y" while reading upstream, client: 192.168.83.1, server: news.local, request: "GET /rubrics/nauka/gubernatory-otcitautsa-putinu-o-vypolnenii-ego-ukazov-7 HTTP/1.1", upstream: "fastcgi://unix:/var/run/php/php7.1-fpm.sock:", host: "news.local", referrer: "http://news.local/rubrics/novosti"

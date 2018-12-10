@@ -46,7 +46,7 @@ class RubricsController extends AppController
      * @return string
      * @throws \yii\web\NotFoundHttpException
      */
-    public function actionIndex(string $rubric)
+    public function actionIndex(string $rubric): string
     {
         $this->view->params['pageParams'] = [
             'wrapper' => 'page_roubrick',
@@ -71,7 +71,12 @@ class RubricsController extends AppController
         ]);
     }
 
-    public function actionLoad(int $id, int $offset)
+    /**
+     * @param int $id
+     * @param int $offset
+     * @return array
+     */
+    public function actionLoad(int $id, int $offset): array
     {
         $limit = 6;
         $isNews = RubricsHelper::isNews($id);
@@ -110,7 +115,7 @@ class RubricsController extends AppController
      * @return string
      * @throws \yii\web\NotFoundHttpException
      */
-    public function actionPost(string $rubric, string $post)
+    public function actionPost(string $rubric, string $post): string
     {
         $this->view->params['pageParams'] = [
             'wrapper' => '',
@@ -127,6 +132,30 @@ class RubricsController extends AppController
 
         return $this->render('post', [
             'rubric' => $rubric,
+            'post' => $post,
+            'posts' => $posts
+        ]);
+    }
+
+    /**
+     * @param string $alias
+     * @return string
+     * @throws \yii\web\NotFoundHttpException
+     */
+    public function actionAnalytic(string $alias): string
+    {
+        $this->view->params['pageParams'] = [
+            'wrapper' => '',
+            'header' => 'header_need_burger-js  header_need_scroll-js header_need_trasparent-js header_transparent',
+            'type' => 'analytic',
+        ];
+
+        $post = $this->newsRepository->getByAlias($alias);
+
+        $tagIDs = NewsHelper::getTags($post);
+        $posts = $this->newsRepository->getByTags(6, $tagIDs);
+
+        return $this->render('analytic', [
             'post' => $post,
             'posts' => $posts
         ]);

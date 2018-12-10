@@ -6,6 +6,7 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
+use news\helpers\NewsHelper;
 
 /** @var \news\entities\posts\News[] $news */
 $news = $dataProvider->getModels();
@@ -18,7 +19,7 @@ $tags[] = $news[0]->getTags();
             <div class="row">
                 <div class="col-xs-12 col-xxsm-12 col-xsm-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="grid__item">
-                        <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $news[0]->alias]); ?>" class="analysis analysis_roubric">
+                        <a href="<?= NewsHelper::url($news[0], $rubric->slug); ?>" class="analysis analysis_roubric">
                             <div class="analysis__content">
                                 <div class="analysis__table">
                                     <div class="analysis__tr">
@@ -71,7 +72,7 @@ $tags[] = $news[0]->getTags();
                                 if ($iteration % 2 === 0): ?>
                                     <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                                         <div class="grid__item">
-                                            <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias]); ?>" class="card card_full" style="background-image: url(<?= $post->getRectanglePicture();?>)">
+                                            <a href="<?= NewsHelper::url($post, $rubric->slug); ?>" class="card card_full" style="background-image: url(<?= $post->getRectanglePicture();?>)">
                                                 <div class="card__photo" style="min-height: 344px;">
                                                     <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title); ?>">
                                                     <div class="card__content">
@@ -95,7 +96,7 @@ $tags[] = $news[0]->getTags();
                                 <?php else: ?>
                                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                         <div class="grid__item">
-                                            <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias]); ?>" class="card card_standart card_border">
+                                            <a href="<?= NewsHelper::url($post, $rubric->slug); ?>" class="card card_standart card_border">
                                                 <div class="card__photo">
                                                     <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title); ?>">
                                                 </div>
@@ -137,7 +138,7 @@ $tags[] = $news[0]->getTags();
                                     if ($iteration % 2 === 0): ?>
                                         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                                             <div class="grid__item">
-                                                <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias]); ?>" class="card card_standart card_border">
+                                                <a href="<?= NewsHelper::url($post, $rubric->slug); ?>" class="card card_standart card_border">
                                                     <div class="card__photo">
                                                         <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title); ?>">
                                                     </div>
@@ -162,7 +163,7 @@ $tags[] = $news[0]->getTags();
                                     <?php else: ?>
                                         <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                                             <div class="grid__item">
-                                                <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias]); ?>" class="card card_full" style="background-image: url(<?= $post->getRectanglePicture();?>)">
+                                                <a href="<?= NewsHelper::url($post, $rubric->slug); ?>" class="card card_full" style="background-image: url(<?= $post->getRectanglePicture();?>)">
                                                     <div class="card__photo" style="min-height: 344px;">
                                                         <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title); ?>">
                                                         <div class="card__content">
@@ -207,7 +208,7 @@ $tags[] = $news[0]->getTags();
                                             ?>
                                             <li class="band__item">
                                                 <div class="band__content">
-                                                    <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias]); ?>" class="band__name title">
+                                                    <a href="<?= NewsHelper::url($post, $rubric->slug); ?>" class="band__name title">
                                                         <?= Html::encode($post->title); ?>
                                                     </a>
                                                     <div class="band__time">
@@ -240,7 +241,7 @@ $tags[] = $news[0]->getTags();
                         ?>
                         <div class="col-xs-12  col-xxsm-12 col-xsm-6  col-sm-6 col-md-3 col-lg-3">
                             <div class="grid__item">
-                                <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias]); ?>" class="card card_standart card_border  card_background_gray">
+                                <a href="<?= NewsHelper::url($post, $rubric->slug); ?>" class="card card_standart card_border  card_background_gray">
                                     <div class="card__photo">
                                         <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title); ?>">
                                     </div>

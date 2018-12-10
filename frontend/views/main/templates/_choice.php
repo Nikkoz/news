@@ -3,6 +3,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use news\helpers\NewsHelper;
 
 /** @var \news\entities\posts\News $post */
 $post = $news[0];
@@ -32,7 +33,7 @@ $rubric = $post->rubricAssignments[0]->rubric;
                 </span>
             </div>
         </div>
-        <a class="clipping__title title" href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>">
+        <a class="clipping__title title" href="<?= Html::encode(NewsHelper::url($post, $rubric->slug)); ?>">
             <?= Html::encode($post->title); ?>
         </a>
     </div>
@@ -47,7 +48,7 @@ $rubric = $post->rubricAssignments[0]->rubric;
                             <img src="<?= $post->getSquarePicture('64x64'); ?>" alt="<?= Html::encode($post->title); ?>">
                         </div>
                         <div class="band__content">
-                            <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $rubric->slug, 'post' => $post->alias])); ?>" class="band__name title">
+                            <a href="<?= Html::encode(NewsHelper::url($post, $rubric->slug)); ?>" class="band__name title">
                                 <?= Html::encode($post->title); ?>
                             </a>
                             <div class="band__time">

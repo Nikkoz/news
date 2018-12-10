@@ -17,7 +17,6 @@ use yii\web\UrlRuleInterface;
  *
  * @property NewsReadRepository $newsRepository
  * @property RubricsReadRepository $rubricsRepository
- * @property Cache $cache
  */
 class PostUrlRule extends BaseObject implements UrlRuleInterface
 {
@@ -45,9 +44,9 @@ class PostUrlRule extends BaseObject implements UrlRuleInterface
                 $rubricAlias = $params['rubric'];
                 $postAlias = $params['post'];
 
-                return "rubrics/{$rubricAlias}/{$postAlias}";
+                return "{$this->prefix}/{$rubricAlias}/{$postAlias}";
             } elseif (isset($params['rubric'])) {
-                return 'rubrics/' . $params['rubric'];
+                return "{$this->prefix}/{$params['rubric']}";
             }
         }
 
@@ -59,7 +58,6 @@ class PostUrlRule extends BaseObject implements UrlRuleInterface
         if (\preg_match('%^' . $this->prefix . '(\/[a-z-]+)(\/[a-z0-9-]+)$%is', $request->pathInfo, $matches)) {
             $rubric = \trim($matches['1'], '/');
             $post = \trim($matches['2'], '/');
-
 
             $result = \Yii::$app->cache->getOrSet(['post_route', 'post' => $post], function () use ($post, $rubric) {
                 if (!$article = $this->newsRepository->getByAlias($post)) {
@@ -76,13 +74,11 @@ class PostUrlRule extends BaseObject implements UrlRuleInterface
             }
 
             if ($rubric != $result['rubric']) {
-                throw new UrlNormalizerRedirectException(['rubrics/post', 'rubric' => $result['rubric'], 'post' => $result['post']], 301);
+                throw new UrlNormalizerRedirectException(['posts/rubrics/post', 'rubric' => $result['rubric'], 'post' => $result['post']], 301);
             }
 
             return ['posts/rubrics/post', ['rubric' => $rubric, 'post' => $post]];
         }
-
-
 
         return false;
     }

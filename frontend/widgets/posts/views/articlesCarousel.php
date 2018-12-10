@@ -3,6 +3,7 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
+use news\helpers\NewsHelper;
 ?>
 <div class="owl-carousel owl-theme mnt__list  mnt_js">
     <?php foreach ($news as $article): ?>
@@ -12,7 +13,7 @@ use yii\helpers\Html;
                     <img src="<?= $article->getSquarePicture('64x64'); ?>" alt="<?= Html::encode($article->title); ?>">
                 </div>
                 <div class="band__content">
-                    <a href="<?= Url::to(['posts/rubrics/post', 'rubric' => $article->rubricAssignments[0]->rubric->slug, 'post' => $article->alias]); ?>" class="band__name title">
+                    <a href="<?= NewsHelper::url($article); ?>" class="band__name title">
                         <?= Html::encode($article->title); ?>
                     </a>
                     <div class="band__time">

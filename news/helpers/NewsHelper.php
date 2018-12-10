@@ -8,6 +8,7 @@ use news\entities\posts\slider\Sliders;
 use news\entities\posts\video\Videos;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 final class NewsHelper
 {
@@ -65,6 +66,19 @@ final class NewsHelper
         }
 
         return $tags;
+    }
+
+    public static function url(News $news, string $rubric = null): string
+    {
+        if ($news->analytic) {
+            return Url::toRoute(['posts/rubrics/analytic', 'alias' => $news->alias]);
+        } else {
+            if (!$rubric) {
+                $rubric = $news->rubricAssignments[0]->rubric->slug;
+            }
+
+            return Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric, 'post' => $news->alias]);
+        }
     }
 
     public static function attributeLabels(): array

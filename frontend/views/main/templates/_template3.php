@@ -8,7 +8,7 @@
 use yii\helpers\Html;
 use news\entities\posts\News;
 use yii\helpers\Url;
-use news\helpers\ColorHelper;
+use news\helpers\NewsHelper;
 ?>
 <div class="grid__block">
     <div class="grid_border">
@@ -34,7 +34,7 @@ use news\helpers\ColorHelper;
                                         <img src="<?= $post->getSquarePicture('64x64');?>" alt="<?= Html::encode($post->title);?>">
                                     </div>
                                     <div class="band__content">
-                                        <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="band__name title">
+                                        <a href="<?= Html::encode(NewsHelper::url($post, $alias)); ?>" class="band__name title">
                                             <?= Html::encode($post->title);?>
                                         </a>
                                         <div class="band__time">
@@ -55,7 +55,7 @@ use news\helpers\ColorHelper;
                 $post = $news[$i];?>
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="grid__item">
-                        <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="analysis analysis_text">
+                        <a href="<?= Html::encode(NewsHelper::url($post, $alias)); ?>" class="analysis analysis_text">
                             <div class="analysis__content">
                                 <div class="analysis__announcement">
                                     <div class="announcement">
@@ -99,7 +99,7 @@ use news\helpers\ColorHelper;
                             $post = $news[$s]; ?>
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" data-id="<?= $post->id;?>">
                                 <div class="grid__item">
-                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_small">
+                                    <a href="<?= Html::encode(NewsHelper::url($post, $alias)); ?>" class="card card_small">
                                         <div class="card__photo">
                                             <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                         </div>
@@ -126,7 +126,7 @@ use news\helpers\ColorHelper;
                         if ($news[$s]): ?>
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="grid__item">
-                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="clipping clipping_card">
+                                    <a href="<?= Html::encode(NewsHelper::url($post, $alias)); ?>" class="clipping clipping_card">
                                         <div class="clipping__photo">
                                             <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                             <div class="clipping__content">
@@ -160,7 +160,7 @@ use news\helpers\ColorHelper;
                     $post = $news[$t];?>
                     <div class="col-xs-12 col-xxsm-12 col-xsm-6 col-sm-6 col-md-6 col-lg-6">
                         <div class="grid__item">
-                            <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $alias, 'post' => $post->alias])); ?>" class="card card_full card_full_biggest" style="background-image: url('<?= $post->getRectanglePicture();?>');">
+                            <a href="<?= Html::encode(NewsHelper::url($post, $alias)); ?>" class="card card_full card_full_biggest" style="background-image: url('<?= $post->getRectanglePicture();?>');">
                                 <div class="card__photo">
                                     <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title);?>">
                                     <div class="card__content">

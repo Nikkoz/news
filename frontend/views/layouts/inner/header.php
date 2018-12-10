@@ -67,7 +67,7 @@ use yii\widgets\Menu;
                     </div>
                 </div>
                 <!--header category end -->
-            <?php elseif ($this->params['pageParams']['type'] == 'post'): ?>
+            <?php elseif ($this->params['pageParams']['type'] == 'post' || $this->params['pageParams']['type'] == 'analytic'): ?>
                 <!--header intertal   start -->
                 <div class="header__intertal">
                     <div class="header__title">
@@ -80,6 +80,8 @@ use yii\widgets\Menu;
     </div>
 </header>
 
-<div class="mnt">
-    <?= ArticleCarouselWidget::widget();?>
-</div>
+<?php if ($this->params['pageParams']['type'] != 'analytic'): ?>
+    <div class="mnt">
+        <?= ArticleCarouselWidget::widget();?>
+    </div>
+<?php endif; ?>

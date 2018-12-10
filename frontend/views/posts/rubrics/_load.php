@@ -5,6 +5,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\Url;
+use news\helpers\NewsHelper;
 ?>
 <div class="row">
     <?php for ($f = 0; $f < 2; $f++):
@@ -14,7 +15,7 @@ use yii\helpers\Url;
         $article = $news[$f]; ?>
         <div class="col-xs-12  col-xxsm-12 col-xsm-6  col-sm-6 col-md-6 col-lg-6">
             <div class="grid__item">
-                <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $isNews ? $article->rubricAssignments[0]->rubric->slug : $rubric, 'post' => $article->alias]); ?>" class="card card_full card_full_biggest" style="background-image:url(<?= $article->getRectanglePicture();?>);">
+                <a href="<?= NewsHelper::url($article); ?>" class="card card_full card_full_biggest" style="background-image:url(<?= $article->getRectanglePicture();?>);">
                     <div class="card__photo">
                         <img src="<?= $article->getRectanglePicture();?>" alt="<?= Html::encode($article->title); ?>">
                         <div class="card__content">
@@ -47,7 +48,7 @@ use yii\helpers\Url;
             $article = $news[$s];?>
             <div class="col-xs-12  col-xxsm-12 col-xsm-6  col-sm-6 col-md-3 col-lg-3">
                 <div class="grid__item">
-                    <a href="<?= Url::toRoute(['posts/rubrics/post', 'rubric' => $isNews ? $article->rubricAssignments[0]->rubric->slug : $rubric, 'post' => $article->alias]); ?>" class="card card_standart card_border  card_background_gray">
+                    <a href="<?= NewsHelper::url($article, $isNews ? $article->rubricAssignments[0]->rubric->slug : $rubric); ?>" class="card card_standart card_border  card_background_gray">
                         <div class="card__photo">
                             <img src="<?= $article->getRectanglePicture();?>" alt="#">
                         </div>

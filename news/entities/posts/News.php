@@ -390,6 +390,11 @@ class News extends ActiveRecord
         return $this->rectanglePictureFile ? $this->rectanglePictureFile->getPicture() : '';
     }
 
+    public function getAnalyticPicture(): string
+    {
+        return $this->analyticPictureFile ? $this->analyticPictureFile->getPicture() : '';
+    }
+
     public function getSquarePicture(string $size = null)
     {
         if (!$this->square_picture) {

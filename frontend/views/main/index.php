@@ -12,6 +12,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\StringHelper;
 use news\entities\posts\News;
+use news\helpers\NewsHelper;
 
 $this->title = \Yii::$app->name;
 
@@ -31,7 +32,7 @@ if ($hot): ?>
                     <div class="first__shocktable first__shocktable-js">
                         <div class="first__shockmiddle">
                             <div class="announcement">
-                                <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $hot->rubricAssignments[0]->rubric->slug, 'post' => $hot->alias]))?>" class="announcement__title opacity">
+                                <a href="<?= Html::encode(NewsHelper::url($hot))?>" class="announcement__title opacity">
                                     <?= Html::encode($hot->title); ?>
                                 </a>
                                 <div class="announcement__date">
@@ -73,7 +74,7 @@ if ($hot): ?>
                                     </span>
                                 </div>
                             </div>
-                            <a class="clipping__title title" href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>">
+                            <a class="clipping__title title" href="<?= Html::encode(NewsHelper::url($first))?>">
                                 <?= Html::encode(StringHelper::truncateWords($first->title, 5)); ?>
                             </a>
                         </div>
@@ -97,7 +98,7 @@ if ($hot): ?>
                                                             </span>
                                                         </div>
                                                     </div>
-                                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias]))?>" class="band__name title">
+                                                    <a href="<?= Html::encode(NewsHelper::url($post))?>" class="band__name title">
                                                         <?= Html::encode($post->title); ?>
                                                     </a>
                                                     <div class="band__tags">
@@ -109,7 +110,7 @@ if ($hot): ?>
                                             </li>
                                             <?php $newsMobile .= '<li class="band__item">
                                                         <div class="band__content">
-                                                            <a href="'. Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias])) .'" class="band__name title">
+                                                            <a href="'. Html::encode(NewsHelper::url($post)) .'" class="band__name title">
                                                                 '. Html::encode($post->title) .'
                                                             </a>
                                                             <div class="band__time">
@@ -159,11 +160,11 @@ if ($hot): ?>
                                             <div class="analysis__announcement">
                                                 <div class="announcement">
 
-                                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>" class="announcement__title opacity">
+                                                    <a href="<?= Html::encode(NewsHelper::url($first))?>" class="announcement__title opacity">
                                                         <?= Html::encode($first->title); ?>
                                                     </a>
                                                     <div class="analysis__data">
-                                                        <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $first->rubricAssignments[0]->rubric->slug, 'post' => $first->alias]))?>" class="tag tag_policy">
+                                                        <a href="<?= Html::encode(NewsHelper::url($first))?>" class="tag tag_policy">
                                                             <?= Html::encode($first->rubricAssignments[0]->rubric->name); ?>
                                                         </a>
                                                         <span class="announcement__time">
@@ -201,7 +202,7 @@ if ($hot): ?>
                                         <div class="analysis__tr">
                                             <div class="analysis__announcement">
                                                 <div class="announcement">
-                                                    <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $second->rubricAssignments[0]->rubric->slug, 'post' => $second->alias]))?>" class="announcement__title opacity">
+                                                    <a href="<?= Html::encode(NewsHelper::utl($second))?>" class="announcement__title opacity">
                                                         <?= Html::encode($second->title); ?>
                                                     </a>
                                                     <div class="analysis__data">
@@ -241,7 +242,7 @@ if ($hot): ?>
                                 foreach ($news as $post): ?>
                                     <li class="band__item">
                                         <div class="band__content">
-                                            <a href="<?= Html::encode(Url::to(['posts/rubrics/post', 'rubric' => $post->rubricAssignments[0]->rubric->slug, 'post' => $post->alias])); ?>" class="band__name title">
+                                            <a href="<?= Html::encode(NewsHelper::url($post)); ?>" class="band__name title">
                                                 <?= Html::encode($post->title); ?>
                                             </a>
                                             <div class="band__time">
@@ -275,7 +276,7 @@ if ($hot): ?>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="grid__analysis">
-                                <a href="<?= Html::encode(Url::toRoute(['analytics/index', 'alias' => $analytic->alias])); ?>" class="analysis" style="background-color: <?= $analytic->color; ?>;">
+                                <a href="<?= Html::encode(NewsHelper::url($analytic)); ?>" class="analysis" style="background-color: <?= $analytic->color; ?>;">
                                     <div class="analysis__background"></div>
                                     <div class="analysis__content">
                                         <div class="analysis__table">
