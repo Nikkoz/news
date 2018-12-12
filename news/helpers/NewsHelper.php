@@ -81,6 +81,11 @@ final class NewsHelper
         }
     }
 
+    public static function countByAuthor(int $authorId): int
+    {
+        return News::find()->active()->andWhere(['=', 'created_by', $authorId])->count();
+    }
+
     public static function attributeLabels(): array
     {
         return [

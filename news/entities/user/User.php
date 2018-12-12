@@ -6,6 +6,7 @@ use news\entities\AggregateRoot;
 use news\entities\EventTrait;
 use news\entities\Pictures;
 use news\entities\user\events\UserCreateRequested;
+use news\helpers\NewsHelper;
 use news\helpers\UsersHelper;
 use Yii;
 use yii\behaviors\TimestampBehavior;
@@ -190,6 +191,11 @@ class User extends ActiveRecord implements AggregateRoot
         $file = \Yii::getAlias('@imagesStatic/users') . "/thumbnail_{$size}/{$picture->name}";
 
         return $file;
+    }
+
+    public function getCountPosts(): int
+    {
+        return NewsHelper::countByAuthor($this->id);
     }
 
     /**

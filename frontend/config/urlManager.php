@@ -22,7 +22,8 @@ return [
         ['class' => 'frontend\urls\AnalyticUrlRule'],
         ['class' => 'frontend\urls\PostUrlRule'],
 
-        '/authors' => 'posts/authors/index',
+        'authors' => 'posts/authors/index',
+        'authors/detail/<id:\d+>' => 'posts/authors/detail',
 
         '<_c:[\w\-]+>' => '<_c>/index',
         '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
