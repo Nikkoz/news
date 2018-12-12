@@ -284,7 +284,7 @@ $tags[] = $news[0]->getTags();
         <div class="related">
             <h3 class="related__title">Материалы по темам:</h3>
             <?php foreach ($tags as $tag): ?>
-                <a href="<?= Url::to(['posts/rubrics/tag', 'tag' => $tag]); ?>" class="btn btn_inline btn_light"><?= $tag; ?></a>
+                <a href="<?= Url::to(['tag', 'tag' => $tag]); ?>" class="btn btn_inline btn_light"><?= $tag; ?></a>
             <?php endforeach; ?>
         </div>
     <?php endif; ?>

@@ -16,6 +16,8 @@ return [
         'signup/<_a:[/w-]+>' => 'auth/signup/<_a>',
         '<_a:login|logout>' => 'auth/auth/<_a>',
 
+        'tag/<tag:\w+>' => 'posts/post/tag',
+
         'rubrics/<rubric:\w+>' => 'posts/rubrics/index',
         ['class' => 'frontend\urls\AnalyticUrlRule'],
         ['class' => 'frontend\urls\PostUrlRule'],

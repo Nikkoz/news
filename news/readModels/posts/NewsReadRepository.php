@@ -29,6 +29,11 @@ class NewsReadRepository
         return News::find()->active()->rubric($rubricId)->count();
     }
 
+    public function countNewsWithTag(int $tagId): int
+    {
+        return News::find()->active()->innerJoin(TagAssignments::tableName(), '`id`=`news_id`')->andWhere(['=', 'tag_id', $tagId])->count();
+    }
+
     public function getPostsInNews(array $conditions, int $limit): array
     {
         return News::find()->active()->news()->with('rubricAssignments')->andWhere($conditions)->orderBy(['created_at' => SORT_DESC])->limit($limit)->all();
@@ -63,12 +68,23 @@ class NewsReadRepository
         return $this->getProvider($query, $limit, $offset ? true : false);
     }
 
-    public function getByTags(int $limit, array $tags): array
+    /**
+     * @param int $limit
+     * @param array $tags
+     * @param int|null $offset
+     * @return array|ActiveDataProvider|ActiveRecord[]
+     */
+    public function getByTags(int $limit, array $tags, int $offset = null)
     {
-        return News::find()->alias('n')->active('n')->with('rectanglePictureFile', 'squarePictureFile')
+        $query = News::find()->alias('n')->active('n')->with('rectanglePictureFile', 'squarePictureFile')
                            ->innerJoin(TagAssignments::tableName(), '`id`=`news_id`')
-                           ->andWhere(['IN', 'tag_id', $tags])
-                           ->limit($limit)->all();
+                           ->andWhere(['IN', 'tag_id', $tags]);
+
+        if ($offset) {
+            return $query->offset($offset)->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
+        }
+
+        return $this->getProvider($query, $limit);
     }
 
     public function getAll(int $limit, int $offset = null)

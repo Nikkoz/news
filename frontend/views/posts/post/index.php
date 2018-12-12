@@ -2,12 +2,13 @@
 /** @var $this \yii\web\View */
 /** @var $rubric \news\entities\posts\rubric\Rubrics */
 /** @var $post \news\entities\posts\News */
-/** @var $posts \news\entities\posts\News[] */
+/** @var $posts \yii\data\DataProviderInterface */
 
 use yii\helpers\Url;
 use yii\helpers\Html;
 use news\helpers\ColorHelper;
 use frontend\widgets\posts\MainNewsWidget;
+use news\helpers\NewsHelper;
 
 $this->title = $post->getSeoTitle();
 
@@ -85,7 +86,7 @@ $tags = $post->getTags();
                         <div class="related">
                             <h3 class="related__title">Материалы по темам:</h3>
                             <?php foreach ($tags as $tag): ?>
-                                <a href="<?= Url::to(['posts/rubrics/tag', 'tag' => $tag]); ?>" class="btn btn_inline btn_light"><?= $tag; ?></a>
+                                <a href="<?= Url::toRoute(['tag', 'tag' => $tag]); ?>" class="btn btn_inline btn_light"><?= $tag; ?></a>
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -101,9 +102,9 @@ $tags = $post->getTags();
                 <div class="related related_card">
                     <h3 class="related__title">Еще по теме</h3>
                     <div class="row">
-                        <?php foreach ($posts as $post): ?>
+                        <?php foreach ($posts->getModels() as $post): ?>
                             <div class="col-xs-12 col-xxsm-12 col-xsm-12 col-sm-4 col-md-2 col-lg-2">
-                                <a href="#" class="card card_small card_miracle">
+                                <a href="<?= NewsHelper::url($post); ?>" class="card card_small card_miracle">
                                     <div class="card__photo">
                                         <img src="<?= $post->getRectanglePicture();?>" alt="<?= Html::encode($post->title); ?>">
                                     </div>

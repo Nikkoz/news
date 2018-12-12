@@ -8,19 +8,24 @@ use news\helpers\NewsHelper;
 use news\readModels\posts\NewsReadRepository;
 use news\readModels\posts\RubricsReadRepository;
 use news\readModels\posts\SubscribeReadRepository;
+use news\readModels\posts\TagsReadRepository;
 use yii\caching\Cache;
+use yii\caching\TagDependency;
+use yii\web\Response;
 
 /**
  * Class PostsController
  * @package frontend\controllers\posts
  *
  * @property NewsReadRepository $newsRepository
+ * @property TagsReadRepository $tagsRepository
  */
 class PostController extends AppController
 {
     public $layout = 'inner/rubric';
 
     private $newsRepository;
+    private $tagsRepository;
 
     public function __construct(
         string $id,
@@ -29,12 +34,14 @@ class PostController extends AppController
         RubricsReadRepository $rubricsRepository,
         SubscribeReadRepository $subscribeRepository,
         NewsReadRepository $newsRepository,
+        TagsReadRepository $tagsRepository,
         array $config = []
     )
     {
         parent::__construct($id, $module, $cache, $rubricsRepository, $subscribeRepository, $config);
 
         $this->newsRepository = $newsRepository;
+        $this->tagsRepository = $tagsRepository;
     }
 
     /**
@@ -87,5 +94,51 @@ class PostController extends AppController
             'post' => $post,
             'posts' => $posts
         ]);
+    }
+
+    public function actionTag(string $tag): string
+    {
+        $this->view->params['pageParams'] = [
+            'wrapper' => 'page_roubrick',
+            'header' => 'header_roubrick header_show_burger',
+            'type' => 'rubric',
+        ];
+
+        $tagId = $this->tagsRepository->getIdByTag($tag);
+        $dataProvider = $this->newsRepository->getByTags(7, [$tagId]);
+
+        return $this->render('tag', [
+            'dataProvider' => $dataProvider,
+            'tag' => $tag,
+            'tagId' => $tagId,
+        ]);
+    }
+
+    /**
+     * @param int $id
+     * @param int $offset
+     * @return array
+     */
+    public function actionLoad(int $id, int $offset): array
+    {
+        $limit = 6;
+
+        $news = $this->newsRepository->getAll($limit, $offset);
+        $count = $this->cache->getOrSet(['news_count_tag', 'tag' => $id], function () use ($id) {
+            return $this->newsRepository->countNewsWithTag($id);
+        }, null, new TagDependency(['tags' => ['posts']]));
+
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'html' => $this->renderPartial('_load', [
+                'news' => $news,
+            ]),
+            'pagination' => [
+                'offset' => $offset + $limit,
+                'show' => $count > $offset + $limit,
+                'count' => $count
+            ]
+        ];
     }
 }
