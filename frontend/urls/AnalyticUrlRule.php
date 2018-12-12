@@ -38,7 +38,7 @@ class AnalyticUrlRule extends BaseObject implements UrlRuleInterface
 
     public function createUrl($manager, $route, $params)
     {
-        if ($route === 'posts/rubrics/analytic') {
+        if ($route === 'posts/post/analytic') {
             if (isset($params['alias'])) {
                 return "{$this->prefix}/{$params['alias']}";
             }
@@ -70,7 +70,7 @@ class AnalyticUrlRule extends BaseObject implements UrlRuleInterface
                 throw new UrlNormalizerRedirectException(['posts/rubrics/post', 'rubric' => $result['rubric'], 'post' => $result['alias']], 301);
             }
 
-            return ['posts/rubrics/analytic', ['alias' => $post]];
+            return ['posts/post/analytic', ['alias' => $post]];
         }
 
         return false;

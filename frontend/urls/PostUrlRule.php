@@ -39,7 +39,7 @@ class PostUrlRule extends BaseObject implements UrlRuleInterface
 
     public function createUrl($manager, $route, $params)
     {
-        if ($route === 'posts/rubrics/post') {
+        if ($route === 'posts/post/index') {
             if (isset($params['rubric'], $params['post'])) {
                 $rubricAlias = $params['rubric'];
                 $postAlias = $params['post'];
@@ -77,7 +77,7 @@ class PostUrlRule extends BaseObject implements UrlRuleInterface
                 throw new UrlNormalizerRedirectException(['posts/rubrics/post', 'rubric' => $result['rubric'], 'post' => $result['post']], 301);
             }
 
-            return ['posts/rubrics/post', ['rubric' => $rubric, 'post' => $post]];
+            return ['posts/post/index', ['rubric' => $rubric, 'post' => $post]];
         }
 
         return false;

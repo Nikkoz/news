@@ -71,13 +71,13 @@ final class NewsHelper
     public static function url(News $news, string $rubric = null): string
     {
         if ($news->analytic) {
-            return Url::toRoute(['posts/rubrics/analytic', 'alias' => $news->alias]);
+            return Url::toRoute(['posts/post/analytic', 'alias' => $news->alias]);
         } else {
             if (!$rubric) {
                 $rubric = $news->rubricAssignments[0]->rubric->slug;
             }
 
-            return Url::toRoute(['posts/rubrics/post', 'rubric' => $rubric, 'post' => $news->alias]);
+            return Url::toRoute(['posts/post/index', 'rubric' => $rubric, 'post' => $news->alias]);
         }
     }
 
