@@ -1,5 +1,6 @@
 <?php
 /* @var $news array */
+/** @var $title string */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -9,7 +10,7 @@ use news\helpers\NewsHelper;
 $post = $news[0];
 unset($news[0]);
 ?>
-<h3>Обсуждают</h3>
+<h3><?= $title; ?></h3>
 
 <?php if ($post): ?>
     <div class="grid__item">

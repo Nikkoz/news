@@ -9,6 +9,8 @@ use news\readModels\posts\NewsReadRepository;
 use news\readModels\posts\RubricsReadRepository;
 use news\readModels\posts\SubscribeReadRepository;
 use yii\caching\Cache;
+use yii\caching\TagDependency;
+use yii\web\Response;
 
 /**
  * Class AuthorsController
@@ -43,16 +45,41 @@ class AuthorsController extends AppController
 
     public function actionIndex(): string
     {
-        $this->view->params['pageParams'] = [
-            'wrapper' => 'page_roubrick',
-            'header' => 'header_roubrick header_show_burger',
-            'type' => 'rubric',
-        ];
-
-        $authors = $this->authorRepository->getAuthors();
+        $this->view->params['pageParams']['type'] = 'authors';
 
         return $this->render('index', [
-            'authors' => $authors,
+            'authors' => $this->authorRepository->getAuthors(),
         ]);
+    }
+
+    public function actionDetail(int $id): string
+    {
+        return $this->render('detail', [
+            'author' => $this->authorRepository->getAuthor($id),
+            'dataProvider' => $this->newsRepository->getByAuthor($id, 10)
+        ]);
+    }
+
+    public function actionLoad(int $id, int $offset): array
+    {
+        $limit = 6;
+
+        $news = $this->newsRepository->getByAuthor($id, $limit, $offset);
+        $count = $this->cache->getOrSet(['news_count_author', 'author' => $id], function () use ($id) {
+            return $this->newsRepository->countAuthorNews($id);
+        }, null, new TagDependency(['tags' => ['posts']]));
+
+        \Yii::$app->response->format = Response::FORMAT_JSON;
+
+        return [
+            'html' => $this->renderPartial('_load', [
+                'news' => $news,
+            ]),
+            'pagination' => [
+                'offset' => $offset + $limit,
+                'show' => $count > $offset + $limit,
+                'count' => $count
+            ]
+        ];
     }
 }

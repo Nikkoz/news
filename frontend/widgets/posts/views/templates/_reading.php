@@ -1,11 +1,14 @@
 <?php
 /** @var $news array */
+/** @var $title string */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
 use news\helpers\NewsHelper;
 ?>
-<h3>Читают</h3>
+
+<h3><?= $title; ?></h3>
+
 <div class="row">
     <?php for ($f = 0; $f < 2; $f++):
         if (!isset($news[$f])) {

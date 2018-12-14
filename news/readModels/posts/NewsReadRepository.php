@@ -34,6 +34,11 @@ class NewsReadRepository
         return News::find()->active()->innerJoin(TagAssignments::tableName(), '`id`=`news_id`')->andWhere(['=', 'tag_id', $tagId])->count();
     }
 
+    public function countAuthorNews(int $authorId): int
+    {
+        return News::find()->active()->andWhere(['created_by' => $authorId])->count();
+    }
+
     public function getPostsInNews(array $conditions, int $limit): array
     {
         return News::find()->active()->news()->with('rubricAssignments')->andWhere($conditions)->orderBy(['created_at' => SORT_DESC])->limit($limit)->all();
@@ -79,6 +84,24 @@ class NewsReadRepository
         $query = News::find()->alias('n')->active('n')->with('rectanglePictureFile', 'squarePictureFile')
                            ->innerJoin(TagAssignments::tableName(), '`id`=`news_id`')
                            ->andWhere(['IN', 'tag_id', $tags]);
+
+        if ($offset) {
+            return $query->offset($offset)->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
+        }
+
+        return $this->getProvider($query, $limit);
+    }
+
+    /**
+     * @param int $author
+     * @param int $limit
+     * @param int|null $offset
+     * @return array|ActiveDataProvider|ActiveRecord[]
+     */
+    public function getByAuthor(int $author, int $limit, int $offset = null)
+    {
+        $query = News::find()->alias('n')->active('n')->with('rectanglePictureFile', 'squarePictureFile', 'tagAssignments', 'rubricAssignments')
+                             ->andWhere(['created_by' => $author]);
 
         if ($offset) {
             return $query->offset($offset)->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();

@@ -65,7 +65,7 @@ class UserManageService
 
         $this->transaction->wrap(function () use ($user, $form) {
             if ($form->photo->photo) {
-                $file = $this->pictureRepository->saveFile($form->photo->photo, 'users', ['64x64', '40x40']);
+                $file = $this->pictureRepository->saveFile($form->photo->photo, 'users', ['144x144', '64x64', '40x40']);
 
                 $picture = Pictures::create($file, 'users');
                 $this->pictureRepository->save($picture);
@@ -100,7 +100,7 @@ class UserManageService
 
         $this->transaction->wrap(function () use ($user, $form) {
             if ($form->photo->photo) {
-                $file = $this->pictureRepository->saveFile($form->photo->photo, 'users', ['64x64', '40x40']);
+                $file = $this->pictureRepository->saveFile($form->photo->photo, 'users', ['144x144', '64x64', '40x40']);
 
                 $picture = Pictures::create($file, 'users');
                 $this->pictureRepository->save($picture);

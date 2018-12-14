@@ -30,13 +30,7 @@ use yii\widgets\Menu;
             </div>
         </div>
         <div class="footer__menus clearfix">
-            <?php
-            $items[] = [
-                'label' => \Yii::t('app', 'News'),
-                'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => 'news'])
-            ];
-
-            foreach ($this->params['rubrics'] as $rubric) {
+            <?php foreach ($this->params['rubrics'] as $rubric) {
                 $items[] = [
                     'label' => $rubric->name,
                     'url' => Url::toRoute(['posts/rubrics/index', 'rubric' => $rubric->slug]),

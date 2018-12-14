@@ -180,15 +180,19 @@ class User extends ActiveRecord implements AggregateRoot
         return $this->hasOne(Pictures::class, ['id' => 'photo']);
     }
 
-    public function getFullName(): string
+    public function getFullName(bool $revers = false): string
     {
-        return $this->name . ' ' . $this->lastname;
+        $name = [$this->name, $this->lastname];
+        if ($revers) {
+            $name = \array_reverse($name);
+        }
+        return \implode(' ', $name);
     }
 
     public function getPhotoMin(string $size): string
     {
         $picture = Pictures::findOne($this->photo);
-        $file = \Yii::getAlias('@imagesStatic/users') . "/thumbnail_{$size}/{$picture->name}";
+        $file = $picture ? \Yii::getAlias('@imagesStatic/users') . "/thumbnail_{$size}/{$picture->name}" : '';
 
         return $file;
     }

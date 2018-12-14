@@ -80,7 +80,7 @@ use yii\widgets\Menu;
     </div>
 </header>
 
-<?php if ($this->params['pageParams']['type'] != 'analytic'): ?>
+<?php if (!Empty($this->params['pageParams']['type']) && $this->params['pageParams']['type'] != 'analytic'): ?>
     <div class="mnt">
         <?= ArticleCarouselWidget::widget();?>
     </div>

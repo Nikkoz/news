@@ -1,5 +1,6 @@
 <?php
 /** @var $news array */
+/** @var $title string */
 
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -13,7 +14,7 @@ unset($news[0]);
 $rubric = $post->rubricAssignments[0]->rubric;
 ?>
 
-<h3>Выбор редакции</h3>
+<h3><?= $title; ?></h3>
 
 <div class="grid__item">
     <div class="clipping clipping_mosaic">

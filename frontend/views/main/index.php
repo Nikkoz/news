@@ -331,34 +331,10 @@ if ($hot): ?>
     <?php endforeach;
 endif; ?>
 
-<div  class="grid__block grid__selection cedition cedition__desctop">
-    <div class="grid_border">
-        <hr style="background: #222;">
-    </div>
-
-    <div class="center">
-        <div class="row">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <?php if ($discussing) {
-                    echo $this->render('templates/_discussing', [
-                        'news' => $discussing
-                    ]);
-                } ?>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <?php if ($reading) {
-                    echo $this->render('templates/_reading', [
-                        'news' => $reading
-                    ]);
-                } ?>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <?php if ($choice) {
-                    echo $this->render('templates/_choice', [
-                        'news' => $choice
-                    ]);
-                } ?>
-            </div>
-        </div>
-    </div>
-</div>
+<?php echo  \frontend\widgets\posts\RubricsWidget::widget([
+    'sort' => [
+        'discussing' => 'Обсуждают',
+        'reading' => 'Читают',
+        'choice' => 'Выбор редакции'
+    ]
+]);?>

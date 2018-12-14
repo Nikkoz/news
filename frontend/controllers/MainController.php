@@ -79,16 +79,12 @@ class MainController extends AppController
             ];
         }
 
-        $reading = $this->newsRepository->getNewsBy(5, ['reading' => 1]);
-        $discussing = $this->newsRepository->getNewsBy(5, ['discussing' => 1]);
-        $choice = $this->newsRepository->getNewsBy(5, ['choice' => 1]);
-
-        return $this->render('index', \array_merge([
+        return $this->render('index', [
             'hot' => $hot,
             'news' => $mainNews,
             'positions' => $positions,
             'rubrics' => $rubrics
-        ], compact('reading', 'discussing', 'choice')));
+        ]);
     }
 
     public function actionSubscribe()

@@ -45,4 +45,9 @@ class AuthorsReadRepository
     {
         return User::find()->andWhere(['=', 'status', User::STATUS_ACTIVE])->all();
     }
+
+    public function getAuthor(int $id): ?User
+    {
+        return User::find()->andWhere(['id' => $id])->limit(1)->one();
+    }
 }

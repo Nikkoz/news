@@ -33,3 +33,11 @@ $this->title = 'Наши авторы';
         </div>
     </div>
 </div>
+
+<?php echo  \frontend\widgets\posts\RubricsWidget::widget([
+    'sort' => [
+        'discussing' => 'Обсуждают',
+        'reading' => 'Читают',
+        'choice' => 'Выбор редакции'
+    ]
+]);?>

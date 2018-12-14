@@ -65,6 +65,12 @@ class AppController extends Controller
             return $this->subscribeRepository->count();
         }, null, new TagDependency(['tags' => ['subscribers']]));
 
+        $this->view->params['pageParams'] = [
+            'wrapper' => '',
+            'header' => '',
+            'type' => '',
+        ];
+
         return parent::beforeAction($action);
     }
 }
