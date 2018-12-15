@@ -34,7 +34,7 @@ class RubricsWidget extends Widget
 
         foreach ($this->sort as $type => $title) {
             $posts[$type] = [
-                'items' => $this->repository->getNewsBy(5, [$type => 1]),
+                'items' => $this->repository->getNewsBy(5, [$type => 1], 0),
                 'title' => $title
             ];
         }

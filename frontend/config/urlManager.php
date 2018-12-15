@@ -25,6 +25,8 @@ return [
         'authors' => 'posts/authors/index',
         'authors/detail/<id:\d+>' => 'posts/authors/detail',
 
+        'search' => 'posts/search/index',
+
         '<_c:[\w\-]+>' => '<_c>/index',
         '<_c:[\w\-]+>/<id:\d+>' => '<_c>/view',
         '<_c:[\w\-]+>/<_a:[\w-]+>' => '<_c>/<_a>',

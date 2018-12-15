@@ -39,6 +39,11 @@ class NewsReadRepository
         return News::find()->active()->andWhere(['created_by' => $authorId])->count();
     }
 
+    public function countNewsSearch(string $phrase): int
+    {
+        return News::find()->active()->andWhere(['LIKE', 'title', $phrase])->count();
+    }
+
     public function getPostsInNews(array $conditions, int $limit): array
     {
         return News::find()->active()->news()->with('rubricAssignments')->andWhere($conditions)->orderBy(['created_at' => SORT_DESC])->limit($limit)->all();
@@ -148,9 +153,21 @@ class NewsReadRepository
         return $news;
     }
 
-    public function getNewsBy(int $limit, array $conditions): array
+    /**
+     * @param int $limit
+     * @param array $conditions
+     * @param int|null $offset
+     * @return array|ActiveDataProvider|ActiveRecord[]
+     */
+    public function getNewsBy(int $limit, array $conditions, int $offset = null)
     {
-        return News::find()->active()->andWhere($conditions)->limit($limit)->orderBy(['created_at' => SORT_DESC])->all();
+        $query = News::find()->alias('n')->active('n')->andWhere($conditions);
+
+        if ($offset !== null) {
+            return $query->limit($limit)->offset($offset)->orderBy(['created_at' => SORT_DESC])->all();
+        }
+
+        return $this->getProvider($query, $limit);
     }
 
     private function getProvider(ActiveQuery $query, $limit = null, $pagination = false): ActiveDataProvider

@@ -1,5 +1,6 @@
 <?php
 use yii\widgets\ActiveForm;
+use yii\helpers\Url;
 ?>
 <!--menu start -->
 <div class="menu">
@@ -25,77 +26,12 @@ use yii\widgets\ActiveForm;
                 <div class="popup__header">
                     <a href="#" class="popup__close"></a>
                     <div class="popup__form">
-                        <form action="#" class="form">
-                            <input type="text" class="input input_ui input_ui_search">
+                        <form action="<?= Url::toRoute(['posts/search/index'])?>" class="form" method="get">
+                            <input type="text" name="q" class="input input_ui input_ui_search" value="" />
                         </form>
                     </div>
                 </div>
-                <div class="found__list">
-                    <div class="found__overflow">
-                        <div class="found">
-                            <div class="found__img">
-                                <img src="/media/band.jpg" alt="#">
-                            </div>
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                        <div class="found">
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                        <div class="found">
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                        <div class="found">
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                        <div class="found">
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                        <div class="found">
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                        <div class="found">
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                        <div class="found">
-                            <div class="found__content">
-                                <a href="#" class="found__title">Губернаторы отчитаются президенту Владимиру Путину о выполнении его указов</a>
-                                <div class="found__text">Квантовое состояние ненаблюдаемо. Излучение, при адиабатическом изменении параметров, мгновенно. Взрыв стохастично искажает квантовый магнит. Очевидно, что объект восстанавливает кварк</div>
-                                <div class="found__data">20 минут назад</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-
         </div>
     </div>
 </div>
